@@ -10,7 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 
     phoneIcon.addEventListener('click', function() {
-        window.location.href = 'tel:+1234567890'; // Replace with your phone number
+        window.location.href = 'tel:0539342717'; // Replace with your phone number
     });
 
     // Scroll progress bar
