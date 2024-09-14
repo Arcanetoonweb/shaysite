@@ -1,1 +1,49 @@
+.feature {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
 
+.feature > div {
+    margin-right: 15px;
+}
+
+.fa-stack {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.iconBack {
+    color: #f0f0f0; /* צבע הרקע של האייקון */
+}
+
+.iconTop {
+    color: #333; /* צבע האייקון */
+}
+
+.featureText {
+    max-width: 500px;
+}
+
+.featureText h3 {
+    font-size: 1.5em;
+    margin: 0;
+}
+
+.featureText p {
+    margin: 5px 0;
+    color: #666; /* צבע הטקסט */
+}
+
+.featureText h3, .featureText p {
+    transition: color 0.3s, background-color 0.3s;
+}
+
+.featureText h3:hover {
+    color: rgba(128, 0, 128, 0.8); /* צבע סגול שקוף */
+    background-color: #000; /* רקע שחור */
+}
+
+.featureText p:hover {
+    color: rgba(128, 0, 128, 0.8); /* צבע סגול שקוף */
+}
