@@ -63,3 +63,7 @@ footer {
 .socialIconTop {
     color: #ffc307;
 }
+
+body {
+    font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+}
