@@ -1,1 +1,91 @@
 
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(51, 48, 51); /* צבע רקע חדש */
+  color: #fff;
+}
+
+body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+footer {
+  background-color: rgb(33, 33, 33); /* צבע רקע של הפוטר */
+  padding: 20px;
+  text-align: center;
+  margin-top: auto;
+}
+
+.footerText {
+  margin: 0;
+  font-size: 18px; /* גודל פונט מותאם לטקסט החדש */
+  line-height: 1.5; /* רווח בין שורות */
+  text-align: center; /* ממרכז את הטקסט */
+}
+
+/* טקסט התיאור */
+.footerText .description {
+  color: rgb(130, 121, 121); /* צבע טקסט מותאם */
+}
+
+/* טקסט "Made by" */
+.footerText .madeBy {
+  color: #fff; /* צבע לבן */
+}
+
+.footerText a {
+  color: #ffc107; /* צבע כתום עבור הלינק */
+  text-decoration: none; /* ביטול קו תחתון */
+}
+
+.footerText a:hover {
+  text-decoration: none; /* ביטול קו תחתון גם בהעברת העכבר */
+}
+
+.footerIcon {
+  margin-bottom: 10px; /* רווח בין האייקון לטקסט */
+}
+
+.footerIcons {
+  margin-top: 10px;
+}
+
+.footerIcons a {
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+.footerIcons .description {
+  color: rgb(130, 121, 121); /* צבע חדש לטקסט */
+}
+
+.fa-stack {
+  display: inline-block;
+  width: 50px;
+  height: 40px;
+  text-align: center;
+}
+
+.socialIconBack {
+  color: #38321f;
+}
+
+.socialIconTop {
+  color: #ffc307;
+}
+
+body {
+  font-family: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, sans-serif;
+}
