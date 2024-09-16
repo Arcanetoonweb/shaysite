@@ -6,12 +6,26 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* ממקם את הלוגו בצד שמאל */
-  padding: 0 20px; /* ריווח משני הצדדים */
+  justify-content: center; /* מרכז את התוכן */
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
+}
+
+/* עיצוב תוכן המלבן */
+.top-rectangle-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: "Open Sans", sans-serif; /* הגדרת הגופן */
+  height: 100%;
+  /* לשנות את הריווח בהתאם לצורך */
+  padding-left: 20px; /* ריווח משמאל */
+  /* או */
+  /* padding-right: 20px; ריווח מימין */
 }
 
 /* עיצוב הלוגו */
