@@ -1,144 +1,126 @@
 /* עיצוב המלבן בראש האתר */
 .top-rectangle {
-  background-color: rgb(29, 36, 36);
-  height: 80px;
-  width: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; /* ממקם את הלוגו בצד שמאל */
-  padding: 0 20px; /* ריווח משני הצדדים */
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 1000;
-}
-
-/* עיצוב הלוגו */
-.logo {
-  height: 40px; /* גובה הלוגו */
-  animation: logoAnimation 1.5s infinite;
-}
-
-/* אנימציה ללוגו */
-@keyframes logoAnimation {
-  0% {
-    transform: scale(1);
+    background-color: rgb(29, 36, 36);
+    height: 80px;
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* ממקם את הלוגו בצד שמאל */
+    padding: 0 20px; /* ריווח משני הצדדים */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
   }
-  50% {
-    transform: scale(1.1);
+  
+  /* עיצוב הלוגו */
+  .logo {
+    height: 40px; /* גובה הלוגו */
+    animation: logoAnimation 1.5s infinite;
   }
-  100% {
-    transform: scale(1);
+  
+  /* אנימציה ללוגו */
+  @keyframes logoAnimation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
   }
-}
-
-/* עיצוב שורת החיפוש מתחת למלבן */
-.search-section {
-  padding: 150px;
-  margin-top: 80px; /* רווח מלמעלה */
-  background-color: #121212; /* צבע רקע של האתר */
-}
-
-/* עיצוב שורת החיפוש */
-.search-container {
-  text-align: center;
-  margin-bottom: 20px; /* ריווח מתחת לשורת החיפוש */
-}
-
-input[type="text"] {
-  width: 100%;
-  max-width: 600px; /* גודל מקסימלי של שורת החיפוש */
-  padding: 10px;
-  border: 1px solid #ff9800; /* מסגרת דקה בצבע כתום */
-  border-radius: 20px; /* עיגול הפינות */
-  font-size: 16px;
-  background-color: transparent; /* צבע הרקע שקוף */
-  outline: none; /* מסיר את המסגרת החיצונית בעת פוקוס */
-  color: #fff; /* צבע טקסט לבן */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* צל קטן */
-  transition: box-shadow 0.3s ease; /* אנימציה לשינוי צל */
-}
-
-input[type="text"]:focus {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* צל חזק יותר בעת פוקוס */
-}
-
-/* עיצוב תוצאות החיפוש */
-#search-results {
-  margin-top: 20px;
-  text-align: center;
-  max-width: 600px; /* גודל מקסימלי לתוצאות החיפוש */
-  margin: 20px auto; /* רווח אוטומטי בצדדים כדי למרכז */
-  background-color: #1e1e1e; /* צבע רקע כהה יותר לתוצאות החיפוש */
-  padding: 20px; /* ריווח פנימי */
-  border-radius: 10px; /* עיגול פינות */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* צל חזק יותר לתיבת התוצאות */
-}
-
-/* עיצוב פריטי התוצאות */
-.product-item {
-  padding: 15px;
-  background-color: #2c2c2c; /* צבע רקע כהה לפריט החיפוש */
-  border-radius: 8px; /* עיגול פינות */
-  margin-bottom: 10px; /* ריווח בין פריטים */
-  color: #f5f5f5; /* צבע טקסט בהיר */
-  transition: background-color 0.3s ease, transform 0.3s ease; /* אנימציה לשינוי צבע ו-Scale */
-  cursor: pointer; /* מחליף את הסמן בעת ריחוף */
-}
-
-.product-item:hover {
-  background-color: #3a3a3a; /* צבע רקע משתנה בעת ריחוף */
-  transform: scale(1.02); /* זום קל בעת ריחוף */
-}
-
-/* התוצאות יהיו בלתי נראות בהתחלה */
-#search-results {
-  display: none; /* ההצגה מוסתרת בהתחלה */
-  margin-top: 20px;
-  text-align: center;
-  max-width: 600px; /* גודל מקסימלי לתוצאות החיפוש */
-  margin: 20px auto; /* רווח אוטומטי בצדדים כדי למרכז */
-  background-color: #1e1e1e; /* צבע רקע כהה יותר לתוצאות החיפוש */
-  padding: 20px; /* ריווח פנימי */
-  border-radius: 10px; /* עיגול פינות */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); /* צל חזק יותר לתיבת התוצאות */
-}
-
-/* עיצוב פריטי התוצאות */
-.product-item {
-  padding: 15px;
-  background-color: #2c2c2c; /* צבע רקע כהה לפריט החיפוש */
-  border-radius: 8px; /* עיגול פינות */
-  margin-bottom: 10px; /* ריווח בין פריטים */
-  color: #f5f5f5; /* צבע טקסט בהיר */
-  transition: background-color 0.3s ease, transform 0.3s ease; /* אנימציה לשינוי צבע ו-Scale */
-  cursor: pointer; /* מחליף את הסמן בעת ריחוף */
-}
-
-.product-item:hover {
-  background-color: #3a3a3a; /* צבע רקע משתנה בעת ריחוף */
-  transform: scale(1.02); /* זום קל בעת ריחוף */
-}
-
-/* עיצוב שורת החיפוש */
-input[type="text"] {
-  width: 100%;
-  max-width: 600px; /* גודל מקסימלי של שורת החיפוש */
-  padding: 12px; /* ריווח פנימי */
-  border: 0px solid #ff9800; /* מסגרת דקה בצבע כתום */
-  border-radius: 10px; /* עיגול הפינות */
-  font-size: 16px;
-  background-color: #333; /* צבע רקע כהה לשורת החיפוש */
-  color: #fff; /* צבע טקסט לבן */
-  outline: none; /* מסיר את המסגרת החיצונית בעת פוקוס */
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 1.2); /* צל קטן */
-  transition: box-shadow 0.3s ease; /* אנימציה לשינוי צל */
-}
-
-input[type="text"]:focus {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* צל חזק יותר בעת פוקוס */
-}
+  
+  /* עיצוב שורת החיפוש מתחת למלבן */
+  .search-section {
+    padding: 150px 20px; /* ריווח מלמעלה וריווח מהצדדים */
+    margin-top: 80px; /* רווח מלמעלה */
+    background-color: #121212; /* צבע רקע של האתר */
+  }
+  
+  /* עיצוב שורת החיפוש */
+  .search-container {
+    text-align: center;
+    margin-bottom: 20px; /* ריווח מתחת לשורת החיפוש */
+  }
+  
+  .search-container input[type="text"] {
+    width: 100%;
+    max-width: 600px; /* גודל מקסימלי של שורת החיפוש */
+    padding: 10px;
+    border: 1px solid #ff9800; /* מסגרת דקה בצבע כתום */
+    border-radius: 20px; /* עיגול הפינות */
+    font-size: 16px;
+    background-color: transparent; /* צבע הרקע שקוף */
+    outline: none; /* מסיר את המסגרת החיצונית בעת פוקוס */
+    color: #fff; /* צבע טקסט לבן */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* צל קטן */
+    transition: box-shadow 0.3s ease; /* אנימציה לשינוי צל */
+  }
+  
+  .search-container input[type="text"]:focus {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* צל חזק יותר בעת פוקוס */
+  }
+  
+  .search-container button {
+    padding: 10px;
+    background-color: #ffc107;
+    border: none;
+    color: white;
+    cursor: pointer;
+  }
+  
+  /* עיצוב קטע המוצרים */
+  #products-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  /* עיצוב כל מוצר */
+  .product {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+    background-color: #2c2c2c; /* צבע רקע כהה */
+    color: #f5f5f5; /* צבע טקסט בהיר */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* צל קל */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* אנימציה */
+  }
+  
+  /* עיצוב התמונה של המוצר */
+  .product-image {
+    max-width: 100%;
+    height: auto;
+    border-bottom: 1px solid #ddd; /* קו מפריד מתחת לתמונה */
+    margin-bottom: 10px; /* ריווח מתחת לתמונה */
+  }
+  
+  /* עיצוב שם המוצר */
+  .product-title {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  /* עיצוב מחיר המוצר */
+  .product-price {
+    color: #ff5722; /* צבע כתום עבור המחיר */
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  
+  /* עיצוב תיאור המוצר */
+  .product-description {
+    font-size: 14px;
+    color: #ddd; /* צבע טקסט בהיר יותר לתיאור */
+  
+  }
 
 /* General Styles */
 body {
@@ -270,6 +252,7 @@ footer {
 .socialIconTop {
   color: #ffc307;
 }
+
 body {
   font-family: "Open Sans", sans-serif;
 }
