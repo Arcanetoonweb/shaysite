@@ -1,6 +1,5 @@
-<script>
 
-$(function() {
+ (function() {
 
     var apiURL = "https://itunes.apple.com/lookup?id=1551518290&country=us&callback=?";
 
@@ -61,5 +60,3 @@ $(function() {
         }
     });  
 });
-
-</script>
