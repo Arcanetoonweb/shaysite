@@ -13,76 +13,80 @@
 <body>
   <!-- מלבן בראש האתר -->
   <div class="top-rectangle">
-    <img src="https://i.ibb.co/YbYzwZx/bag-smile.png" alt="Logo" class="logo">
-  </div>
-
-  <!-- Search Bar Section -->
-  <div class="search-section">
-    <div class="search-container">
-      <input type="text" id="search-input" placeholder="חפש מוצרים...">
-      <button onclick="searchProducts()" class="search-button">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
-          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
-          <g id="SVGRepo_iconCarrier">
-            <path d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z" stroke="#545454" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-            <path opacity="0.4" d="M22 22L20 20" stroke="#545454" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-          </g>
-        </svg>
-      </button>
+    <div class="top-rectangle-content">
+      <img src="https://i.ibb.co/YbYzwZx/bag-smile.png" alt="Logo" class="logo">
+      <span>Shuk Shay</span>
     </div>
   </div>
+</body>
 
-  <!-- Products Section -->
-  <div id="products-container">
-    <!-- Row 1 -->
-    <div class="product-row">
-      <div class="product">
-        <img src="https://i.ibb.co/rxV6VdB/Pngtree-three-dimensional-element-of-essence-dropper-5318087.png" alt="מוצר 1" class="product-image">
-        <h2 class="product-title">שם המוצר 1</h2>
-        <p class="product-price">₪30.00</p>
-        <p class="product-description">תיאור מוצר 1</p>
-      </div>
-      <div class="product">
-        <img src="https://i.ibb.co/rxV6VdB/Pngtree-three-dimensional-element-of-essence-dropper-5318087.png" alt="מוצר 2" class="product-image">
-        <h2 class="product-title">שם המוצר 2</h2>
-        <p class="product-price">₪40.00</p>
-        <p class="product-description">תיאור מוצר 2</p>
-      </div>
+<!-- Search Bar Section -->
+<div class="search-section">
+  <div class="search-container">
+    <input type="text" id="search-input" placeholder="חפש מוצרים...">
+    <button onclick="searchProducts()" class="search-button">
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <g id="SVGRepo_iconCarrier">
+          <path d="M11.5 21C16.7467 21 21 16.7467 21 11.5C21 6.25329 16.7467 2 11.5 2C6.25329 2 2 6.25329 2 11.5C2 16.7467 6.25329 21 11.5 21Z" stroke="#545454" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path opacity="0.4" d="M22 22L20 20" stroke="#545454" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </g>
+      </svg>
+    </button>
+  </div>
+</div>
+
+<!-- Products Section -->
+<div id="products-container">
+  <!-- Row 1 -->
+  <div class="product-row">
+    <div class="product">
+      <img src="https://i.ibb.co/rxV6VdB/Pngtree-three-dimensional-element-of-essence-dropper-5318087.png" alt="מוצר 1" class="product-image">
+      <h2 class="product-title">שם המוצר 1</h2>
+      <p class="product-price">₪30.00</p>
+      <p class="product-description">תיאור מוצר 1</p>
     </div>
-
-    <!-- Row 2 -->
-    <div class="product-row">
-      <div class="product">
-        <img src="https://i.ibb.co/rxV6VdB/Pngtree-three-dimensional-element-of-essence-dropper-5318087.png" alt="מוצר 4" class="product-image">
-        <h2 class="product-title">שם המוצר 4</h2>
-        <p class="product-price">₪60.00</p>
-        <p class="product-description">תיאור מוצר 4</p>
-      </div>
-      <div class="product">
-        <img src="https://i.ibb.co/rxV6VdB/Pngtree-three-dimensional-element-of-essence-dropper-5318087.png" alt="מוצר 5" class="product-image">
-        <h2 class="product-title">שם המוצר 5</h2>
-        <p class="product-price">₪70.00</p>
-        <p class="product-description">תיאור מוצר 5</p>
-      </div>
-    </div>
-
-    <!-- Row 3 -->
-    <div class="product-row">
-      <div class="product">
-        <img src="https://i.ibb.co/rxV6VdB/Pngtree-three-dimensional-element-of-essence-dropper-5318087.png" alt="מוצר 7" class="product-image">
-        <h2 class="product-title">שם המוצר 7</h2>
-        <p class="product-price">₪90.00</p>
-        <p class="product-description">תיאור מוצר 7</p>
-      </div>
-      <div class="product">
-        <img src="https://i.ibb.co/rxV6VdB/Pngtree-three-dimensional-element-of-essence-dropper-5318087.png" alt="מוצר 8" class="product-image">
-        <h2 class="product-title">שם המוצר 8</h2>
-        <p class="product-price">₪100.00</p>
-        <p class="product-description">תיאור מוצר 8</p>
-      </div>
+    <div class="product">
+      <img src="https://i.ibb.co/rxV6VdB/Pngtree-three-dimensional-element-of-essence-dropper-5318087.png" alt="מוצר 2" class="product-image">
+      <h2 class="product-title">שם המוצר 2</h2>
+      <p class="product-price">₪40.00</p>
+      <p class="product-description">תיאור מוצר 2</p>
     </div>
   </div>
+
+  <!-- Row 2 -->
+  <div class="product-row">
+    <div class="product">
+      <img src="https://i.ibb.co/rxV6VdB/Pngtree-three-dimensional-element-of-essence-dropper-5318087.png" alt="מוצר 4" class="product-image">
+      <h2 class="product-title">שם המוצר 4</h2>
+      <p class="product-price">₪60.00</p>
+      <p class="product-description">תיאור מוצר 4</p>
+    </div>
+    <div class="product">
+      <img src="https://i.ibb.co/rxV6VdB/Pngtree-three-dimensional-element-of-essence-dropper-5318087.png" alt="מוצר 5" class="product-image">
+      <h2 class="product-title">שם המוצר 5</h2>
+      <p class="product-price">₪70.00</p>
+      <p class="product-description">תיאור מוצר 5</p>
+    </div>
+  </div>
+
+  <!-- Row 3 -->
+  <div class="product-row">
+    <div class="product">
+      <img src="https://i.ibb.co/rxV6VdB/Pngtree-three-dimensional-element-of-essence-dropper-5318087.png" alt="מוצר 7" class="product-image">
+      <h2 class="product-title">שם המוצר 7</h2>
+      <p class="product-price">₪90.00</p>
+      <p class="product-description">תיאור מוצר 7</p>
+    </div>
+    <div class="product">
+      <img src="https://i.ibb.co/rxV6VdB/Pngtree-three-dimensional-element-of-essence-dropper-5318087.png" alt="מוצר 8" class="product-image">
+      <h2 class="product-title">שם המוצר 8</h2>
+      <p class="product-price">₪100.00</p>
+      <p class="product-description">תיאור מוצר 8</p>
+    </div>
+  </div>
+</div>
 
 </body>
 
