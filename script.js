@@ -1,62 +1,30 @@
+function searchProducts() {
+  const input = document.getElementById("search-input").value.toLowerCase();
+  const productList = document.getElementById("product-list");
+  const resultsContainer = document.getElementById("search-results");
 
- (function() {
+  // ניקוי התוצאות הקודמות
+  resultsContainer.innerHTML = "";
 
-    var apiURL = "https://itunes.apple.com/lookup?id=1551518290&country=us&callback=?";
+  if (input.length === 0) {
+    resultsContainer.style.display = "none"; // אם אין קלט, מסתיר את התוצאות
+    return;
+  }
 
-    $.getJSON(apiURL, function(json) {
+  const products = productList.getElementsByClassName("product-item");
 
-        if (json.results && json.results.length) {
+  for (let i = 0; i < products.length; i++) {
+    const product = products[i];
+    if (product.textContent.toLowerCase().includes(input)) {
+      resultsContainer.style.display = "block"; // מראה את התוצאות אם יש תוצאה תואמת
+      const result = document.createElement("div");
+      result.className = "product-item";
+      result.textContent = product.textContent;
+      resultsContainer.appendChild(result);
+    }
+  }
 
-            console.info("Image strings loaded from Apple API.");
-            var appInfo = json.results[0];
-
-            // Set favicon
-            $('link[rel="shortcut icon"]').attr("href", appInfo.artworkUrl512);
-
-            // Set page title using the iOS app ID if it is not set manually in _config.yml
-            var $pageTitle = $(".pageTitle");
-            if ($.trim($($pageTitle).text()).length == 0) {
-                $($pageTitle).html(appInfo.trackName);
-            }
-
-            // Set large app icon using the iOS app ID if it is not set manually in _config.yml
-            var $appIconLarge = $(".appIconLarge");
-            if (!$appIconLarge.attr('src')) {
-                $($appIconLarge).attr("src", appInfo.artworkUrl512);
-            }
-
-            // Set header app icon using the iOS app ID if it is not set manually in _config.yml
-            var $appIconHeader = $(".headerIcon");
-            if (!$appIconHeader.attr('src')) {
-                $($appIconHeader).attr("src", appInfo.artworkUrl512);
-            }
-
-            // Set app name using the iOS app ID if it is not set manually in _config.yml
-            var $appName = $(".appName");
-            if ($.trim($($appName).text()).length == 0) {
-                $($appName).html(appInfo.trackName);
-            }
-
-            // Set the name displayed in the header if it is not set manually in _config.yml
-            var $headerName = $(".headerName");
-            if ($.trim($($headerName).text()).length == 0) {
-                $($headerName).html(appInfo.trackName);
-            }
-
-            // Set price using the iOS app ID if it is not set manually in _config.yml
-            var $appPrice = $(".appPrice");
-            if ($.trim($($appPrice).text()).length == 0) {
-                $($appPrice).html(appInfo.formattedPrice);
-            }
-
-            // Set App Store link using the iOS app ID if it is not set manually in _config.yml
-            var $appStoreLink = $(".appStoreLink");
-            if ($.trim($appStoreLink.attr('href')).length == 0) {
-                $($appStoreLink).attr("href", appInfo.trackViewUrl);
-            }
-
-            console.info(appInfo);
-
-        }
-    });  
-});
+  if (resultsContainer.children.length === 0) {
+    resultsContainer.style.display = "none"; // אם אין תוצאות, מסתיר את התוצאות
+  }
+}
