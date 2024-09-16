@@ -96,7 +96,7 @@
   color: #f5f5f5; /* צבע טקסט בהיר */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* צל קל */
   transition: background-color 0.3s ease, transform 0.3s ease; /* אנימציה */
-  margin-bottom: 70px; /* רווח בין שורות המוצרים */
+  margin-bottom: 50px; /* רווח בין שורות המוצרים */
 }
 
 /* עיצוב התמונה של המוצר */
