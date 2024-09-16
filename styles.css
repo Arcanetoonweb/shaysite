@@ -14,7 +14,7 @@ main {
 }
 
 .spacer {
-    height: 960px; /* גובה הרווח שאתה רוצה */
+    height: 920px; /* גובה הרווח שאתה רוצה */
     background-color: transparent; /* אם אתה לא רוצה צבע רקע */
 }
 
