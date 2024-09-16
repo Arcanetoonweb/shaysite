@@ -105,7 +105,7 @@ footer {
   display: flex;
   justify-content: center; /* מרכז את האייקונים אופקית */
   gap: 20px; /* רווח בין האייקונים */
-  margin-top: 10px;
+  margin-top: 80px;
 }
 
 .footerIcons a {
