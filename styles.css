@@ -1,11 +1,22 @@
-/* General Styles */
+/* הגדרות כלליות */
 body {
-    font-family: Arial, sans-serif;
-    color: #fff;
-    background-color: #121212;
+    background-image: url('https://i.imgur.com/ioU7WMm.gif'); /* קישור לתמונה הזזה */
+    background-size: cover; /* התמונה תתאים לגודל המסך */
+    background-position: center; /* ממרכז את התמונה */
+    background-repeat: no-repeat; /* מונע חזרה של התמונה */
     margin: 0;
     padding: 0;
-  }
+    /* הוספת שקיפות לרקע */
+    background-color: rgba(255, 255, 255, 0.1); /* צבע לבן עם שקיפות */
+}
+
+/* מגדיר את הפוטר כדי שלא ישתמש ברקע */
+footer {
+    background-color: #333333; /* שומר על הצבע המקורי של הפוטר */
+    position: relative; /* שומר את מיקום הפוטר כך שלא יושפע מהרקע */
+    z-index: 1; /* מבטיח שהפוטר יהיה מעל הרקע */
+}
+
 
 
 /* Main Section Styles */
@@ -14,7 +25,7 @@ main {
 }
 
 .spacer {
-    height: 700px; /* גובה הרווח שאתה רוצה */
+    height: 900px; /* גובה הרווח שאתה רוצה */
     background-color: transparent; /* אם אתה לא רוצה צבע רקע */
 }
 
