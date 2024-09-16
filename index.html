@@ -1,4 +1,4 @@
-<html lang="en">
+<html lang="en"></html>
 
 <head>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
@@ -17,12 +17,29 @@
     <img src="https://i.ibb.co/YbYzwZx/bag-smile.png" alt="Logo" class="logo">
   </div>
 
-  <!-- שורת חיפוש מתחת למלבן -->
+  <!-- Search Bar Section -->
   <div class="search-section">
     <div class="search-container">
-      <input type="text" id="search-input" placeholder="Search..." onkeyup="searchProducts()">
+      <input type="text" id="search-input" placeholder="חפש מוצרים...">
+      <button onclick="searchProducts()">חפש</button>
     </div>
-    <div id="search-results"></div>
+  </div>
+
+  </div>
+
+  <!-- Products Section -->
+  <div id="products-container">
+    <!-- Example Product -->
+    <div class="product">
+      <img src="path-to-product-image.jpg" alt="מוצר לדוגמה" class="product-image">
+      <h2 class="product-title">שם המוצר</h2>
+      <p class="product-price">₪99.00</p>
+      <p class="product-description">תיאור קצר של המוצר. תיאור זה יכיל מידע על המוצר ומה שהוא מציע.</p>
+    </div>
+    <!-- Repeat the above block for each product -->
+  </div>
+
+  <!-- Repeat the above block for each product -->
   </div>
 
   <!-- רשימת מוצרים לדוגמה -->
@@ -42,8 +59,6 @@
     <!-- הוסף מוצרים נוספים כאן -->
   </div>
 
-  <!-- הוסף JavaScript -->
-  <script src="script.js"></script>
 </body>
 
 </div>
