@@ -56,7 +56,7 @@ input[type="text"] {
   background-color: transparent; /* צבע הרקע שקוף */
   outline: none; /* מסיר את המסגרת החיצונית בעת פוקוס */
   color: #fff; /* צבע טקסט לבן */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* צל קטן */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* צל קטן */
   transition: box-shadow 0.3s ease; /* אנימציה לשינוי צל */
 }
 
