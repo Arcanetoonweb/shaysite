@@ -64,13 +64,16 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* צל חזק יותר בעת פוקוס */
   }
   
-  .search-container button {
-    padding: 10px;
-    background-color: #ffc107;
-    border: none;
-    color: white;
-    cursor: pointer;
-  }
+  .search-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.search-button svg {
+  width: 24px;
+  height: 24px;
+}
   
   /* עיצוב קטע המוצרים */
   #products-container {
