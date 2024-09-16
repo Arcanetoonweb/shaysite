@@ -38,6 +38,7 @@
   padding: 150px 20px; /* ריווח מלמעלה וריווח מהצדדים */
   margin-top: 80px; /* רווח מלמעלה */
   background-color: #121212; /* צבע רקע של האתר */
+  display: none; /* הסתרה של שורת החיפוש */
 }
 
 /* עיצוב שורת החיפוש */
@@ -79,9 +80,10 @@
 #products-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 500px; /* רווח גדול בין כל מוצר לרוחב */
+  gap: 30px; /* רווח קטן בין כל מוצר לרוחב */
   justify-content: center; /* מרכז את המוצרים במרכז */
   padding: 20px;
+  margin-top: 600px; /* רווח למעלה להורדת הקטע למטה */
 }
 
 /* עיצוב כל מוצר */
@@ -96,7 +98,7 @@
   color: #f5f5f5; /* צבע טקסט בהיר */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* צל קל */
   transition: background-color 0.3s ease, transform 0.3s ease; /* אנימציה */
-  margin-bottom: 80px; /* רווח בין שורות המוצרים */
+  margin: 0 40px 100px; /* רווחים סביב המוצר: שמאל, ימין, למטה */
 }
 
 /* עיצוב התמונה של המוצר */
