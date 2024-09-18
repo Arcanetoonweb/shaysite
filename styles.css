@@ -1,36 +1,32 @@
-/* עיצוב המלבן בראש האתר */
+/* מלבן ראשי בראש האתר */
 .top-rectangle {
   background-color: rgb(29, 36, 36);
-  height: 80px;
+  height: 60px; /* גובה המלבן */
   width: 100%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   display: flex;
-  align-items: center;
-  justify-content: center; /* מרכז את התוכן */
-  position: fixed;
-  top: 0;
-  left: 0;
+  align-items: center; /* מרכז את התוכן אנכית */
+  justify-content: center;
+  position: relative; /* מאפשר למלבן השני להתמקם יחסית לו */
   z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* צל של המלבן */
 }
 
-/* עיצוב תוכן המלבן */
 .top-rectangle-content {
   display: flex;
   align-items: center;
   justify-content: center;
   color: #ffffff;
   font-size: 16px;
-  font-family: "Open Sans", sans-serif; /* הגדרת הגופן */
-  height: 100%;
-  /* לשנות את הריווח בהתאם לצורך */
-  padding-left: 20px; /* ריווח משמאל */
-  /* או */
-  /* padding-right: 20px; ריווח מימין */
+  font-family: "Open Sans", sans-serif;
+}
+
+.top-rectangle-content span {
+  margin-top: -5px; /* או השתמש ב-padding-top או line-height */
 }
 
 /* עיצוב הלוגו */
 .logo {
-  height: 40px; /* גובה הלוגו */
+  height: 40px;
   animation: logoAnimation 1.5s infinite;
 }
 
@@ -47,47 +43,104 @@
   }
 }
 
-/* עיצוב שורת החיפוש מתחת למלבן */
-.search-section {
-  padding: 150px 20px; /* ריווח מלמעלה וריווח מהצדדים */
-  margin-top: 80px; /* רווח מלמעלה */
-  background-color: #121212; /* צבע רקע של האתר */
-  display: none; /* הסתרה של שורת החיפוש */
-}
-
-/* עיצוב שורת החיפוש */
-.search-container {
-  text-align: center;
-  margin-bottom: 20px; /* ריווח מתחת לשורת החיפוש */
-}
-
-.search-container input[type="text"] {
+/* עיצוב המלבן המשני */
+.secondary-rectangle {
+  background-color: rgb(25, 30, 50);
+  height: 100px; /* גובה המלבן המשני */
   width: 100%;
-  max-width: 600px; /* גודל מקסימלי של שורת החיפוש */
-  padding: 10px;
-  border: 1px solid #ff9800; /* מסגרת דקה בצבע כתום */
-  border-radius: 20px; /* עיגול הפינות */
-  font-size: 16px;
-  background-color: transparent; /* צבע הרקע שקוף */
-  outline: none; /* מסיר את המסגרת החיצונית בעת פוקוס */
-  color: #fff; /* צבע טקסט לבן */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* צל קטן */
-  transition: box-shadow 0.3s ease; /* אנימציה לשינוי צל */
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* מיקום התכנים בצד ימין */
+  position: absolute;
+  top: 60px;
+  left: 0;
+  z-index: 999;
+  padding: 0 20px; /* ריווח פנימי משני הצדדים */
+  box-sizing: border-box;
 }
 
-.search-container input[type="text"]:focus {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* צל חזק יותר בעת פוקוס */
+/* עיצוב התכנים בתוך המלבן המשני */
+.secondary-rectangle-content {
+  display: flex;
+  align-items: center;
 }
 
-.search-button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
+/* עיצוב פריט בתפריט */
+.item {
+  margin-left: 20px; /* רווח בין הפריטים */
+  display: flex;
+  align-items: center;
 }
 
-.search-button svg {
-  width: 24px;
-  height: 24px;
+.item a {
+  color: #ffffff;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+}
+
+.item .icon {
+  width: 28px; /* גובה ורוחב האייקון */
+  height: 30px;
+  margin-right: 8px; /* רווח בין האייקון לטקסט */
+}
+
+/* עיצוב אייקון SVG */
+.icon {
+  width: 50px; /* גובה ורוחב האייקון */
+  height: 50px;
+  margin-right: 8px; /* רווח בין האייקון לטקסט */
+  margin-left: 4px; /* הזזה מהצד השמאלי */
+}
+
+/* אנימציה כאשר העכבר על האייקון */
+.item a:hover .icon {
+  transform: scale(1.1); /* הגדלה של האייקון ב-10% */
+}
+
+/* אנימציה כאשר האייקון נלחץ */
+.item a:active .icon {
+  transform: scale(0.9); /* הקטנה של האייקון ב-10% */
+}
+
+/* סגנון בסיסי להתראה */
+.notification-badge {
+  position: absolute;
+  top: -10px; /* מיקום מעל האייקון */
+  right: -10px; /* מיקום לצד הימין של האייקון */
+  background-color: red; /* צבע הרקע */
+  color: white; /* צבע הטקסט */
+  border-radius: 50%; /* עיגול */
+  width: 20px; /* רוחב */
+  height: 20px; /* גובה */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px; /* גודל הטקסט */
+  font-weight: bold; /* משקל הטקסט */
+  opacity: 0; /* בהתחלה, לא גלוי */
+  transform: scale(0); /* התפשטות אפסית */
+  transition: opacity 0.3s ease, transform 0.3s ease; /* אנימציה חלקה */
+}
+
+/* סגנון כשההתראה מוצגת */
+.notification-badge.show {
+  opacity: 1; /* הופעה מלאה */
+  transform: scale(1); /* התפשטות מלאה */
+}
+
+.secondary-rectangle-content {
+  display: flex;
+  justify-content: center; /* יישור מרכזי של התוכן בקונטיינר */
+  gap: 10px; /* רווח בין האייקונים */
+  padding-right: 200px; /* הזזה כללית מצד שמאל */
+}
+
+/* לוודא שאין סגנונות נוספים שמפריעים */
+html,
+body {
+  margin: 0;
+  padding: 0;
 }
 
 /* עיצוב קטע המוצרים */
@@ -142,22 +195,26 @@
   color: #ddd; /* צבע טקסט בהיר יותר לתיאור */
 }
 
-/*--- testimonial -----*/
+/* עיצוב עבור הקטע של הטסטימוניאלים */
 .testimonial {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  flex-wrap: wrap; /* מאפשר למרכיבים לעבור לשורה הבאה אם אין מקום */
+  justify-content: space-between; /* יוצר רווח שווה בין האלמנטים */
   margin: 20px;
 }
 
+/* עיצוב עבור כל אלמנט בתוך הטסטימוניאלים */
 .testimonial .col-3 {
+  flex: 1 1 30%; /* מאפשר לאלמנטים להתרחב ולהתכווץ בהתאם לצורך */
   text-align: center;
   padding: 40px 20px;
-  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.5s;
+  margin: 10px; /* רווח בין האלמנטים */
 }
 
+/* עיצוב התמונה בתוך הטסטימוניאלים */
 .testimonial .col-3 img {
   width: 80px; /* ניתן לשנות את הרוחב לפי הצורך */
   height: 80px; /* מבטיח שהתמונה תשמור על צורת ריבוע */
@@ -165,26 +222,32 @@
   border-radius: 50%; /* הופך את התמונה לעגלית */
 }
 
+/* אנימציה בעת ריחוף על האלמנט */
 .testimonial .col-3:hover {
   transform: translateY(-10px);
 }
+
+/* עיצוב עבור סימן הציטוט */
 .fa.fa-quote-left {
   font-size: 34px;
   color: #ff523b;
 }
 
+/* עיצוב עבור הטקסט בתוך האלמנט */
 .col-3 p {
   font-size: 12px;
   margin: 12px 0;
   color: #777;
 }
 
+/* עיצוב עבור הכותרת בתוך האלמנט */
 .testimonial .col-3 h3 {
   font-weight: 600;
   color: #555;
   font-size: 16px;
 }
 
+/* עיצוב עבור דירוגים */
 .rating .fa {
   color: #ff523b;
 }
