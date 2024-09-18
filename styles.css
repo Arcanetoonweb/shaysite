@@ -142,13 +142,58 @@
   color: #ddd; /* צבע טקסט בהיר יותר לתיאור */
 }
 
+/*--- testimonial -----*/
+.testimonial {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.testimonial .col-3 {
+  text-align: center;
+  padding: 40px 20px;
+  box-shadow: 0 0 20px 0px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.5s;
+}
+
+.testimonial .col-3 img {
+  width: 80px; /* ניתן לשנות את הרוחב לפי הצורך */
+  height: 80px; /* מבטיח שהתמונה תשמור על צורת ריבוע */
+  margin-top: 20px;
+  border-radius: 50%; /* הופך את התמונה לעגלית */
+}
+
+.testimonial .col-3:hover {
+  transform: translateY(-10px);
+}
+.fa.fa-quote-left {
+  font-size: 34px;
+  color: #ff523b;
+}
+
+.col-3 p {
+  font-size: 12px;
+  margin: 12px 0;
+  color: #777;
+}
+
+.testimonial .col-3 h3 {
+  font-weight: 600;
+  color: #555;
+  font-size: 16px;
+}
+
+.rating .fa {
+  color: #ff523b;
+}
+
 /* General Styles */
 body {
-  font-family: Arial, sans-serif;
+  font-family: "Open Sans", sans-serif;
   color: #fff;
   background-color: #121212;
-  margin: 0;
-  padding: 0;
 }
 
 /* Main Section Styles */
