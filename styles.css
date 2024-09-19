@@ -164,14 +164,13 @@ body {
   padding: 0;
 }
 
-/* עיצוב קטע המוצרים */
 #products-container {
   display: flex;
   flex-wrap: wrap;
   gap: 30px; /* רווח קטן בין כל מוצר לרוחב */
   justify-content: center; /* מרכז את המוצרים במרכז */
   padding: 20px;
-  margin-top: 600px; /* רווח למעלה להורדת הקטע למטה */
+  margin-top: 500px; /* הפחתה של הרווח למעלה */
 }
 
 /* עיצוב כל מוצר */
