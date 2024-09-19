@@ -9,42 +9,42 @@
     position: relative; /* מאפשר למלבן השני להתמקם יחסית לו */
     z-index: 1000;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* צל של המלבן */
-  }
+}
   
-  .top-rectangle-content {
+.top-rectangle-content {
     display: flex;
     align-items: center;
     justify-content: center;
     color: #ffffff;
     font-size: 16px;
     font-family: "Open Sans", sans-serif;
-  }
+}
   
-  .top-rectangle-content span {
+.top-rectangle-content span {
     margin-top: -5px; /* או השתמש ב-padding-top או line-height */
-  }
+}
   
-  /* עיצוב הלוגו */
-  .logo {
+/* עיצוב הלוגו */
+.logo {
     height: 40px;
     animation: logoAnimation 1.5s infinite;
-  }
+}
   
-  /* אנימציה ללוגו */
-  @keyframes logoAnimation {
+/* אנימציה ללוגו */
+@keyframes logoAnimation {
     0% {
-      transform: scale(1);
+        transform: scale(1);
     }
     50% {
-      transform: scale(1.1);
+        transform: scale(1.1);
     }
     100% {
-      transform: scale(1);
+        transform: scale(1);
     }
-  }
+}
   
-  /* עיצוב המלבן המשני */
-  .secondary-rectangle {
+/* עיצוב המלבן המשני */
+.secondary-rectangle {
     background-color: rgb(25, 30, 50);
     height: 100px; /* גובה המלבן המשני */
     width: 100%;
@@ -57,54 +57,57 @@
     z-index: 999;
     padding: 0 20px; /* ריווח פנימי משני הצדדים */
     box-sizing: border-box;
-  }
+}
   
-  /* עיצוב התכנים בתוך המלבן המשני */
-  .secondary-rectangle-content {
+/* עיצוב התכנים בתוך המלבן המשני */
+.secondary-rectangle-content {
     display: flex;
     align-items: center;
-  }
+    justify-content: center; /* יישור מרכזי של התוכן בקונטיינר */
+    gap: 10px; /* רווח בין האייקונים */
+    padding-right: 200px; /* הזזה כללית מצד שמאל */
+}
   
-  /* עיצוב פריט בתפריט */
-  .item {
+/* עיצוב פריט בתפריט */
+.item {
     margin-left: 20px; /* רווח בין הפריטים */
     display: flex;
     align-items: center;
-  }
+}
   
-  .item a {
+.item a {
     color: #ffffff;
     text-decoration: none;
     display: flex;
     align-items: center;
-  }
+}
   
-  .item .icon {
+.item .icon {
     width: 28px; /* גובה ורוחב האייקון */
     height: 30px;
     margin-right: 8px; /* רווח בין האייקון לטקסט */
-  }
+}
   
-  /* עיצוב אייקון SVG */
-  .icon {
+/* עיצוב אייקון SVG */
+.icon {
     width: 50px; /* גובה ורוחב האייקון */
     height: 50px;
     margin-right: 8px; /* רווח בין האייקון לטקסט */
     margin-left: 4px; /* הזזה מהצד השמאלי */
-  }
+}
   
-  /* אנימציה כאשר העכבר על האייקון */
-  .item a:hover .icon {
+/* אנימציה כאשר העכבר על האייקון */
+.item a:hover .icon {
     transform: scale(1.1); /* הגדלה של האייקון ב-10% */
-  }
+}
   
-  /* אנימציה כאשר האייקון נלחץ */
-  .item a:active .icon {
+/* אנימציה כאשר האייקון נלחץ */
+.item a:active .icon {
     transform: scale(0.9); /* הקטנה של האייקון ב-10% */
-  }
+}
   
-  /* סגנון בסיסי להתראה */
-  .notification-badge {
+/* סגנון בסיסי להתראה */
+.notification-badge {
     position: absolute;
     top: -10px; /* מיקום מעל האייקון */
     right: -10px; /* מיקום לצד הימין של האייקון */
@@ -121,43 +124,29 @@
     opacity: 0; /* בהתחלה, לא גלוי */
     transform: scale(0); /* התפשטות אפסית */
     transition: opacity 0.3s ease, transform 0.3s ease; /* אנימציה חלקה */
-  }
+}
   
-  /* סגנון כשההתראה מוצגת */
-  .notification-badge.show {
+/* סגנון כשההתראה מוצגת */
+.notification-badge.show {
     opacity: 1; /* הופעה מלאה */
     transform: scale(1); /* התפשטות מלאה */
-  }
+}
   
-  .secondary-rectangle-content {
-    display: flex;
-    justify-content: center; /* יישור מרכזי של התוכן בקונטיינר */
-    gap: 10px; /* רווח בין האייקונים */
-    padding-right: 200px; /* הזזה כללית מצד שמאל */
-  }
-  
-  /* לוודא שאין סגנונות נוספים שמפריעים */
-  html,
-  body {
-    margin: 0;
-    padding: 0;
-  }
-  
-  /* עיצוב קטע המוצרים */
-  #products-container {
+/* עיצוב קטע המוצרים */
+#products-container {
     display: flex;
     flex-wrap: wrap;
     gap: 30px; /* רווח קטן בין כל מוצר לרוחב */
     justify-content: center; /* מרכז את המוצרים במרכז */
     padding: 20px;
-    margin-top: 600px; /* רווח למעלה להורדת הקטע למטה */
-  }
+    margin-top: 60px; /* רווח למעלה להורדת הקטע למטה */
+}
   
-  /* עיצוב כל מוצר */
-  .product {
+/* עיצוב כל מוצר */
+.product {
     border: 1px solid #ddd;
     border-radius: 8px;
-    padding: 60px;
+    padding: 20px; /* ריווח פנימי מתאים */
     width: 200px; /* גודל מוצר מוגדל לרוחב */
     min-height: 400px; /* גובה מינימלי מוגדל */
     text-align: center;
@@ -165,46 +154,46 @@
     color: #f5f5f5; /* צבע טקסט בהיר */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* צל קל */
     transition: background-color 0.3s ease, transform 0.3s ease; /* אנימציה */
-    margin: 0 40px 100px; /* רווחים סביב המוצר: שמאל, ימין, למטה */
-  }
+    margin: 0 20px 20px; /* רווחים סביב המוצר: שמאל, ימין, למטה */
+}
   
-  /* עיצוב התמונה של המוצר */
-  .product-image {
+/* עיצוב התמונה של המוצר */
+.product-image {
     max-width: 100%;
     height: auto;
     border-bottom: none; /* קו מפריד מתחת לתמונה */
     margin-bottom: 10px; /* ריווח מתחת לתמונה */
-  }
+}
   
-  /* עיצוב שם המוצר */
-  .product-title {
+/* עיצוב שם המוצר */
+.product-title {
     font-size: 18px;
     margin: 10px 0;
-  }
+}
   
-  /* עיצוב מחיר המוצר */
-  .product-price {
+/* עיצוב מחיר המוצר */
+.product-price {
     color: #ff5722; /* צבע כתום עבור המחיר */
     font-size: 16px;
     margin: 10px 0;
-  }
+}
   
-  /* עיצוב תיאור המוצר */
-  .product-description {
+/* עיצוב תיאור המוצר */
+.product-description {
     font-size: 14px;
     color: #ddd; /* צבע טקסט בהיר יותר לתיאור */
-  }
+}
   
-  /* עיצוב עבור הקטע של הטסטימוניאלים */
-  .testimonial {
+/* עיצוב עבור הקטע של הטסטימוניאלים */
+.testimonial {
     display: flex;
     flex-wrap: wrap; /* מאפשר למרכיבים לעבור לשורה הבאה אם אין מקום */
     justify-content: center; /* יוצר רווח שווה בין האלמנטים */
     margin: 1px;
-  }
+}
   
-  /* עיצוב עבור כל אלמנט בתוך הטסטימוניאלים */
-  .testimonial .col-3 {
+/* עיצוב עבור כל אלמנט בתוך הטסטימוניאלים */
+.testimonial .col-3 {
     flex: 1 1 30%; /* מאפשר לאלמנטים להתרחב ולהתכווץ בהתאם לצורך */
     text-align: center;
     padding: 40px 20px;
@@ -212,62 +201,69 @@
     cursor: pointer;
     transition: transform 0.5s;
     margin: 10px; /* רווח בין האלמנטים */
-  }
+}
   
-  /* עיצוב התמונה בתוך הטסטימוניאלים */
-  .testimonial .col-3 img {
+/* עיצוב התמונה בתוך הטסטימוניאלים */
+.testimonial .col-3 img {
     width: 80px; /* ניתן לשנות את הרוחב לפי הצורך */
     height: 80px; /* מבטיח שהתמונה תשמור על צורת ריבוע */
     margin-top: 20px;
     border-radius: 50%; /* הופך את התמונה לעגלית */
-  }
+}
   
-  /* אנימציה בעת ריחוף על האלמנט */
-  .testimonial .col-3:hover {
+/* אנימציה בעת ריחוף על האלמנט */
+.testimonial .col-3:hover {
     transform: translateY(-10px);
-  }
+}
   
-  /* עיצוב עבור סימן הציטוט */
-  .fa.fa-quote-left {
+/* עיצוב עבור סימן הציטוט */
+.fa.fa-quote-left {
     font-size: 34px;
     color: #ff523b;
-  }
+}
   
-  /* עיצוב עבור הטקסט בתוך האלמנט */
-  .col-3 p {
+/* עיצוב עבור הטקסט בתוך האלמנט */
+.col-3 p {
     font-size: 12px;
     margin: 12px 0;
     color: #777;
-  }
+}
   
-  /* עיצוב עבור הכותרת בתוך האלמנט */
-  .testimonial .col-3 h3 {
+/* עיצוב עבור הכותרת בתוך האלמנט */
+.testimonial .col-3 h3 {
     font-weight: 600;
     color: #555;
     font-size: 16px;
-  }
+}
   
-  /* עיצוב עבור דירוגים */
-  .rating .fa {
+/* עיצוב עבור דירוגים */
+.rating .fa {
     color: #ff523b;
-  }
+}
   
-  /* General Styles */
-  body {
+ /* General Styles */
+body {
     font-family: "Open Sans", sans-serif;
     color: #fff;
     background-color: #121212;
-  }
+}
   
-  /* Main Section Styles */
-  main {
+/* Main Section Styles */
+main {
     padding: 20px;
-  }
+}
   
-  .spacer {
-    height: 920px; /* גובה הרווח שאתה רוצה */
-    background-color: transparent; /* אם אתה לא רוצה צבע רקע */
-  }
+.spacer {
+    height: 920px; /* גובה רווח בין חלקים */
+}
+  
+/* Responsive Design */
+@media (max-width: 768px) {
+    .top-rectangle, .secondary-rectangle {
+        flex-direction: column;
+        align-items: center;
+    }
+}
   
   /* Features Section Styles */
   .features {
