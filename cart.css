@@ -1,0 +1,387 @@
+/* מלבן ראשי בראש האתר */
+.top-rectangle {
+    background-color: rgb(29, 36, 36);
+    height: 60px; /* גובה המלבן */
+    width: 100%;
+    display: flex;
+    align-items: center; /* מרכז את התוכן אנכית */
+    justify-content: center;
+    position: relative; /* מאפשר למלבן השני להתמקם יחסית לו */
+    z-index: 1000;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* צל של המלבן */
+  }
+  
+  .top-rectangle-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: "Open Sans", sans-serif;
+  }
+  
+  .top-rectangle-content span {
+    margin-top: -5px; /* או השתמש ב-padding-top או line-height */
+  }
+  
+  /* עיצוב הלוגו */
+  .logo {
+    height: 40px;
+    animation: logoAnimation 1.5s infinite;
+  }
+  
+  /* אנימציה ללוגו */
+  @keyframes logoAnimation {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  /* עיצוב המלבן המשני */
+  .secondary-rectangle {
+    background-color: rgb(25, 30, 50);
+    height: 100px; /* גובה המלבן המשני */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* מיקום התכנים בצד ימין */
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 999;
+    padding: 0 20px; /* ריווח פנימי משני הצדדים */
+    box-sizing: border-box;
+  }
+  
+  /* עיצוב התכנים בתוך המלבן המשני */
+  .secondary-rectangle-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  /* עיצוב פריט בתפריט */
+  .item {
+    margin-left: 20px; /* רווח בין הפריטים */
+    display: flex;
+    align-items: center;
+  }
+  
+  .item a {
+    color: #ffffff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .item .icon {
+    width: 28px; /* גובה ורוחב האייקון */
+    height: 30px;
+    margin-right: 8px; /* רווח בין האייקון לטקסט */
+  }
+  
+  /* עיצוב אייקון SVG */
+  .icon {
+    width: 50px; /* גובה ורוחב האייקון */
+    height: 50px;
+    margin-right: 8px; /* רווח בין האייקון לטקסט */
+    margin-left: 4px; /* הזזה מהצד השמאלי */
+  }
+  
+  /* אנימציה כאשר העכבר על האייקון */
+  .item a:hover .icon {
+    transform: scale(1.1); /* הגדלה של האייקון ב-10% */
+  }
+  
+  /* אנימציה כאשר האייקון נלחץ */
+  .item a:active .icon {
+    transform: scale(0.9); /* הקטנה של האייקון ב-10% */
+  }
+  
+  /* סגנון בסיסי להתראה */
+  .notification-badge {
+    position: absolute;
+    top: -10px; /* מיקום מעל האייקון */
+    right: -10px; /* מיקום לצד הימין של האייקון */
+    background-color: red; /* צבע הרקע */
+    color: white; /* צבע הטקסט */
+    border-radius: 50%; /* עיגול */
+    width: 20px; /* רוחב */
+    height: 20px; /* גובה */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px; /* גודל הטקסט */
+    font-weight: bold; /* משקל הטקסט */
+    opacity: 0; /* בהתחלה, לא גלוי */
+    transform: scale(0); /* התפשטות אפסית */
+    transition: opacity 0.3s ease, transform 0.3s ease; /* אנימציה חלקה */
+  }
+  
+  /* סגנון כשההתראה מוצגת */
+  .notification-badge.show {
+    opacity: 1; /* הופעה מלאה */
+    transform: scale(1); /* התפשטות מלאה */
+  }
+  
+  .secondary-rectangle-content {
+    display: flex;
+    justify-content: center; /* יישור מרכזי של התוכן בקונטיינר */
+    gap: 10px; /* רווח בין האייקונים */
+    padding-right: 200px; /* הזזה כללית מצד שמאל */
+  }
+  
+  /* לוודא שאין סגנונות נוספים שמפריעים */
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* עיצוב קטע המוצרים */
+  #products-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px; /* רווח קטן בין כל מוצר לרוחב */
+    justify-content: center; /* מרכז את המוצרים במרכז */
+    padding: 20px;
+    margin-top: 600px; /* רווח למעלה להורדת הקטע למטה */
+  }
+  
+  /* עיצוב כל מוצר */
+  .product {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 60px;
+    width: 200px; /* גודל מוצר מוגדל לרוחב */
+    min-height: 400px; /* גובה מינימלי מוגדל */
+    text-align: center;
+    background-color: #2c2c2c; /* צבע רקע כהה */
+    color: #f5f5f5; /* צבע טקסט בהיר */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* צל קל */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* אנימציה */
+    margin: 0 40px 100px; /* רווחים סביב המוצר: שמאל, ימין, למטה */
+  }
+  
+  /* עיצוב התמונה של המוצר */
+  .product-image {
+    max-width: 100%;
+    height: auto;
+    border-bottom: none; /* קו מפריד מתחת לתמונה */
+    margin-bottom: 10px; /* ריווח מתחת לתמונה */
+  }
+  
+  /* עיצוב שם המוצר */
+  .product-title {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
+  /* עיצוב מחיר המוצר */
+  .product-price {
+    color: #ff5722; /* צבע כתום עבור המחיר */
+    font-size: 16px;
+    margin: 10px 0;
+  }
+  
+  /* עיצוב תיאור המוצר */
+  .product-description {
+    font-size: 14px;
+    color: #ddd; /* צבע טקסט בהיר יותר לתיאור */
+  }
+  
+  /* עיצוב עבור הקטע של הטסטימוניאלים */
+  .testimonial {
+    display: flex;
+    flex-wrap: wrap; /* מאפשר למרכיבים לעבור לשורה הבאה אם אין מקום */
+    justify-content: center; /* יוצר רווח שווה בין האלמנטים */
+    margin: 1px;
+  }
+  
+  /* עיצוב עבור כל אלמנט בתוך הטסטימוניאלים */
+  .testimonial .col-3 {
+    flex: 1 1 30%; /* מאפשר לאלמנטים להתרחב ולהתכווץ בהתאם לצורך */
+    text-align: center;
+    padding: 40px 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: transform 0.5s;
+    margin: 10px; /* רווח בין האלמנטים */
+  }
+  
+  /* עיצוב התמונה בתוך הטסטימוניאלים */
+  .testimonial .col-3 img {
+    width: 80px; /* ניתן לשנות את הרוחב לפי הצורך */
+    height: 80px; /* מבטיח שהתמונה תשמור על צורת ריבוע */
+    margin-top: 20px;
+    border-radius: 50%; /* הופך את התמונה לעגלית */
+  }
+  
+  /* אנימציה בעת ריחוף על האלמנט */
+  .testimonial .col-3:hover {
+    transform: translateY(-10px);
+  }
+  
+  /* עיצוב עבור סימן הציטוט */
+  .fa.fa-quote-left {
+    font-size: 34px;
+    color: #ff523b;
+  }
+  
+  /* עיצוב עבור הטקסט בתוך האלמנט */
+  .col-3 p {
+    font-size: 12px;
+    margin: 12px 0;
+    color: #777;
+  }
+  
+  /* עיצוב עבור הכותרת בתוך האלמנט */
+  .testimonial .col-3 h3 {
+    font-weight: 600;
+    color: #555;
+    font-size: 16px;
+  }
+  
+  /* עיצוב עבור דירוגים */
+  .rating .fa {
+    color: #ff523b;
+  }
+  
+  /* General Styles */
+  body {
+    font-family: "Open Sans", sans-serif;
+    color: #fff;
+    background-color: #121212;
+  }
+  
+  /* Main Section Styles */
+  main {
+    padding: 20px;
+  }
+  
+  .spacer {
+    height: 920px; /* גובה הרווח שאתה רוצה */
+    background-color: transparent; /* אם אתה לא רוצה צבע רקע */
+  }
+  
+  /* Features Section Styles */
+  .features {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px;
+  }
+  
+  .feature {
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px;
+    width: 30%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+  }
+  
+  .feature div {
+    margin-bottom: 10px;
+  }
+  
+  .iconBack {
+    fill: #000;
+  }
+  
+  .iconTop {
+    fill: #fff;
+  }
+  
+  .featureText {
+    color: #ccc;
+    color: rgb(130, 121, 121);
+  }
+  
+  .featureText h3 {
+    margin: 0;
+    color: #ffc107;
+  }
+  
+  .featureText p {
+    margin: 10px 0;
+  }
+  
+  /* Footer Styles */
+  footer {
+    background-color: #333333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .footerText {
+    margin: 0;
+    font-size: 18px; /* גודל פונט מותאם לטקסט החדש */
+    line-height: 1.5; /* רווח בין שורות */
+    text-align: center; /* ממרכז את הטקסט */
+  }
+  
+  /* טקסט התיאור */
+  .footerText .description {
+    color: rgb(130, 121, 121); /* צבע טקסט מותאם */
+  }
+  
+  /* טקסט "Made by" */
+  .footerText .madeBy {
+    color: #fff; /* צבע לבן */
+  }
+  
+  .footerText a {
+    color: #ffc107; /* צבע כתום עבור הלינק */
+    text-decoration: none; /* ביטול קו תחתון */
+  }
+  
+  .footerText a:hover {
+    text-decoration: none; /* ביטול קו תחתון גם בהעברת העכבר */
+  }
+  
+  .footerIcon {
+    margin-bottom: 12px; /* רווח בין האייקון לטקסט */
+  }
+  
+  .footerIcons {
+    display: flex;
+    justify-content: center; /* מרכז את האייקונים אופקית */
+    gap: 20px; /* רווח בין האייקונים */
+    margin-top: 80px;
+  }
+  
+  .footerIcons a {
+    text-decoration: none;
+  }
+  
+  .footerIcons .description {
+    color: rgb(130, 121, 121);
+  }
+  
+  .fa-stack {
+    display: inline-block;
+    width: 50px;
+    height: 40px;
+    text-align: center;
+  }
+  
+  .socialIconBack {
+    color: #38321f;
+  }
+  
+  .socialIconTop {
+    color: #ffc307;
+  }
+  
+  body {
+    font-family: "Open Sans", sans-serif;
+  }
+  
