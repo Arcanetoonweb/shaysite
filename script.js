@@ -1,27 +1,46 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const cartIcon = document.querySelector('.item a[href="#cart"]');
-  const notificationBadge = cartIcon.querySelector(".notification-badge");
+// מערך לאחסון המוצרים שנבחרו
+let cart = [];
 
-  // נניח שהמשתמש לוחץ על כפתור שמוסיף פריטים לסל
-  const addToCartButton = document.querySelector("#add-to-cart-button"); // נניח שזה הכפתור להוספה לסל
-  let itemCount = 0; // מספר הפריטים בעגלה
+// בוחר את כל הכפתורים של 'ADD TO CART'
+const addToCartButtons = document.querySelectorAll('.add-to-cart-button');
 
-  // פונקציה להוספת פריטים לסל
-  function addItemToCart() {
-    itemCount += 1;
-    notificationBadge.textContent = itemCount; // עדכון המספר בהתראה
+// בוחר את ההתראה של הסל
+const notificationBadge = document.querySelector('.notification-badge');
 
-    // הוספת קלאס 'show' כדי להפעיל את האנימציה
-    notificationBadge.classList.add("show");
+// פונקציה שמעדכנת את ההתראה על הסל
+function updateCartNotification() {
+  if (cart.length > 0) {
+    notificationBadge.textContent = cart.length; // מספר המוצרים בסל
+    notificationBadge.classList.add('show'); // מציג את ההתראה
+  } else {
+    notificationBadge.classList.remove('show'); // מסתיר את ההתראה אם הסל ריק
   }
+}
 
-  // האזנה לאירוע לחיצה על כפתור הוספה לסל
-  addToCartButton.addEventListener("click", function () {
-    addItemToCart();
-  });
-
-  // אפשר להוסיף גם פונקציה להסרת קלאס אחרי זמן קצר כדי לגרום לאנימציה להופיע מחדש
+// פונקציה להוסיף אנימציה לפלאש
+function flashNotification() {
+  notificationBadge.classList.add('flash');
   setTimeout(() => {
-    notificationBadge.classList.remove("show");
-  }, 1000); // לדוגמה, הסרת הקלאס לאחר שניה
+    notificationBadge.classList.remove('flash');
+  }, 600); // משך האנימציה (תואם ל-CSS)
+}
+
+// מאזין לאירוע לחיצה על כפתור 'ADD TO CART'
+addToCartButtons.forEach(button => {
+  button.addEventListener('click', function () {
+    const product = this.closest('.product'); // המוצר שנבחר
+    const productId = product.getAttribute('data-product-id'); // מזהה המוצר
+
+    // הוספת המוצר לסל
+    cart.push(productId);
+
+    // עדכון ההתראה
+    updateCartNotification();
+    
+    // הפעלת האנימציה
+    flashNotification();
+  });
 });
+
+// בעת טעינת הדף, לעדכן את המצב הנוכחי של ההתראה
+updateCartNotification();
