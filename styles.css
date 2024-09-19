@@ -155,17 +155,17 @@ body {
 
 /* עיצוב כל מוצר */
 .product {
-  border: 1px solid #ddd;
+  border: 1px solid #f18622;
   border-radius: 8px;
-  padding: 60px;
+  padding: 20px; /* ריווח פנימי קטן יותר */
   width: 200px; /* גודל מוצר מוגדל לרוחב */
-  min-height: 400px; /* גובה מינימלי מוגדל */
+  min-height: 200px; /* גובה מינימלי מוגדל */
   text-align: center;
-  background-color: #2c2c2c; /* צבע רקע כהה */
+  background-color: #f18622; /* צבע רקע כהה */
   color: #f5f5f5; /* צבע טקסט בהיר */
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* צל קל */
   transition: background-color 0.3s ease, transform 0.3s ease; /* אנימציה */
-  margin: 0 40px 100px; /* רווחים סביב המוצר: שמאל, ימין, למטה */
+  margin: 0 20px 20px; /* רווחים סביב המוצר: שמאל, ימין, למטה */
 }
 
 /* עיצוב התמונה של המוצר */
@@ -176,24 +176,13 @@ body {
   margin-bottom: 10px; /* ריווח מתחת לתמונה */
 }
 
-/* עיצוב שם המוצר */
-.product-title {
-  font-size: 18px;
-  margin: 10px 0;
+/* שורת מוצרים */
+.product-row {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* ממרכז את המוצרים */
 }
 
-/* עיצוב מחיר המוצר */
-.product-price {
-  color: #ff5722; /* צבע כתום עבור המחיר */
-  font-size: 16px;
-  margin: 10px 0;
-}
-
-/* עיצוב תיאור המוצר */
-.product-description {
-  font-size: 14px;
-  color: #ddd; /* צבע טקסט בהיר יותר לתיאור */
-}
 
 /* עיצוב עבור הקטע של הטסטימוניאלים */
 .testimonial {
