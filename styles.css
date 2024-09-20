@@ -235,15 +235,19 @@ body {
 .testimonial {
   display: flex;
   flex-wrap: wrap; /* מאפשר למרכיבים לעבור לשורה הבאה אם אין מקום */
-  justify-content: space-between; /* יוצר רווח שווה בין האלמנטים */
+  justify-content: center; /* ממרכז את האלמנטים */
+  align-items: center; /* ממרכז את האלמנטים מבחינת גובה */
   margin: 20px;
+  max-width: 1200px; /* או כל ערך אחר שיתאים לך */
+  margin: 0 auto; /* מרכז את הקונטיינר */
 }
 
 /* עיצוב עבור כל אלמנט בתוך הטסטימוניאלים */
 .testimonial .col-3 {
-  flex: 1 1 30%; /* מאפשר לאלמנטים להתרחב ולהתכווץ בהתאם לצורך */
+  flex: 0 1 20%; /* או 15% אם תרצה עוד יותר קטן */
+  max-width: 200px; /* גבול לרוחב המרבי של הריבוע */
   text-align: center;
-  padding: 40px 20px;
+  padding: 10px; /* ריווח פנימי */
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.5s;
@@ -287,6 +291,7 @@ body {
 .rating .fa {
   color: #ff523b;
 }
+
 
 /* General Styles */
 body {
