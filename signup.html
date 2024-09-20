@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="signup.css">
+    <title>הרשמה</title>
+    <style>
+        body {
+            background-color: #f0f0f0; /* צבע רקע */
+            font-family: Arial, sans-serif; /* גופן */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh; /* גובה מלא */
+            margin: 0; /* הוצאת רווחים */
+        }
+        .container {
+    background-color: white; /* צבע קונטיינר */
+    padding: 20px 40px 20px 20px; /* ריווח פנימי עם יותר רווח מימין */
+    border-radius: 8px; /* פינות מעוגלות */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* צל */
+    width: 300px; /* רוחב קבוע */
+}
+
+        }
+        h1 {
+            text-align: center; /* מרכז הכותרת */
+        }
+        .form-group {
+            margin-bottom: 15px; /* רווחים בין השדות */
+        }
+        label {
+            display: block; /* תצוגה בלוק */
+            margin-bottom: 5px; /* רווח בין תווית לשדה */
+        }
+        input {
+            width: 100%; /* רוחב מלא */
+            padding: 10px; /* ריווח פנימי */
+            border: 1px solid #ccc; /* גבול */
+            border-radius: 4px; /* פינות מעוגלות */
+        }
+        button {
+            width: 100%; /* רוחב מלא */
+            padding: 10px; /* ריווח פנימי */
+            background-color: #5cb85c; /* צבע רקע כפתור */
+            color: white; /* צבע טקסט */
+            border: none; /* בלי גבול */
+            border-radius: 4px; /* פינות מעוגלות */
+            cursor: pointer; /* ידית עכבר */
+        }
+        button:hover {
+            background-color: #4cae4c; /* צבע כפתור בעת ריחוף */
+        }
+        .error-message {
+            color: red; /* צבע הודעות שגיאה */
+            text-align: center; /* מרכז את הטקסט */
+            margin-top: 10px; /* רווח מעל */
+        }
+        p {
+            text-align: center; /* מרכז טקסט */
+        }
+        a {
+            color: #5cb85c; /* צבע קישור */
+            text-decoration: none; /* בלי קו מתחת */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>הרשמה</h1>
+        <form id="signup-form">
+            <div class="form-group">
+                <label for="email">איימיל:</label>
+                <input type="email" id="email" required>
+            </div>
+            <div class="form-group">
+                <label for="password">סיסמה:</label>
+                <input type="password" id="password" required>
+            </div>
+            <div class="form-group">
+                <label for="confirm-password">אשר סיסמה:</label>
+                <input type="password" id="confirm-password" required>
+            </div>
+            <div id="error-message" class="error-message"></div>
+            <button type="submit">הרשמה</button>
+        </form>
+
+        <!-- הודעת הצלחה שתוצג לאחר ההרשמה -->
+        <div id="success-message" class="hidden">
+            נרשמת בהצלחה! כעת תוכל להתחבר.
+        </div>
+
+        <p>כבר יש לך חשבון? <a href="signin.html">התחבר כאן</a></p>
+    </div>
+    <script src="signup.js"></script>
+</body>
+</html>
