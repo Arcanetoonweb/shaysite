@@ -106,13 +106,13 @@
 /* סגנון בסיסי להתראה */
 .notification-badge {
   position: absolute;
-  top: -10px; /* מיקום מעל האייקון */
-  right: -10px; /* מיקום לצד הימין של האייקון */
+  top: 30px; /* כוונן את המיקום הזה עד שיתאים לאייקון */
+  right: 250px; /* כוונן גם את המיקום הזה */
   background-color: red; /* צבע הרקע */
   color: white; /* צבע הטקסט */
   border-radius: 50%; /* עיגול */
-  width: 20px; /* רוחב */
-  height: 20px; /* גובה */
+  width: 15px; /* רוחב */
+  height: 15px; /* גובה */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -172,6 +172,7 @@ body {
   padding: 20px;
   margin-top: 300px; /* הפחתה של הרווח למעלה */
 }
+
 
 /* עיצוב כל מוצר */
 .product {
@@ -308,7 +309,7 @@ main {
 .features {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between; /* או space-around, תלוי בהעדפה */
   margin: 20px;
 }
 
@@ -317,7 +318,7 @@ main {
   border-radius: 10px;
   padding: 20px;
   margin: 10px;
-  width: 30%;
+  flex: 1 1 30%; /* מאפשר לרכיבים לגדול/ל縮וך עם רוחב מינימלי של 30% */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   text-align: center;
 }
@@ -325,6 +326,8 @@ main {
 .feature div {
   margin-bottom: 10px;
 }
+
+/* המשך העיצוב כפי שהיה */
 
 .iconBack {
   fill: #000;
