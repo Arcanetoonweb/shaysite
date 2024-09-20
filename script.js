@@ -1,46 +1,82 @@
-// מערך לאחסון המוצרים שנבחרו
-let cart = [];
-
-// בוחר את כל הכפתורים של 'ADD TO CART'
-const addToCartButtons = document.querySelectorAll('.add-to-cart-button');
-
-// בוחר את ההתראה של הסל
-const notificationBadge = document.querySelector('.notification-badge');
-
-// פונקציה שמעדכנת את ההתראה על הסל
-function updateCartNotification() {
-  if (cart.length > 0) {
-    notificationBadge.textContent = cart.length; // מספר המוצרים בסל
-    notificationBadge.classList.add('show'); // מציג את ההתראה
-  } else {
-    notificationBadge.classList.remove('show'); // מסתיר את ההתראה אם הסל ריק
+// פונקציה להוספת מוצר לעגלה
+function addToCart(productId) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || {};
+  
+    if (cart[productId]) {
+      cart[productId].quantity += 1; // אם המוצר כבר בעגלה, הגדל את הכמות
+    } else {
+      cart[productId] = {
+        id: productId,
+        quantity: 1
+      };
+    }
+  
+    localStorage.setItem('cart', JSON.stringify(cart));
   }
-}
-
-// פונקציה להוסיף אנימציה לפלאש
-function flashNotification() {
-  notificationBadge.classList.add('flash');
-  setTimeout(() => {
-    notificationBadge.classList.remove('flash');
-  }, 600); // משך האנימציה (תואם ל-CSS)
-}
-
-// מאזין לאירוע לחיצה על כפתור 'ADD TO CART'
-addToCartButtons.forEach(button => {
-  button.addEventListener('click', function () {
-    const product = this.closest('.product'); // המוצר שנבחר
-    const productId = product.getAttribute('data-product-id'); // מזהה המוצר
-
-    // הוספת המוצר לסל
-    cart.push(productId);
-
-    // עדכון ההתראה
-    updateCartNotification();
-    
-    // הפעלת האנימציה
-    flashNotification();
-  });
-});
-
-// בעת טעינת הדף, לעדכן את המצב הנוכחי של ההתראה
-updateCartNotification();
+  
+  // פונקציה להסרת מוצר מהעגלה
+  function removeFromCart(productId) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || {};
+  
+    if (cart[productId]) {
+      delete cart[productId]; // מחק את המוצר מהעגלה
+      localStorage.setItem('cart', JSON.stringify(cart));
+      displayCart(); // עדכן את התצוגה
+    }
+  }
+  
+  // פונקציה להגדלת כמות המוצר
+  function increaseQuantity(productId) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || {};
+  
+    if (cart[productId]) {
+      cart[productId].quantity += 1; // הגדל את הכמות
+      localStorage.setItem('cart', JSON.stringify(cart));
+      displayCart(); // עדכן את התצוגה
+    }
+  }
+  
+  // פונקציה להקטנת כמות המוצר
+  function decreaseQuantity(productId) {
+    let cart = JSON.parse(localStorage.getItem('cart')) || {};
+  
+    if (cart[productId] && cart[productId].quantity > 1) {
+      cart[productId].quantity -= 1; // הקטן את הכמות
+      localStorage.setItem('cart', JSON.stringify(cart));
+      displayCart(); // עדכן את התצוגה
+    }
+  }
+  
+  // פונקציה להציג את המוצרים בעגלת הקניות
+  function displayCart() {
+    let cart = JSON.parse(localStorage.getItem('cart')) || {};
+    let cartContainer = document.getElementById('cart-container'); // הצג את המוצרים בתוך הקונטיינר
+  
+    cartContainer.innerHTML = ''; // ניקוי התצוגה הקודמת
+  
+    for (let productId in cart) {
+      let product = cart[productId];
+      let productElement = document.createElement('div');
+      productElement.className = 'product-container';
+      productElement.innerHTML = `
+        <img src="path/to/image.jpg" class="product-image" alt="Product Image">
+        <div class="item-details">
+          <h2 class="product-title">Product Name</h2>
+          <p class="product-description">Product Description</p>
+          <div class="quantity-container">
+            <button class="quantity-button" onclick="decreaseQuantity('${productId}')">-</button>
+            <span id="quantity">${product.quantity}</span> <!-- הכמות -->
+            <button class="quantity-button" onclick="increaseQuantity('${productId}')">+</button>
+          </div>
+          <p class="product-price">$99.99</p>
+          <button class="buy-button">Buy</button>
+          <button class="remove-button" onclick="removeFromCart('${productId}')">Remove</button> <!-- כפתור ההסרה -->
+        </div>
+      `;
+      cartContainer.appendChild(productElement);
+    }
+  }
+  
+  // קריאה לפונקציה לצורך הצגת המוצרים בעגלת הקניות בעת טעינת הדף
+  document.addEventListener('DOMContentLoaded', displayCart);
+  
