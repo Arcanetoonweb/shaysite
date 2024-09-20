@@ -1,93 +1,80 @@
-// פונקציה להוסיף מוצר לסל הקניות
-function addToCart(productId) {
-    // קבלת סל הקניות מה-localStorage או יצירת אובייקט חדש אם אין כזה
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+document.addEventListener('DOMContentLoaded', function() {
+    const productContainer = document.querySelector('.product-container');
   
-    // בדיקה אם המוצר כבר קיים בסל והוספתו אם לא
-    if (!cart.includes(productId)) {
-      cart.push(productId);
+    function loadCartItems() {
+      const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+  
+      productContainer.innerHTML = '';
+  
+      cartItems.forEach(item => {
+        const productCard = document.createElement('div');
+        productCard.classList.add('product-card');
+  
+        productCard.innerHTML = `
+          <img src="${item.image}" alt="Product Image">
+          <h2>${item.name}</h2>
+          <p>${item.description}</p>
+          <p>$${item.price}</p>
+          <div class="button-container">
+            <button class="quantity-button" data-action="decrease">-</button>
+            <span>${item.quantity}</span>
+            <button class="quantity-button" data-action="increase">+</button>
+            <button class="buy-button">Buy</button>
+            <button class="remove-button" data-id="${item.id}">Remove</button>
+          </div>
+        `;
+  
+        productContainer.appendChild(productCard);
+      });
+  
+      setupButtons();
     }
   
-    // שמירת הסל המעודכן ב-localStorage
-    localStorage.setItem('cart', JSON.stringify(cart));
-  }
-  
-  // פונקציה להציג את המוצרים בסל בעמוד
-  function displayCartItems() {
-    // קבלת המוצרים מה-localStorage
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  
-    // בחר את אלמנט התצוגה של הסל בעמוד
-    const cartContainer = document.getElementById('cart-items-container');
-  
-    // ניקוי התצוגה הקודמת
-    cartContainer.innerHTML = '';
-  
-    // הצגת כל מוצר בסל
-    cart.forEach(productId => {
-      // יצירת אלמנט מוצר חדש
-      const productElement = document.createElement('div');
-      productElement.className = 'cart-item';
-  
-      // הצגת פרטי המוצר
-      productElement.innerHTML = `
-        <div class="product-image">
-          <img src="https://via.placeholder.com/100" alt="מוצר ${productId}">
-        </div>
-        <div class="product-details">
-          <h2 class="product-title">שם המוצר ${productId}</h2>
-          <p class="product-price">₪${(30 + parseInt(productId) * 10).toFixed(2)}</p>
-          <button class="remove-from-cart-button" data-product-id="${productId}">Remove</button>
-        </div>
-      `;
-  
-      // הוספת המוצר לתצוגה
-      cartContainer.appendChild(productElement);
-    });
-  
-    // הצגת סכום כולל
-    displayCartTotal();
-  }
-  
-  // פונקציה להסרת מוצר מהסל
-  function removeFromCart(productId) {
-    // קבלת סל הקניות מה-localStorage
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  
-    // הסרת המוצר מהסל
-    cart = cart.filter(id => id !== productId);
-  
-    // שמירת הסל המעודכן ב-localStorage
-    localStorage.setItem('cart', JSON.stringify(cart));
-  
-    // עדכון התצוגה של הסל
-    displayCartItems();
-  }
-  
-  // פונקציה להציג את הסכום הכולל
-  function displayCartTotal() {
-    // קבלת המוצרים מה-localStorage
-    let cart = JSON.parse(localStorage.getItem('cart')) || [];
-  
-    // חישוב הסכום הכולל
-    const total = cart.reduce((acc, productId) => acc + (30 + parseInt(productId) * 10), 0);
-  
-    // הצגת הסכום הכולל בעמוד
-    const totalElement = document.getElementById('cart-total');
-    totalElement.textContent = `Total: ₪${total.toFixed(2)}`;
-  }
-  
-  // הוספת מאזינים לאירועים בעמוד הסל
-  document.addEventListener('DOMContentLoaded', () => {
-    // הצגת פרטי הסל כשעמוד הסל נטען
-    displayCartItems();
-  
-    // מאזין להסרת מוצר מהסל
-    document.querySelectorAll('.remove-from-cart-button').forEach(button => {
-      button.addEventListener('click', function () {
-        const productId = this.getAttribute('data-product-id');
-        removeFromCart(productId);
+    function setupButtons() {
+      document.querySelectorAll('.remove-button').forEach(button => {
+        button.addEventListener('click', function() {
+          const productId = this.getAttribute('data-id');
+          removeItemFromCart(productId);
+        });
       });
-    });
+  
+      document.querySelectorAll('.quantity-button').forEach(button => {
+        button.addEventListener('click', function() {
+          const action = this.getAttribute('data-action');
+          const productCard = this.closest('.product-card');
+          const quantitySpan = productCard.querySelector('span');
+          let quantity = parseInt(quantitySpan.textContent);
+  
+          if (action === 'increase') {
+            quantity += 1;
+          } else if (action === 'decrease' && quantity > 1) {
+            quantity -= 1;
+          }
+  
+          quantitySpan.textContent = quantity;
+          updateCartItemQuantity(productCard.querySelector('.remove-button').getAttribute('data-id'), quantity);
+        });
+      });
+    }
+  
+    function removeItemFromCart(id) {
+      let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+      cartItems = cartItems.filter(item => item.id !== id);
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+      loadCartItems(); // רענן את העמוד
+    }
+  
+    function updateCartItemQuantity(id, quantity) {
+      let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+      cartItems = cartItems.map(item => {
+        if (item.id === id) {
+          item.quantity = quantity;
+        }
+        return item;
+      });
+      localStorage.setItem('cartItems', JSON.stringify(cartItems));
+    }
+  
+    loadCartItems();
   });
   
