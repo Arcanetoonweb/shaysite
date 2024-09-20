@@ -236,23 +236,22 @@ body {
   display: flex;
   flex-wrap: wrap; /* מאפשר למרכיבים לעבור לשורה הבאה אם אין מקום */
   justify-content: center; /* ממרכז את האלמנטים */
-  align-items: center; /* ממרכז את האלמנטים מבחינת גובה */
+  align-items: flex-start; /* ממרכז מבחינת גובה */
   margin: 20px;
-  max-width: 1200px; /* או כל ערך אחר שיתאים לך */
-  margin: 0 auto; /* מרכז את הקונטיינר */
 }
 
 /* עיצוב עבור כל אלמנט בתוך הטסטימוניאלים */
 .testimonial .col-3 {
-  flex: 0 1 20%; /* או 15% אם תרצה עוד יותר קטן */
-  max-width: 200px; /* גבול לרוחב המרבי של הריבוע */
+  flex: 1 1 30%; /* מאפשר לאלמנטים להתרחב ולהתכווץ בהתאם לצורך */
+  max-width: 300px; /* הגבל את הרוחב המרבי של כל אלמנט */
   text-align: center;
-  padding: 10px; /* ריווח פנימי */
+  padding: 20px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.5s;
   margin: 10px; /* רווח בין האלמנטים */
 }
+
 
 /* עיצוב התמונה בתוך הטסטימוניאלים */
 .testimonial .col-3 img {
