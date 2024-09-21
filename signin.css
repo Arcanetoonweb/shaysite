@@ -2,7 +2,7 @@
 /* עיצוב הכללי של עמוד ההתחברות */
 body {
     font-family: Arial, sans-serif;
-    background-color: #f0f0f0; /* צבע רקע בהיר */
+    background-color: #1b1b1b; /* צבע רקע בהיר */
     margin: 0;
     padding: 0;
     display: flex;
