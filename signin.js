@@ -19,6 +19,6 @@ document.getElementById('signin-form').addEventListener('submit', function(event
         // ניווט לעמוד הבית
         window.location.href = 'index.html';
     } else {
-        errorMessage.textContent = 'אימייל או סיסמה שגויים.';
+        errorMessage.textContent = 'Incorrect email or password.';
     }
 });
