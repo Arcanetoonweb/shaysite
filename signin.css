@@ -1,22 +1,5 @@
-/* עיצוב הודעת הצלחה */
-#success-message {
-    background-color: #d4edda; /* צבע רקע ירוק בהיר */
-    color: #155724; /* צבע טקסט ירוק כהה */
-    border: 1px solid #c3e6cb; /* גבול ירוק בהיר */
-    padding: 10px;
-    border-radius: 5px; /* פינות מעוגלות */
-    margin-top: 15px; /* רווח מעל ההודעה */
-    text-align: center; /* מרכז את הטקסט */
-    font-size: 16px;
-  }
-  
-  /* מחביא את ההודעה כברירת מחדל */
-  .hidden {
-    display: none;
-  }
-  
-  /* עיצוב הכללי של עמוד ההרשמה */
-  body {
+/* עיצוב הכללי של עמוד ההתחברות */
+body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0; /* צבע רקע בהיר */
     margin: 0;
@@ -25,36 +8,36 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-  }
-  
-  /* קונטיינר עבור טופס ההרשמה */
-  .signup-container {
+}
+
+/* קונטיינר עבור טופס ההתחברות */
+.login-container {
     background-color: white; /* צבע רקע לבן */
     border-radius: 10px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* צל עדין */
     padding: 20px;
     width: 400px; /* רוחב קבוע */
-  }
-  
-  /* כותרת הטופס */
-  .signup-container h2 {
+    padding-left: 20px; /* הזזת הכל ימינה */
+}
+
+/* כותרת הטופס */
+.login-container h2 {
     text-align: center; /* מרכז את הכותרת */
     color: #333; /* צבע טקסט כהה */
-  }
-  
-  /* עיצוב השדות בטופס */
-  input[type="text"],
-  input[type="email"],
-  input[type="password"] {
-    width: 100%; /* לוקח את כל הרוחב */
+}
+
+/* עיצוב השדות בטופס */
+input[type="email"],
+input[type="password"] {
+    width: calc(100% - 20px); /* לוקח כמעט את כל הרוחב */
     padding: 10px;
     margin: 10px 0; /* רווחים בין השדות */
     border: 1px solid #ccc; /* גבול בהיר */
     border-radius: 5px; /* פינות מעוגלות */
-  }
-  
-  /* עיצוב הכפתור */
-  .signup-button {
+}
+
+/* עיצוב הכפתור */
+.login-button {
     background-color: #f18622; /* צבע רקע */
     color: white; /* צבע טקסט לבן */
     border: none; /* ללא גבול */
@@ -63,22 +46,21 @@
     cursor: pointer; /* מצביע יד */
     width: 100%; /* רוחב מלא */
     transition: background-color 0.3s; /* אנימציה על מעבר צבע */
-  }
-  
-  .signup-button:hover {
+}
+
+.login-button:hover {
     background-color: #d1711c; /* צבע רקע כהה יותר בעת ריחוף */
-  }
-  
-  /* קישור להירשם */
-  .signup-link {
+}
+
+/* קישור להתחברות */
+.login-link {
     display: block; /* שורת קישור חדשה */
     text-align: center; /* מרכז את הקישור */
     margin-top: 10px;
     color: #007BFF; /* צבע קישור */
     text-decoration: none; /* ללא קו תחתון */
-  }
-  
-  .signup-link:hover {
+}
+
+.login-link:hover {
     text-decoration: underline; /* קו תחתון בעת ריחוף */
-  }
-  
+}
