@@ -10,7 +10,7 @@ document.getElementById('signup-form').addEventListener('submit', function(event
 
     // לבדוק אם הסיסמאות תואמות
     if (password !== confirmPassword) {
-        errorMessage.textContent = 'הסיסמאות אינן תואמות.';
+        errorMessage.textContent = 'The passwords do not match.';
         return;
     }
 
@@ -19,7 +19,7 @@ document.getElementById('signup-form').addEventListener('submit', function(event
     localStorage.setItem('userPassword', password);
 
     // הודעה שההרשמה הצליחה
-    alert('נרשמת בהצלחה! כעת תוכל להתחבר.');
+    alert('You have successfully registered! You can now log in.');
 
     // מעבר לעמוד ההתחברות
     window.location.href = 'signin.html';
