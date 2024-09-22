@@ -103,28 +103,26 @@
   transform: scale(0.9); /* הקטנה של האייקון ב-10% */
 }
 
-/* סגנון בסיסי להתראה */
 .notification-badge {
   position: absolute;
-  top: 30px; /* כוונן את המיקום הזה עד שיתאים לאייקון */
-  right: 250px; /* כוונן גם את המיקום הזה */
-  background-color: red; /* צבע הרקע */
-  color: white; /* צבע הטקסט */
-  border-radius: 50%; /* עיגול */
-  width: 15px; /* רוחב */
-  height: 15px; /* גובה */
-  display: flex;
+  top: -6px; /* מיקום מעל האייקון */
+  left: -10px; /* מיקום לצד האייקון */
+  background-color: red;
+  color: white;
+  border-radius: 50%; /* מעגל */
+  width: 4px; /* רוחב */
+  height: 10px; /* גובה */
+  display: none; /* הסתר את העיגול בהתחלה */
   align-items: center;
   justify-content: center;
-  font-size: 12px; /* גודל הטקסט */
-  font-weight: bold; /* משקל הטקסט */
-  opacity: 0; /* בהתחלה, לא גלוי */
-  transform: scale(0); /* התפשטות אפסית */
-  transition: opacity 0.3s ease, transform 0.3s ease; /* אנימציה חלקה */
+  font-size: 8px; /* גודל טקסט קטן יותר */
+  font-weight: bold;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5); /* צל */
 }
 
-/* סגנון כשההתראה מוצגת */
+/* הראה את העיגול כשיש פריטים */
 .notification-badge.show {
+  display: flex; /* הראה את העיגול */
   opacity: 1; /* הופעה מלאה */
   transform: scale(1); /* התפשטות מלאה */
 }
@@ -136,18 +134,19 @@
 
 @keyframes flash {
   0% {
-    transform: scale(1);
-    background-color: red;
+      transform: scale(1);
+      background-color: red;
   }
   50% {
-    transform: scale(1.2);
-    background-color: #ff0000;
+      transform: scale(1.2);
+      background-color: #ff0000;
   }
   100% {
-    transform: scale(1);
-    background-color: red;
+      transform: scale(1);
+      background-color: red;
   }
 }
+
 
 
 .secondary-rectangle-content {
@@ -449,4 +448,28 @@ footer {
 
 body {
   font-family: "Open Sans", sans-serif;
+}
+
+.cart-icon {
+  display: flex; /* תצוגה גמישה */
+  align-items: center; /* מרכז לפי ציר Y */
+  position: relative; /* מיקום יחסי */
+  text-decoration: none; /* בלי קו מתחת */
+}
+
+.icon {
+  width: 25px; /* גובה ורוחב האייקון */
+  height: 30px;
+  margin-right: 8px; /* רווח בין האייקון לטקסט */
+}
+
+#cart-count {
+  position: absolute; /* מיקום מוחלט */
+  top: 0; /* מיקום למעלה */
+  right: -10px; /* מיקום לימין */
+  background-color: red; /* צבע הרקע של המספר */
+  color: white; /* צבע הטקסט */
+  border-radius: 50%; /* פינות מעוגלות */
+  padding: 3px 6px; /* ריווח פנימי - תוכל לשנות את הערכים כאן */
+  font-size: 10px; /* גודל טקסט קטן יותר */
 }
