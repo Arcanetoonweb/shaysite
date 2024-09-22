@@ -1,80 +1,56 @@
-document.addEventListener('DOMContentLoaded', function() {
-    const productContainer = document.querySelector('.product-container');
-  
-    function loadCartItems() {
-      const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-  
-      productContainer.innerHTML = '';
-  
-      cartItems.forEach(item => {
-        const productCard = document.createElement('div');
-        productCard.classList.add('product-card');
-  
-        productCard.innerHTML = `
-          <img src="${item.image}" alt="Product Image">
-          <h2>${item.name}</h2>
-          <p>${item.description}</p>
-          <p>$${item.price}</p>
-          <div class="button-container">
-            <button class="quantity-button" data-action="decrease">-</button>
-            <span>${item.quantity}</span>
-            <button class="quantity-button" data-action="increase">+</button>
-            <button class="buy-button">Buy</button>
-            <button class="remove-button" data-id="${item.id}">Remove</button>
-          </div>
-        `;
-  
-        productContainer.appendChild(productCard);
-      });
-  
-      setupButtons();
+document.addEventListener('DOMContentLoaded', function () {
+    displayCartItems();
+});
+
+// פונקציה להצגת פריטי הסל
+function displayCartItems() {
+    const cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    const cartContainer = document.getElementById('cart-container');
+    cartContainer.innerHTML = ''; // ניקוי התוכן הקודם
+
+    if (cartItems.length === 0) {
+        cartContainer.innerHTML = '<p>הסל שלך ריק.</p>';
+        return;
     }
-  
-    function setupButtons() {
-      document.querySelectorAll('.remove-button').forEach(button => {
-        button.addEventListener('click', function() {
-          const productId = this.getAttribute('data-id');
-          removeItemFromCart(productId);
-        });
-      });
-  
-      document.querySelectorAll('.quantity-button').forEach(button => {
-        button.addEventListener('click', function() {
-          const action = this.getAttribute('data-action');
-          const productCard = this.closest('.product-card');
-          const quantitySpan = productCard.querySelector('span');
-          let quantity = parseInt(quantitySpan.textContent);
-  
-          if (action === 'increase') {
-            quantity += 1;
-          } else if (action === 'decrease' && quantity > 1) {
-            quantity -= 1;
-          }
-  
-          quantitySpan.textContent = quantity;
-          updateCartItemQuantity(productCard.querySelector('.remove-button').getAttribute('data-id'), quantity);
-        });
-      });
-    }
-  
-    function removeItemFromCart(id) {
-      let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-      cartItems = cartItems.filter(item => item.id !== id);
-      localStorage.setItem('cartItems', JSON.stringify(cartItems));
-      loadCartItems(); // רענן את העמוד
-    }
-  
-    function updateCartItemQuantity(id, quantity) {
-      let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
-      cartItems = cartItems.map(item => {
-        if (item.id === id) {
-          item.quantity = quantity;
+
+    let totalPrice = 0;
+
+    cartItems.forEach(item => {
+        if (item) { // בדוק אם האובייקט אינו null
+            const itemDiv = document.createElement('div');
+            itemDiv.className = 'cart-item';
+
+            itemDiv.innerHTML = `
+                <img src="${item.image}" alt="${item.name}" style="width: 193px; height: 193px;">
+                <div class="item-details">
+                    <h3>${item.name}</h3>
+                    <p>מחיר: ₪${item.price}</p>
+                    <p>כמות: <span class="quantity">${item.quantity}</span></p>
+                    <button class="remove-item-button" data-name="${item.name}">הסר</button>
+                </div>
+            `;
+
+            cartContainer.appendChild(itemDiv);
+            totalPrice += item.price * item.quantity; // חישוב סכום כולל
         }
-        return item;
-      });
-      localStorage.setItem('cartItems', JSON.stringify(cartItems));
-    }
-  
-    loadCartItems();
-  });
-  
+    });
+
+    document.getElementById('total-price').innerText = totalPrice.toFixed(2); // עדכון סכום כולל
+
+    // הוספת פעולה לכפתורי ההסרה
+    const removeButtons = document.querySelectorAll('.remove-item-button');
+    removeButtons.forEach(button => {
+        button.addEventListener('click', function () {
+            removeItemFromCart(this.dataset.name);
+        });
+    });
+}
+
+// פונקציה להסרת מוצר מהסל
+function removeItemFromCart(productName) {
+    let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+    cartItems = cartItems.filter(item => item.name !== productName); // סינון המוצר לה-sל
+
+    localStorage.setItem('cartItems', JSON.stringify(cartItems)); // שמירה מחדש
+    displayCartItems(); // עדכון התצוגה
+}
