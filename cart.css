@@ -86,3 +86,67 @@ body {
 #continue-order-button:hover {
     background-color: #45a049;
 }
+
+/* סגנון עבור טופס ההזמנה */
+#order-form {
+    margin-top: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+#order-form input {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.select-container {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+select {
+    padding: 10px;
+    width: calc(100% - 20px);
+    border: 1px solid #ccc; /* עיצוב גבול */
+    border-radius: 3px; /* פינות מעוגלות */
+    appearance: none; /* מסיר את עיצוב ברירת המחדל של ה-select */
+}
+
+.arrow-down {
+    position: absolute;
+    right: 10px; /* מרחק מהצד הימני */
+    top: 50%; /* ממקם באמצע */
+    transform: translateY(-50%); /* ממקם בדיוק באמצע */
+    font-size: 12px; /* גודל חץ */
+    pointer-events: none; /* מונע קליקים על החץ */
+}
+
+#submit-order-button {
+    background-color: #2196F3;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#submit-order-button:hover {
+    background-color: #1976D2;
+}
+
+.form-row {
+    display: flex;
+    margin-bottom: 10px; /* רווח מתחת לשורה */
+}
+
+.form-row input {
+    padding: 10px;
+    border: 1px solid #ccc; /* עיצוב גבול */
+    border-radius: 3px; /* פינות מעוגלות */
+}
