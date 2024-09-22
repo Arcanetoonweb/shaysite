@@ -231,34 +231,51 @@ body {
   justify-content: center; /* ממרכז את המוצרים */
 }
 
-/* עיצוב עבור הקטע של הטסטימוניאלים */
-.testimonial {
-  display: flex;
-  flex-wrap: wrap; /* מאפשר למרכיבים לעבור לשורה הבאה אם אין מקום */
-  justify-content: center; /* ממרכז את האלמנטים */
-  align-items: flex-start; /* ממרכז מבחינת גובה */
-  margin: 20px;
-}
-
-/* עיצוב עבור כל אלמנט בתוך הטסטימוניאלים */
+/* הגדרת גובה מינימלי אחיד לכל הכרטיסים */
 .testimonial .col-3 {
-  flex: 1 1 30%; /* מאפשר לאלמנטים להתרחב ולהתכווץ בהתאם לצורך */
-  max-width: 300px; /* הגבל את הרוחב המרבי של כל אלמנט */
+  flex: 0 0 30%;
+  max-width: 300px;
   text-align: center;
   padding: 20px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.5s;
-  margin: 10px; /* רווח בין האלמנטים */
+  margin: 10px;
+  min-height: 450px; /* גובה מינימלי אחיד */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* מפזר את האלמנטים בצורה אחידה */
+  align-items: center; /* ממרכז את התמונה ושאר האלמנטים */
 }
 
-
-/* עיצוב התמונה בתוך הטסטימוניאלים */
+/* יישור התמונה במרכז */
 .testimonial .col-3 img {
-  width: 80px; /* ניתן לשנות את הרוחב לפי הצורך */
-  height: 80px; /* מבטיח שהתמונה תשמור על צורת ריבוע */
+  width: 80px;
+  height: 80px;
   margin-top: 20px;
-  border-radius: 50%; /* הופך את התמונה לעגלית */
+  border-radius: 50%;
+  display: block;
+}
+
+/* עיצוב עבור הקטע של הטסטימוניאלים */
+.testimonial .row {
+  display: flex; /* שורת האלמנטים תהיה לרוחב */
+  flex-wrap: nowrap; /* מונע שבירה לשורות נוספות */
+  justify-content: space-around; /* מפזר את האלמנטים לרוחב */
+  margin: 20px;
+  gap: 20px; /* רווח בין האלמנטים */
+}
+
+/* עיצוב עבור כל אלמנט בתוך הטסטימוניאלים */
+.testimonial .col-3 {
+  flex: 0 0 30%; /* כל אלמנט יקבל 30% מהרוחב */
+  max-width: 300px; /* הגבל את הרוחב המרבי */
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.5s;
+  margin: 10px;
 }
 
 /* אנימציה בעת ריחוף על האלמנט */
@@ -266,31 +283,38 @@ body {
   transform: translateY(-10px);
 }
 
-/* עיצוב עבור סימן הציטוט */
+/* עיצוב התמונה */
+.testimonial .col-3 img {
+  width: 80px;
+  height: 80px;
+  margin-top: 20px;
+  border-radius: 50%;
+}
+
+/* עיצוב הציטוט */
 .fa.fa-quote-left {
   font-size: 34px;
   color: #ff523b;
 }
 
-/* עיצוב עבור הטקסט בתוך האלמנט */
-.col-3 p {
+/* עיצוב הפסקאות */
+.testimonial .col-3 p {
   font-size: 12px;
   margin: 12px 0;
   color: #777;
 }
 
-/* עיצוב עבור הכותרת בתוך האלמנט */
+/* עיצוב הכותרת */
 .testimonial .col-3 h3 {
   font-weight: 600;
   color: #555;
   font-size: 16px;
 }
 
-/* עיצוב עבור דירוגים */
+/* דירוג */
 .rating .fa {
   color: #ff523b;
 }
-
 
 /* General Styles */
 body {
