@@ -1,6 +1,6 @@
 /* מלבן ראשי בראש האתר */
 .top-rectangle {
-  background-color: rgb(29, 36, 36);
+  background-color: rgb(255, 255, 255);
   height: 60px; /* גובה המלבן */
   width: 100%;
   display: flex;
@@ -45,7 +45,7 @@
 
 /* עיצוב המלבן המשני */
 .secondary-rectangle {
-  background-color: rgb(220, 221, 226);
+  background-color: rgb(255, 255, 255);
   height: 100px; /* גובה המלבן המשני */
   width: 100%;
   display: flex;
@@ -319,7 +319,7 @@ body {
 body {
   font-family: "Open Sans", sans-serif;
   color: #fff;
-  background-color: #dbdada;
+  background-color: #fffdfd;
 }
 
 /* Main Section Styles */
@@ -341,12 +341,12 @@ main {
 }
 
 .feature {
-  background-color: #1e1e1e;
+  background-color: #ffffff;
   border-radius: 10px;
   padding: 20px;
   margin: 10px;
   flex: 1 1 30%; /* מאפשר לרכיבים לגדול/ל縮וך עם רוחב מינימלי של 30% */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
   text-align: center;
 }
 
@@ -380,7 +380,7 @@ main {
 
 /* Footer Styles */
 footer {
-  background-color: #333333;
+  background-color: #ece8e8;
   color: #fff;
   padding: 20px;
   text-align: center;
@@ -400,7 +400,7 @@ footer {
 
 /* טקסט "Made by" */
 .footerText .madeBy {
-  color: #fff; /* צבע לבן */
+  color: #000000; /* צבע לבן */
 }
 
 .footerText a {
