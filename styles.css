@@ -42,6 +42,12 @@
     transform: scale(1);
   }
 }
+h1{
+    font-size: 80px;
+     margin: 10px 0 30px;
+     line-height: 80px;
+
+}
 
 /* עיצוב המלבן המשני */
 .secondary-rectangle {
@@ -230,6 +236,29 @@ body {
   justify-content: center; /* ממרכז את המוצרים */
 }
 
+/* הגדר רוחב מקסימלי עבור מסכים רחבים יותר */
+.container {
+  max-width: 1216px; /* שמירה על רוחב של 1216 פיקסלים */
+  margin: 0 auto; /* מרכז את התוכן */
+}
+
+/* מדיה קווטים לניידים קטנים */
+@media screen and (max-width: 600px)
+{
+      h1{     
+      font-size: 36px;
+      line-height: 50px;
+      }
+  .top-rectangle {
+    height: 50px; /* גובה מותאם */
+  }
+
+  .product {
+    max-width: 95%; /* רוחב המוצר כמעט מלא */
+    min-height: 180px; /* גובה מינימלי */
+  }
+}
+
 /* הגדרת גובה מינימלי אחיד לכל הכרטיסים */
 .testimonial .col-3 {
   flex: 0 0 30%;
@@ -240,7 +269,7 @@ body {
   cursor: pointer;
   transition: transform 0.5s;
   margin: 5px;
-  min-height: 400px; /* גובה מינימלי אחיד */
+  min-height: 450px; /* גובה מינימלי אחיד */
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* מפזר את האלמנטים בצורה אחידה */
