@@ -233,7 +233,7 @@ body {
 /* הגדרת גובה מינימלי אחיד לכל הכרטיסים */
 .testimonial .col-3 {
   flex: 0 0 30%;
-  max-width: 300px;
+  max-width: 200px;
   text-align: center;
   padding: 20px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
