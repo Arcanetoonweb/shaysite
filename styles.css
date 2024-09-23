@@ -1,4 +1,4 @@
-/* מלבן ראשי בראש האתר */
+/* עיצוב בסיסי */
 .top-rectangle {
   background-color: rgb(255, 255, 255);
   height: 60px; /* גובה המלבן */
@@ -24,13 +24,11 @@
   margin-top: -5px; /* או השתמש ב-padding-top או line-height */
 }
 
-/* עיצוב הלוגו */
 .logo {
   height: 40px;
   animation: logoAnimation 1.5s infinite;
 }
 
-/* אנימציה ללוגו */
 @keyframes logoAnimation {
   0% {
     transform: scale(1);
@@ -42,11 +40,82 @@
     transform: scale(1);
   }
 }
-h1{
-    font-size: 80px;
-     margin: 10px 0 30px;
-     line-height: 80px;
 
+h1 {
+  font-size: 80px;
+  margin: 10px 0 30px;
+  line-height: 80px;
+}
+
+/* מדיה קוויירים עבור מכשירים שונים */
+@media (max-width: 320px) {
+  .top-rectangle {
+    height: 40px;
+  }
+  h1 {
+    font-size: 30px;
+    line-height: 30px;
+  }
+}
+
+@media (max-width: 375px) {
+  .top-rectangle {
+    height: 45px;
+  }
+  h1 {
+    font-size: 35px;
+    line-height: 35px;
+  }
+}
+
+@media (max-width: 425px) {
+  .top-rectangle {
+    height: 50px;
+  }
+  h1 {
+    font-size: 40px;
+    line-height: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .top-rectangle {
+    height: 55px;
+  }
+  h1 {
+    font-size: 50px;
+    line-height: 50px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .top-rectangle {
+    height: 60px;
+  }
+  h1 {
+    font-size: 60px;
+    line-height: 60px;
+  }
+}
+
+@media (max-width: 1440px) {
+  .top-rectangle {
+    height: 65px;
+  }
+  h1 {
+    font-size: 70px;
+    line-height: 70px;
+  }
+}
+
+@media (max-width: 2560px) {
+  .top-rectangle {
+    height: 70px;
+  }
+  h1 {
+    font-size: 80px;
+    line-height: 80px;
+  }
 }
 
 /* עיצוב המלבן המשני */
@@ -256,13 +325,6 @@ body {
   width: 100%; /* המוצרים ימלאו את רוחב הקונטיינר */
   box-sizing: border-box; /* כולל גבולות וריווחים בתוך רוחב המוצר */
   margin-bottom: 20px; /* ריווח בין המוצרים */
-}
-
-/* מדיה קויירי למכשירים קטנים יותר */
-@media (max-width: 768px) {
-  .product {
-      width: calc(100% - 32px); /* מותאם לריווח צדדי */
-  }
 }
 
 /* הגדרת גובה מינימלי אחיד לכל הכרטיסים */
