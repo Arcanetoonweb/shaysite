@@ -45,7 +45,7 @@
 
 /* עיצוב המלבן המשני */
 .secondary-rectangle {
-  background-color: rgb(25, 30, 50);
+  background-color: rgb(220, 221, 226);
   height: 100px; /* גובה המלבן המשני */
   width: 100%;
   display: flex;
@@ -319,7 +319,7 @@ body {
 body {
   font-family: "Open Sans", sans-serif;
   color: #fff;
-  background-color: #121212;
+  background-color: #dbdada;
 }
 
 /* Main Section Styles */
