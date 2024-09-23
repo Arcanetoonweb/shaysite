@@ -233,31 +233,6 @@ body {
   justify-content: center; /* ממרכז את המוצרים */
 }
 
-/* הגדר רוחב מקסימלי עבור מסכים רחבים יותר */
-.container {
-  max-width: 1216px; /* שמירה על רוחב של 1216 פיקסלים */
-  margin: 0 auto; /* מרכז את התוכן */
-}
-
-/* מדיה קווטים לניידים קטנים */
-@media screen and (max-width: 600px)
-{
-      h1{     
-      font-size: 36px;
-      line-height: 50px;
-      }
-      .top-rectangle{
-      width: 100%;
-      height: 50px;
-      top: 0;
-      bottom: 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0 10px;
-      box-sizing: border-box;
-    }
-  }
 
   .top-rectangle {
     height: 50px; /* גובה מותאם */
@@ -266,6 +241,27 @@ body {
   .product {
     max-width: 95%; /* רוחב המוצר כמעט מלא */
     min-height: 180px; /* גובה מינימלי */
+  }
+
+/* הגדרת הקונטיינר */
+.container {
+  max-width: 1216px; /* רוחב מקסימלי */
+  margin: 0 auto; /* ממרכז את התוכן */
+  padding: 0 16px; /* ריווח צדדי במכשירים קטנים */
+  overflow: hidden; /* מונע גלילה */
+}
+
+/* עיצוב המוצרים */
+.product {
+  width: 100%; /* המוצרים ימלאו את רוחב הקונטיינר */
+  box-sizing: border-box; /* כולל גבולות וריווחים בתוך רוחב המוצר */
+  margin-bottom: 20px; /* ריווח בין המוצרים */
+}
+
+/* מדיה קויירי למכשירים קטנים יותר */
+@media (max-width: 768px) {
+  .product {
+      width: calc(100% - 32px); /* מותאם לריווח צדדי */
   }
 }
 
