@@ -105,8 +105,8 @@
 
 .notification-badge {
   position: absolute;
-  top: -6px; /* מיקום מעל האייקון */
-  left: -10px; /* מיקום לצד האייקון */
+  top: 15px;  
+  margin-right: 1px; /* הזזה מהצד השמאלי */
   background-color: red;
   color: white;
   border-radius: 50%; /* מעגל */
