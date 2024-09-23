@@ -233,14 +233,14 @@ body {
 /* הגדרת גובה מינימלי אחיד לכל הכרטיסים */
 .testimonial .col-3 {
   flex: 0 0 30%;
-  max-width: 200px;
+  max-width: 300px;
   text-align: center;
   padding: 20px;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   transition: transform 0.5s;
   margin: 5px;
-  min-height: 450px; /* גובה מינימלי אחיד */
+  min-height: 400px; /* גובה מינימלי אחיד */
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* מפזר את האלמנטים בצורה אחידה */
