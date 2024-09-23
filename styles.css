@@ -153,8 +153,6 @@ h1{
   }
 }
 
-
-
 .secondary-rectangle-content {
   display: flex;
   justify-content: center; /* יישור מרכזי של התוכן בקונטיינר */
@@ -177,7 +175,6 @@ body {
   padding: 20px;
   margin-top: 300px; /* הפחתה של הרווח למעלה */
 }
-
 
 /* עיצוב כל מוצר */
 .product {
@@ -249,6 +246,19 @@ body {
       font-size: 36px;
       line-height: 50px;
       }
+      .top-rectangle{
+      width: 100%;
+      height: 50px;
+      top: 0;
+      bottom: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10px;
+      box-sizing: border-box;
+    }
+  }
+
   .top-rectangle {
     height: 50px; /* גובה מותאם */
   }
