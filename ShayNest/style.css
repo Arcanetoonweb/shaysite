@@ -1,3 +1,27 @@
+html, body {
+    width: 100%;
+    overflow-x: hidden; /* הימנע מגלילה אופקית */
+  }
+  
+  * {
+    box-sizing: border-box; /* הכללת גבול וריווח פנימי בחישוב רוחב */
+  }
+  
+  .container {
+    width: 100%;
+    overflow-x: hidden; /* הימנע מגלילה אופקית */
+  }
+  
+  img {
+    max-width: 100%; /* הגבל את רוחב התמונה */
+    height: auto; /* שמור על הפרופורציות */
+  }
+  
+  .some-element {
+    margin: 0 auto; /* מרכז אלמנטים */
+    padding: 10px; /* ריווח פנימי */
+  }
+  
 body{
     margin: 0;
     font-family: "Open Sans", sans-serif;
