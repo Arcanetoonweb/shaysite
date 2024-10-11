@@ -28,6 +28,60 @@
       /* להבטיח שהחלל יכסה את כל גובה הדף */
     }
   </style>
+    <style>
+      /* סגנון כללי לכל המסכים */
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+      }
+  
+      .container {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        padding: 20px;
+      }
+  
+      .item {
+        flex: 1 1 300px; /* מינימום 300 פיקסלים לרוחב */
+        margin: 10px;
+        padding: 20px;
+        text-align: center;
+      }
+  
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+  
+      /* מסכים קטנים */
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+          align-items: center;
+        }
+  
+        .item {
+          width: 100%; /* פריסה עמודתית למסכים קטנים */
+          max-width: 600px;
+        }
+      }
+  
+      /* מסכים בינוניים */
+      @media (min-width: 769px) and (max-width: 1024px) {
+        .item {
+          flex: 1 1 45%; /* שני טורים למסכים בינוניים */
+        }
+      }
+  
+      /* מסכים גדולים */
+      @media (min-width: 1025px) {
+        .item {
+          flex: 1 1 30%; /* שלושה טורים למסכים גדולים */
+        }
+      }
+    </style>
 </head>
 
 <body>
@@ -102,33 +156,41 @@
       <img id="main-image" src="https://i.postimg.cc/3JhxzPB6/S85dd13c07cf74973ba431abfac69946ah.avif" alt="Image of winter socks" class="product-image">
       <p class="product-price"><span class="currency-icon">₪</span> <span id="price">77.00</span></p> <!-- Price updated to 77 ₪ -->
 
-<!-- Thumbnail Images -->
-<div class="thumbnail-container">
-  <img src="https://i.postimg.cc/3JhxzPB6/S85dd13c07cf74973ba431abfac69946ah.avif" alt="Image 1" class="thumbnail" onclick="changeProduct('https://i.postimg.cc/3JhxzPB6/S85dd13c07cf74973ba431abfac69946ah.avif', 19.01, '35-39 (24cm)')">
-  <img src="https://i.postimg.cc/FztGywqb/ep-Dw-Sc44fd13e195d439286893f51b5a7c00e-O-e074-g5-znr0-u4-sq7h-c7.jpg" alt="Image 2" class="thumbnail" onclick="changeProduct('https://i.postimg.cc/FztGywqb/ep-Dw-Sc44fd13e195d439286893f51b5a7c00e-O-e074-g5-znr0-u4-sq7h-c7.jpg', 19.09, '40-44 (26cm)')">
-  <img src="https://i.postimg.cc/DZcdGmrh/vb-Lc-S2b1e2c82bc8240b5969e3c11b33c307cb-ei49-3a-f38b-f4.jpg" alt="Image 3" class="thumbnail" onclick="changeProduct('https://i.postimg.cc/DZcdGmrh/vb-Lc-S2b1e2c82bc8240b5969e3c11b33c307cb-ei49-3a-f38b-f4.jpg', 19.09, '45-48 (28cm)')">
-  <img src="https://i.postimg.cc/BvSx0JWw/h-Dz5-S050328b7c0aa49d8998a1a5928f17fb0-Z-zdj2-0a-oujh-yy.webp" alt="Image 4" class="thumbnail" onclick="changeProduct('https://i.postimg.cc/BvSx0JWw/h-Dz5-S050328b7c0aa49d8998a1a5928f17fb0-Z-zdj2-0a-oujh-yy.webp', 19.05, '49-52 (30cm)')">
-  <!-- Add more images as needed -->
-</div>
+      <!-- Thumbnail Images -->
+      <div class="thumbnail-container">
+        <img src="https://i.postimg.cc/3JhxzPB6/S85dd13c07cf74973ba431abfac69946ah.avif" alt="Image 1" class="thumbnail" onclick="changeProduct('https://i.postimg.cc/3JhxzPB6/S85dd13c07cf74973ba431abfac69946ah.avif', 19.01, '35-39 (24cm)')">
+        <img src="https://i.postimg.cc/FztGywqb/ep-Dw-Sc44fd13e195d439286893f51b5a7c00e-O-e074-g5-znr0-u4-sq7h-c7.jpg" alt="Image 2" class="thumbnail" onclick="changeProduct('https://i.postimg.cc/FztGywqb/ep-Dw-Sc44fd13e195d439286893f51b5a7c00e-O-e074-g5-znr0-u4-sq7h-c7.jpg', 19.09, '40-44 (26cm)')">
+        <img src="https://i.postimg.cc/DZcdGmrh/vb-Lc-S2b1e2c82bc8240b5969e3c11b33c307cb-ei49-3a-f38b-f4.jpg" alt="Image 3" class="thumbnail" onclick="changeProduct('https://i.postimg.cc/DZcdGmrh/vb-Lc-S2b1e2c82bc8240b5969e3c11b33c307cb-ei49-3a-f38b-f4.jpg', 19.09, '45-48 (28cm)')">
+        <img src="https://i.postimg.cc/BvSx0JWw/h-Dz5-S050328b7c0aa49d8998a1a5928f17fb0-Z-zdj2-0a-oujh-yy.webp" alt="Image 4" class="thumbnail" onclick="changeProduct('https://i.postimg.cc/BvSx0JWw/h-Dz5-S050328b7c0aa49d8998a1a5928f17fb0-Z-zdj2-0a-oujh-yy.webp', 19.05, '49-52 (30cm)')">
+        <!-- Add more images as needed -->
+      </div>
 
-<style>
-.thumbnail-container {
-display: flex; /* פריסה אופקית לתמונות הממוזערות */
-margin-top: 10px; /* רווח מעל התמונות הממוזערות */
-background-color: #181818; /* צבע רקע */
-padding: 10px; /* רווח פנימי סביב התמונות */
-border-radius: 5px; /* פינות מעוגלות */
-}
+      <style>
+        .thumbnail-container {
+          display: flex;
+          /* פריסה אופקית לתמונות הממוזערות */
+          margin-top: 10px;
+          /* רווח מעל התמונות הממוזערות */
+          background-color: #181818;
+          /* צבע רקע */
+          padding: 10px;
+          /* רווח פנימי סביב התמונות */
+          border-radius: 5px;
+          /* פינות מעוגלות */
+        }
 
-.thumbnail {
-width: 50px; /* גודל התמונות הממוזערות */
-height: auto; /* שמירה על פרופורציות */
-margin-right: 5px; /* רווח בין התמונות */
-cursor: pointer; /* הופך את העכבר לאצבע כשמעבירים מעל */
-}
-</style>
-</div>
-
+        .thumbnail {
+          width: 50px;
+          /* גודל התמונות הממוזערות */
+          height: auto;
+          /* שמירה על פרופורציות */
+          margin-right: 5px;
+          /* רווח בין התמונות */
+          cursor: pointer;
+          /* הופך את העכבר לאצבע כשמעבירים מעל */
+        }
+      </style>
+    </div>
 
     <script>
       function changeProduct(imageUrl, price, size) {
@@ -140,28 +202,24 @@ cursor: pointer; /* הופך את העכבר לאצבע כשמעבירים מע�
     <!-- Product Description Container -->
     <div class="product-description-container">
       <p class="product-description">
-        <h2>Winter socks</h2>
-        <strong>Stay warm and relaxed</strong> this winter with our <strong>cozy socks</strong>! Made from <strong>soft, comfortable material</strong>, these socks are perfect for <strong>indoor and outdoor use</strong>. The <strong>non-slip design</strong> ensures safety with every step. Don’t miss the chance to <strong>treat yourself and your family</strong>!
+      <h2>Winter socks</h2>
+      <strong>Stay warm and relaxed</strong> this winter with our <strong>cozy socks</strong>! Made from <strong>soft, comfortable material</strong>, these socks are perfect for <strong>indoor and outdoor use</strong>. The <strong>non-slip design</strong> ensures safety with every step. Don’t miss the chance to <strong>treat yourself and your family</strong>!
       </p>
 
+      <p style="text-align: center; margin-top: 5px; font-weight: bold; font-size: 18px;">
+        Please choose a sock color and send Us your size via email.
+      </p>
 
-
-<p style="text-align: center; margin-top: 5px; font-weight: bold; font-size: 18px;">
-  Please choose a sock color and send Us your size via email.
-</p>
-
-
-
-<!-- Stars -->
-<div class="star-rating" style="text-align: center; margin-top: 15px;">
-  <i class="fa fa-star" aria-hidden="true"></i>
-  <i class="fa fa-star" aria-hidden="true"></i>
-  <i class="fa fa-star" aria-hidden="true"></i>
-  <i class="fa fa-star" aria-hidden="true"></i>
-  <i class="fa fa-star" aria-hidden="true"></i>
-  <span class="rating">4.9</span>
-</div>
-</div>
+      <!-- Stars -->
+      <div class="star-rating" style="text-align: center; margin-top: 15px;">
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <i class="fa fa-star" aria-hidden="true"></i>
+        <span class="rating">4.9</span>
+      </div>
+    </div>
 
     <!-- PayPal Button -->
     <div id="paypal-button-container"></div>
@@ -537,22 +595,26 @@ cursor: pointer; /* הופך את העכבר לאצבע כשמעבירים מע�
     }
 
     .thumbnail-container {
-  display: flex;
-  margin-top: 10px;
-  background-image: url('path/to/your/image.jpg'); /* החלף את הכתובת בתמונה שלך */
-background-size: cover; /* מכסה את כל הרקע */
-background-repeat: no-repeat; /* מונע חזרה על התמונה */
-  padding: 10px; /* רווח פנימי סביב התמונות */
-  border-radius: 5px; /* פינות מעוגלות */
-}
+      display: flex;
+      margin-top: 10px;
+      background-image: url('path/to/your/image.jpg');
+      /* החלף את הכתובת בתמונה שלך */
+      background-size: cover;
+      /* מכסה את כל הרקע */
+      background-repeat: no-repeat;
+      /* מונע חזרה על התמונה */
+      padding: 10px;
+      /* רווח פנימי סביב התמונות */
+      border-radius: 5px;
+      /* פינות מעוגלות */
+    }
 
-.thumbnail {
-  width: 50px; 
-  height: auto; 
-  margin-right: 5px; 
-  cursor: pointer; 
-}
-
+    .thumbnail {
+      width: 50px;
+      height: auto;
+      margin-right: 5px;
+      cursor: pointer;
+    }
 
     .product-price {
       font-size: 18px;
