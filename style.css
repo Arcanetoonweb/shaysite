@@ -1,0 +1,832 @@
+/* שים את זה בתחילת קובץ ה-CSS שלך */
+body {
+  background-color: #b5b7ad;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* שאר קוד ה-CSS שלך ימשיך כאן... */
+
+/* מלבן ראשי בראש האתר */
+.top-rectangle {
+  background-color: #2b2d25;
+  height: 60px; /* גובה המלבן */
+  width: 100%; /* רוחב מלא */
+  display: flex;
+  align-items: center; /* מרכז את התוכן אנכית */
+  justify-content: center;
+  position: relative; /* מאפשר למלבן השני להתמקם יחסית לו */
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6); /* צל קל */
+  margin-bottom: 0px; /* מרווח מתחת למלבן */
+}
+
+.logo-container {
+  flex-grow: 1; /* ממלא את המקום הפנוי */
+  display: flex; /* מאפשר סידור של הלוגו */
+  justify-content: flex-start; /* ממקם את הלוגו בצד שמאל */
+  padding-left: 20px; /* מוסיף רווח פנימי בצד השמאלי */
+}
+
+.shaynest-logo {
+  height: 100px; /* גובה הלוגו שונה ל-100 פיקסלים */
+  width: auto; /* שומר על פרופורציות */
+  animation: logoAnimation 1.5s infinite; /* הוספת האנימציה */
+}
+
+/* אנימציה ללוגו */
+@keyframes logoAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* אפקט ריחוף על הלוגו */
+.shaynest-logo:hover {
+  animation: logoAnimation 1s infinite; /* מופעלת רק כשיש ריחוף */
+}
+
+/* אפקט ריחוף על האייקונים */
+.item:hover .icon {
+  transform: scale(1.1); /* מגדיל את האייקון במעבר עכבר */
+  transition: transform 0.3s; /* מעבר חלק */
+}
+
+/* המלבן המשני מתחת לראש האתר */
+.secondary-rectangle {
+  background-color: #737668; /* צבע רקע */
+  height: 60px; /* גובה המלבן המשני */
+  width: 100%; /* רוחב מלא */
+  display: flex;
+  align-items: center; /* מרכז את התוכן אנכית */
+  justify-content: flex-end; /* מיקום התכנים בצד ימין */
+  position: relative; /* מיקום יחסי */
+  margin: 0; /* הסרת רווחים נוספים */
+  margin-bottom: 20px; /* רווח בין המלבן למוצרים שמתחתיו */
+  padding: 0; /* הסרת רווח פנימי */
+}
+
+/* לוודא שאין רווחים לא רצויים באלמנטים שמעל המלבן */
+header,
+.main-content,
+.upper-section {
+  margin: 0; /* הסרת מרווחים נוספים */
+  padding: 0; /* הסרת רווח פנימי */
+}
+
+/* תוכן המלבן המשני */
+.secondary-rectangle-content {
+  display: flex;
+  justify-content: flex-start; /* ממקם את הפריטים מצד שמאל */
+  align-items: center; /* מרכז את התוכן אנכית */
+  padding: 0 20px; /* הוסף רווח פנימי מצדדים */
+}
+
+/* אייקון סל הקניות */
+.icon {
+  width: 32px; /* גובה ורוחב האייקון */
+  height: 32px; /* גובה ורוחב האייקון */
+}
+
+/* מסך עליון - חוסם סרגל גלילה אופקי */
+body {
+  overflow-x: hidden; /* מסתיר סרגל גלילה אופקי */
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden; /* הימנע מגלילה אופקית */
+}
+
+* {
+  box-sizing: border-box; /* הכללת גבול וריווח פנימי בחישוב רוחב */
+}
+
+html,
+body {
+  width: 100%;
+  overflow-x: hidden; /* הימנע מגלילה אופקית */
+}
+
+* {
+  box-sizing: border-box; /* הכללת גבול וריווח פנימי בחישוב רוחב */
+}
+
+/* עיצוב אייקון הסל */
+.item {
+  margin-right: 15px; /* הוסף רווח ימין לאייקון */
+}
+
+.notification-badge {
+  position: absolute;
+  top: 25px; /* מיקום ההתראה מעל האייקון */
+  right: 15px; /* מיקום ההתראה בצד ימין */
+  background-color: red; /* צבע הרקע של ההתראה */
+  color: white; /* צבע הטקסט של ההתראה */
+  border-radius: 50%; /* עיגול */
+  padding: 4px 8px; /* ריווח פנימי */
+  font-size: 9px; /* גודל הטקסט */
+  font-weight: bold; /* דגש על הטקסט */
+  display: none; /* ברירת מחדל מוסתרת */
+}
+
+.container {
+  width: 100%;
+  overflow-x: hidden; /* הימנע מגלילה אופקית */
+}
+
+img {
+  max-width: 100%; /* הגבל את רוחב התמונה */
+  height: auto; /* שמור על הפרופורציות */
+}
+
+.some-element {
+  margin: 0 auto; /* מרכז אלמנטים */
+  padding: 10px; /* ריווח פנימי */
+}
+
+body {
+  margin: 0;
+  font-family: "Open Sans", sans-serif;
+}
+svg {
+  width: 30px;
+}
+
+a {
+  text-decoration: none;
+  color: #2f2f2f;
+}
+button {
+  cursor: pointer;
+}
+.container {
+  width: 900px;
+  margin: auto;
+  max-width: 90vw;
+  text-align: center;
+  padding-top: 10px;
+  transition: 0.5s;
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 0;
+}
+.icon-cart {
+  position: relative;
+}
+.icon-cart span {
+  position: absolute;
+  background-color: red;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  color: #fff;
+  top: 50%;
+  right: -20px;
+}
+.title {
+  font-size: xx-large;
+}
+
+.cartTab {
+  width: 400px;
+  max-width: 100%;
+  background-color: #353432;
+  color: #eee;
+  position: fixed;
+  top: 0;
+  right: 0px;
+  bottom: 0;
+  display: grid;
+  grid-template-rows: 70px 1fr 70px;
+}
+.cartTab h1 {
+  padding: 20px;
+  margin: 0;
+  font-weight: 300;
+}
+.cartTab .btn {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.cartTab button {
+  background-color: #121212;
+  color: #ffffff;
+  border: none;
+  font-family: Poppins;
+  font-weight: 500;
+  cursor: pointer;
+}
+.cartTab .close {
+  background-color: #ffffff;
+  color: #000;
+}
+.listCart {
+  overflow: auto;
+}
+.listCart::-webkit-scrollbar {
+  width: 0;
+}
+/*  */
+.cartTab {
+  right: -400px;
+  transition: 0.5s;
+}
+body.activeTabCart .cartTab {
+  right: 0;
+}
+body.activeTabCart .container {
+  transform: translateX(-250px);
+}
+
+.listCart .item img {
+  width: 100%;
+}
+.listCart .item {
+  display: grid;
+  grid-template-columns: 70px 150px 50px 1fr;
+  gap: 10px;
+  text-align: center;
+  align-items: center;
+}
+.listCart .quantity span {
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+  background-color: #eee;
+  border-radius: 50%;
+  color: #555;
+  cursor: pointer;
+}
+.listCart .quantity span:nth-child(2) {
+  background-color: transparent;
+  color: #eee;
+  cursor: auto;
+}
+.listCart .quantity {
+  display: flex;
+}
+.listCart .item:nth-child(even) {
+  background-color: #eee1;
+}
+/*  */
+
+/* detail page */
+
+.detail {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 50px;
+  text-align: left;
+}
+.detail .image img {
+  width: 100%;
+}
+.detail .image {
+  position: relative;
+}
+.detail .image::before {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  content: "";
+  background-color: #94817733;
+  z-index: -1;
+  border-radius: 190px 100px 170px 180px;
+  left: calc(50% - 150px);
+  top: 50px;
+}
+.detail .name {
+  font-size: xxx-large;
+  padding: 40px 0 0 0;
+  margin: 0 0 10px 0;
+}
+.detail .price {
+  font-weight: bold;
+  font-size: x-large;
+  letter-spacing: 7px;
+  margin-bottom: 20px;
+}
+.detail .buttons {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+.detail .buttons button {
+  background-color: #eee;
+  border: none;
+  padding: 15px 20px;
+  border-radius: 20px;
+  font-family: Poppins;
+  font-size: large;
+}
+.detail .buttons svg {
+  width: 15px;
+}
+.detail .buttons span {
+  background-color: #555454;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin-left: 20px;
+}
+.detail .buttons button:nth-child(2) {
+  background-color: #2f2f2f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #eee;
+  box-shadow: 0 10px 20px #2f2f2f77;
+}
+.detail .description {
+  font-weight: 300;
+}
+
+/*  */
+
+@media only screen and (max-width: 992px) {
+  .listProduct {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .detail {
+    grid-template-columns: 40% 1fr;
+  }
+}
+
+/* mobile */
+@media only screen and (max-width: 767px) {
+  .listProduct {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .detail {
+    text-align: center;
+    grid-template-columns: 1fr;
+  }
+  .detail .image img {
+    width: unset;
+    height: 40vh;
+  }
+  .detail .name {
+    font-size: x-large;
+    margin: 0;
+  }
+  .detail .buttons button {
+    font-size: small;
+  }
+  .detail .buttons {
+    justify-content: center;
+  }
+}
+
+/* קונטיינר עבור כל המוצרים */
+.product-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px; /* מרווח חיצוני עבור כל הקונטיינר */
+}
+
+/* עיצוב עבור כל מוצר */
+.product {
+  background-color: #50553f; /* צבע רקע */
+  border-radius: 10px; /* פינות עגולות */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* צל */
+  text-align: center; /* יישור טקסט במרכז */
+  padding: 20px; /* ריווח פנימי */
+  margin: 10px; /* רווח בין הכרטיסים */
+  margin-bottom: 400px; /* הוסף רווח מתחת לכל מוצר */
+  transition: transform 0.3s ease; /* אנימציה בעת ריחוף */
+  width: 310px; /* רוחב הכרטיס */
+  min-height: 370px; /* גובה מינימלי */
+  display: flex; /* מתן גמישות לקונטיינר של המוצר */
+  flex-direction: column; /* העמדת האלמנטים בעמודה */
+  justify-content: flex-end; /* הצמדת כל התוכן לתחתית */
+}
+
+/* עיצוב התמונה */
+.product-image {
+  width: 100%; /* התמונה תתפוס את כל הרוחב */
+  height: auto; /* גובה התמונה יתאים באופן אוטומטי */
+  border-radius: 10px; /* פינות עגולות לתמונה */
+  margin-bottom: auto; /* דחוף את התמונה לראש הכרטיסייה */
+}
+
+/* עיצוב הכותרת והתיאור */
+.product-title,
+.product-description {
+  margin: 5px 0; /* מרווח בין הכותרת והתיאור */
+  color: #ffffff; /* צבע הכותרת והתיאור */
+}
+
+/* עיצוב המחיר */
+.product-price {
+  font-size: 20px; /* גודל הטקסט של המחיר */
+  color: #ff523b; /* צבע הטקסט של המחיר */
+  margin: 10px 0; /* מרווח סביב המחיר */
+  font-weight: bold; /* הפוך את הטקסט ל-bold */
+}
+
+/* עיצוב המלבן העליון */
+.top-rectangle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* התוכן מיושר לצד שמאל */
+  background-color: #2b2d25; /* צבע הרקע של המלבן */
+  padding: 10px;
+  animation: waveAnimation 4s ease-in-out infinite; /* הוספת אנימציה */
+}
+
+/* עיצוב בחירת השפה */
+.language-selector select {
+  border: none;
+  background-color: transparent; /* רקע שקוף */
+  font-size: 16px; /* גודל טקסט */
+  font-weight: bold; /* טקסט בולט */
+  transition: color 0.3s ease; /* מעבר חלק לצבע */
+  color: #43496e; /* צבע טקסט */
+  cursor: pointer; /* הוספת ידית בעת ריחוף */
+}
+
+/* אפקט ריחוף על הבחירה */
+.language-selector select:hover {
+  color: #393969; /* צבע טקסט בריחוף */
+}
+
+/* אפקט כאשר התפריט פתוח */
+.language-selector select:focus {
+  outline: none; /* הסרת קו מתחת לבחירה */
+  box-shadow: 0 0 5px #000; /* הוספת צל כשתפריט הבחירה פתוח */
+}
+
+/* עיצוב הכפתור */
+.add-to-cart-button {
+  background-color: #ff523b; /* צבע רקע הכפתור */
+  color: #ffffff; /* צבע טקסט הכפתור */
+  border: none; /* ללא גבול */
+  border-radius: 5px; /* פינות עגולות */
+  padding: 10px 15px; /* ריווח פנימי */
+  cursor: pointer; /* עכבר מצביע */
+  transition: background-color 0.3s ease; /* אנימציה */
+  margin-top: 10px; /* רווח קטן מעל הכפתור */
+}
+
+/* שינוי צבע הכפתור בעת ריחוף */
+.add-to-cart-button:hover {
+  background-color: #e04434; /* צבע חדש בעת ריחוף */
+}
+
+/* עיצוב המלבן השני */
+.second-rectangle {
+  background-color: #b5b7ad; /* צבע הרקע של המלבן השני */
+  padding: 20px; /* ריווח פנימי */
+  border-radius: 10px; /* פינות עגולות */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* צל */
+  margin-top: 20px; /* מרווח עליון מהקטע של המוצרים */
+}
+
+/* אנימציה בעת ריחוף על המוצר */
+.product:hover {
+  transform: scale(1.05); /* הגדלת המוצר מעט */
+}
+
+/* הסרת כפילויות של עיצוב כפתור ה-ADD TO CART */
+.add-to-cart-button {
+  background-color: #ff523b; /* צבע רקע */
+  color: white; /* צבע טקסט */
+  border: none; /* ללא גבול */
+  padding: 10px 20px; /* ריווח פנימי */
+  border-radius: 5px; /* פינות עגולות */
+  cursor: pointer; /* יד כאשר עובר על הכפתור */
+  transition: background-color 0.3s ease; /* מעבר חלק בזמן ריחוף */
+}
+
+.extra-space {
+  height: 900px; /* גובה של 100 פיקסלים */
+}
+
+/* הגדרת גובה מינימלי אחיד לכל הכרטיסים */
+.testimonial {
+  margin-bottom: 700px; /* הוסף מרווח מתחת לכל הכרטיסיות */
+}
+
+.testimonial .col-3 {
+  position: relative; /* מאפשר להוסיף אפקטים נוספים */
+  flex: 0 0 30%; /* כל אלמנט יקבל 30% מהרוחב */
+  max-width: 250px; /* רוחב מקסימלי קטן יותר */
+  text-align: center;
+  padding: 10px; /* ריווח פנימי קטן יותר */
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease,
+    box-shadow 0.3s ease; /* שינוי מהירות האנימציה */
+  margin: 20px 50px; /* רווח סביב הכרטיס */
+  min-height: 220px; /* גובה מינימלי קטן יותר */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* מפזר את האלמנטים בצורה אחידה */
+  align-items: center; /* ממרכז את התמונה ושאר האלמנטים */
+  background-color: #50553f; /* צבע הרקע */
+  border-radius: 10px; /* פינות עגולות 10px */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4); /* צל חזק יותר */
+}
+
+
+/* אפקט כאשר העכבר עובר על הכרטיס */
+.testimonial .col-3:hover {
+  transform: scale(2); /* מגדיל את הכרטיס פי 2 */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.5); /* צל חזק יותר כאשר מעבירים מעל */
+}
+
+/* אפקט ריחוף עם סיבוב קל ומעבר צבע */
+.testimonial .col-3:hover {
+  transform: translateY(-10px) rotate(3deg); /* ריחוף קל וסיבוב */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6); /* צל חזק ומוגדל בעת ריחוף */
+  background-color: #606b50; /* שינוי צבע בעת ריחוף */
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease-in-out; /* אנימציה חלקה */
+}
+
+/* אפקט גל של מעבר צבעים עם אנימציה */
+.testimonial .col-3:hover::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent);
+  animation: ripple 1s ease-out;
+  z-index: -1; /* לשמור שהאפקט יהיה ברקע */
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.8);
+    opacity: 0.6;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+/* עיצוב לתמונות */
+.testimonial img {
+  max-width: 80%; /* התמונה תתפס 80% מהכרטיס */
+  height: auto; /* שומר על יחס הגובה לרוחב */
+  border-radius: 5px; /* פינות עגולות לתמונה */
+}
+
+/* עיצוב לדרוג */
+.rating {
+  margin: 10px 0; /* ריווח סביב הדירוג */
+}
+
+
+/* יישור התמונה במרכז */
+.testimonial .col-3 img {
+  width: 60px;
+  height: 60px;
+  margin-top: 20px;
+  border-radius: 50%;
+  display: block;
+}
+
+/* עיצוב עבור הקטע של הטסטימוניאלים */
+.testimonial .row {
+  display: flex; /* שורת האלמנטים תהיה לרוחב */
+  flex-wrap: wrap; /* מאפשר שבירה לשורות נוספות */
+  justify-content: center; /* יישור אל האלמנטים מתחילת השורה */
+  margin: 0; /* אין מרווח חיצוני לשורה */
+  gap: 20px; /* אין רווח בין האלמנטים */
+}
+
+/* אנימציה בעת ריחוף על האלמנט */
+.testimonial .col-3:hover {
+  transform: translateY(-10px);
+}
+
+/* עיצוב הציטוט */
+.fa.fa-quote-left {
+  font-size: 34px;
+  color: #ff523b;
+}
+
+/* עיצוב הפסקאות */
+.testimonial .col-3 p {
+  font-size: 10px;
+  margin: 12px 0;
+  color: #777;
+}
+
+/* עיצוב הכותרת */
+.testimonial .col-3 h3 {
+  font-weight: 600;
+  color: #555;
+  font-size: 14px;
+}
+
+/* דירוג */
+.rating .fa {
+  color: #ff523b;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #737668; /* צבע הרקע של Amazon */
+  color: #e0e0e0; /* צבע טקסט כללי */
+  padding: 20px; /* ריווח פנימי */
+  text-align: center; /* ממרכז את התוכן */
+}
+
+/* Secondary Footer Styles */
+.footer-secondary {
+  background-color: #737668; /* צבע רקע שונה עבור ה-footer השני */
+  color: #c2c0c0; /* צבע טקסט כללי */
+  padding: 20px; /* ריווח פנימי */
+  text-align: center; /* ממרכז את התוכן */
+}
+
+.footerText {
+  margin: 0; /* אין רווחים */
+  font-size: 18px; /* גודל פונט מותאם לטקסט */
+  line-height: 1.5; /* רווח בין שורות */
+  text-align: center; /* ממרכז את הטקסט */
+}
+
+/* טקסט התיאור */
+.footerText .description {
+  color: rgb(130, 121, 121); /* צבע טקסט מותאם */
+}
+
+/* טקסט "Made by" */
+.footerText .madeBy {
+  color: #32381f; /* צבע טקסט */
+}
+
+.divider {
+  color: #1d2112; /* צבע הקו המפריד */
+  margin: 0 5px; /* רווח בין הקישורים לקו */
+}
+
+.footerText a {
+  color: #32381f; /* צבע כתום עבור הלינק */
+  text-decoration: none; /* ביטול קו תחתון */
+}
+
+.footerText a:hover {
+  text-decoration: none; /* קו תחתון כאשר העכבר מרחף */
+}
+
+.footerIcon {
+  margin-bottom: 10px; /* רווח בין האייקון לטקסט */
+}
+
+.footerIcons {
+  display: flex;
+  justify-content: center; /* מרכז את האייקונים אופקית */
+  gap: 20px; /* רווח בין האייקונים */
+  margin-top: 80px; /* רווח מעל האייקונים */
+}
+
+.footerIcons a {
+  text-decoration: none; /* ביטול קו תחתון */
+}
+
+.footerText .description {
+  color: rgb(130, 121, 121); /* צבע טקסט מותאם */
+}
+
+.footerIcons svg {
+  width: 30px; /* רוחב האייקון */
+  height: auto; /* גובה אוטומטי לשמירה על יחס */
+  transition: transform 0.3s, filter 0.3s; /* אנימציה בזמן ריחוף */
+}
+
+.footerIcons a:hover svg {
+  transform: scale(1.1); /* אפקט של הגדלה בזמן ריחוף */
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7)); /* צל זוהר */
+}
+
+footer {
+  background-color: #545747; /* צבע רקע כהה */
+  color: #ffc107; /* צבע טקסט */
+  padding: 20px; /* ריווח פנימי */
+  text-align: center; /* מיקום מרכזי של הטקסט */
+  position: relative; /* מאפשר לקבוע את המיקום של אלמנטים פנימיים */
+}
+
+.footerText {
+  margin-bottom: 20px; /* רווח בין הטקסט לאייקונים */
+}
+
+.footerIcons {
+  margin: 10px 0; /* רווח בין האייקונים */
+}
+
+.socialIcon {
+  color: #ffc107; /* צבע האייקונים */
+  margin: 0 10px; /* רווחים בין האייקונים */
+  font-size: 24px; /* גודל האייקונים */
+  transition: transform 0.3s; /* אנימציה בזמן ריחוף */
+}
+
+.socialIcon:hover {
+  transform: scale(1.2); /* אפקט של הגדלה בזמן ריחוף */
+}
+
+.features {
+  display: flex; /* מסודר בשורות */
+  justify-content: space-around; /* רווח שווה בין האלמנטים */
+  flex-wrap: wrap; /* מאפשר למוצרים להתארגן בשורות */
+}
+
+.feature {
+  position: relative; /* חשוב למיקום הקו הזוהר */
+  width: 30%; /* גודל של כל תכונה */
+  padding: 10px; /* ריווח פנימי */
+  text-align: center; /* טקסט ממורכז */
+  background-color: #333629; /* צבע רקע כהה לתכונות */
+  border-radius: 15px; /* פינות מעוגלות */
+  margin: 20px 0; /* רווח בין תכונות */
+  overflow: hidden; /* להסתיר את הקו כשלא מרחפים */
+  transition: transform 0.3s, box-shadow 0.3s; /* אנימציה בזמן ריחוף */
+}
+
+.feature::after {
+  content: ""; /* מאפשר ליצור אלמנט דקורטיבי */
+  position: absolute; /* מיקום מוחלט ביחס להורה */
+  width: 100%; /* לוקח את רוחב הכרטיסייה */
+  height: 4px; /* גובה הקו */
+  background: rgba(27, 27, 27, 0.8); /* צבע הקו */
+  bottom: -100%; /* מתחיל מתחת לכרטיסייה */
+  left: 0; /* מיקום משמאל */
+  transition: bottom 0.3s; /* אנימציה לירידה */
+}
+
+.feature:hover {
+  transform: translateY(-5px) rotate(10deg); /* אפקט של הזזה כלפי מעלה וסיבוב בזמן ריחוף */
+  box-shadow: 0 0 15px rgba(8, 8, 8, 0.74); /* צל זוהר בזמן ריחוף */
+}
+
+.feature:hover::after {
+  bottom: 0; /* מכניס את הקו לזווית התחתונה של הכרטיסייה */
+}
+
+.featureText {
+  margin-top: 10px; /* רווח בין האייקון לטקסט */
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+}
+
+/*-------------------------PayPal Button----------------------------------------------*/
+
+/* PayPal Button Container */
+#paypal-button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -30px; /* שינוי לערך נמוך יותר */
+  padding: 10px; /* ריווח */
+  border-radius: 8px; /* פינות מעוגלות */
+  box-shadow: none; /* ללא צל */
+  width: 250px; /* רוחב גדול יותר */
+  height: 60px; /* גובה */
+  background-color: transparent; /* רקע שקוף */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* אנימציה חלקה */
+  will-change: transform; /* הכנה לשינוי בהגדלה */
+  margin-left: 55%; /* להזיז טיפה ימינה */
+  transform: translateX(-45%); /* להזיז טיפה שמאלה */
+}
+
+/* Custom PayPal Button Text */
+.paypal-button-text {
+  font-size: 14px; /* גודל טקסט */
+  font-weight: bold;
+  color: #000000; /* צבע טקסט שחור */
+  text-transform: uppercase;
+  letter-spacing: 1px; /* מרווח בין האותיות */
+}
+
+/* Custom loading spinner inside the PayPal button */
+.paypal-button-loading-spinner {
+  color: #000000; /* צבע שחור לספינר */
+}

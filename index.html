@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ShayNest</title>
+  <script src="https://www.paypal.com/sdk/js?client-id=AR0BLTf2md3aCX9bAS8i08_cgeBXwSIlrBm0lRzRhTkqQwCAfID-lHu3wsq7vceByIHrwajrM8wgxYTn"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="https://i.ibb.co/KWqhRzs/cart-shopping-fast-svgrepo-com.png" sizes="32x32" type="image/png">
+  <style>
+    html,
+    body {
+      margin: 0;
+      /* ביטול רווחים סביב */
+      overflow-x: hidden;
+      /* הסרת גלילה אופקית */
+    }
+
+    .extra-space {
+      padding: 20px;
+      /* ריווח נוסף */
+      box-sizing: border-box;
+      /* לדאוג שה-padding לא יוסיף לגובה הכללי */
+      min-height: 100vh;
+      /* להבטיח שהחלל יכסה את כל גובה הדף */
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- מלבן ראשי בראש האתר -->
+  <div class="top-rectangle">
+    <div class="top-rectangle-content">
+      <div class="language-selector">
+        </select>
+      </div>
+    </div>
+
+    <script>
+      // פונקציה לעדכון שפת המוצר
+      function updateProductLanguage(country) {
+        const language = country === 'IL' ? 'he' : 'en';
+        const products = document.querySelectorAll('.product');
+        products.forEach(product => {
+          const titleElement = product.querySelector('.product-title');
+          const descriptionElement = product.querySelector('.product-description');
+          titleElement.textContent = titleElement.getAttribute(`data-title-${language}`);
+          descriptionElement.textContent = descriptionElement.getAttribute(`data-description-${language}`);
+        });
+      }
+      // פונקציה לעדכון מטבע ושפה
+      function updateCurrencyAndLanguage(country) {
+        // כאן אתה יכול להוסיף לוגיקה כדי לעדכן גם את המטבע
+        updateProductLanguage(country);
+      }
+      // מאזין אירועים לבחירת המדינה
+      document.getElementById('country-select').addEventListener('change', (event) => {
+        const selectedCountry = event.target.value;
+        updateCurrencyAndLanguage(selectedCountry);
+      });
+      // התחלה עם מדינה נוכחית
+      window.onload = function() {
+        const countrySelect = document.getElementById('country-select');
+        updateCurrencyAndLanguage(countrySelect.value); // התחלה עם המדינה שבחרו
+      };
+    </script>
+
+    <div class="logo-container">
+      <a href="index.html">
+        <!-- החלף בכתובת עמוד הבית שלך -->
+      </a>
+    </div>
+  </div>
+
+  <!-- מלבן שני מתחת לראש האתר -->
+  <div class="secondary-rectangle">
+    <div class="secondary-rectangle-content">
+      <div class="item">
+        <a href="#register">
+
+        </a>
+      </div>
+      <div class="item">
+        <a href="#cart">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="19.25" height="23">
+            <!--!Font Awesome Free 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.-->
+            <path d="M352 160v-32C352 57.4 294.6 0 224 0 153.4 0 96 57.4 96 128v32H0v272c0 44.2 35.8 80 80 80h288c44.2 0 80-35.8 80-80V160h-96zm-192-32c0-35.3 28.7-64 64-64s64 28.7 64 64v32H160v-32zm160 120c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24zm-192 0c-13.3 0-24-10.7-24-24s10.7-24 24-24 24 10.7 24 24-10.7 24-24 24z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Product Container -->
+  <div class="product-container">
+    <div class="product">
+      <h3 class="product-title" data-title-he="Winter socks" data-title-en="Winter Socks for the Whole Family">Winter Socks for the Whole Family</h3>
+      <img id="main-image" src="https://i.postimg.cc/3JhxzPB6/S85dd13c07cf74973ba431abfac69946ah.avif" alt="Image of winter socks" class="product-image">
+      <p class="product-price"><span class="currency-icon">₪</span> <span id="price">77.00</span></p> <!-- Price updated to 77 ₪ -->
+
+<!-- Thumbnail Images -->
+<div class="thumbnail-container">
+  <img src="https://i.postimg.cc/3JhxzPB6/S85dd13c07cf74973ba431abfac69946ah.avif" alt="Image 1" class="thumbnail" onclick="changeProduct('https://i.postimg.cc/3JhxzPB6/S85dd13c07cf74973ba431abfac69946ah.avif', 19.01, '35-39 (24cm)')">
+  <img src="https://i.postimg.cc/FztGywqb/ep-Dw-Sc44fd13e195d439286893f51b5a7c00e-O-e074-g5-znr0-u4-sq7h-c7.jpg" alt="Image 2" class="thumbnail" onclick="changeProduct('https://i.postimg.cc/FztGywqb/ep-Dw-Sc44fd13e195d439286893f51b5a7c00e-O-e074-g5-znr0-u4-sq7h-c7.jpg', 19.09, '40-44 (26cm)')">
+  <img src="https://i.postimg.cc/DZcdGmrh/vb-Lc-S2b1e2c82bc8240b5969e3c11b33c307cb-ei49-3a-f38b-f4.jpg" alt="Image 3" class="thumbnail" onclick="changeProduct('https://i.postimg.cc/DZcdGmrh/vb-Lc-S2b1e2c82bc8240b5969e3c11b33c307cb-ei49-3a-f38b-f4.jpg', 19.09, '45-48 (28cm)')">
+  <img src="https://i.postimg.cc/BvSx0JWw/h-Dz5-S050328b7c0aa49d8998a1a5928f17fb0-Z-zdj2-0a-oujh-yy.webp" alt="Image 4" class="thumbnail" onclick="changeProduct('https://i.postimg.cc/BvSx0JWw/h-Dz5-S050328b7c0aa49d8998a1a5928f17fb0-Z-zdj2-0a-oujh-yy.webp', 19.05, '49-52 (30cm)')">
+  <!-- Add more images as needed -->
+</div>
+
+<style>
+.thumbnail-container {
+display: flex; /* פריסה אופקית לתמונות הממוזערות */
+margin-top: 10px; /* רווח מעל התמונות הממוזערות */
+background-color: #181818; /* צבע רקע */
+padding: 10px; /* רווח פנימי סביב התמונות */
+border-radius: 5px; /* פינות מעוגלות */
+}
+
+.thumbnail {
+width: 50px; /* גודל התמונות הממוזערות */
+height: auto; /* שמירה על פרופורציות */
+margin-right: 5px; /* רווח בין התמונות */
+cursor: pointer; /* הופך את העכבר לאצבע כשמעבירים מעל */
+}
+</style>
+</div>
+
+
+    <script>
+      function changeProduct(imageUrl, price, size) {
+        document.getElementById("main-image").src = imageUrl;
+        document.getElementById("price").textContent = price;
+      }
+    </script>
+
+    <!-- Product Description Container -->
+    <div class="product-description-container">
+      <p class="product-description">
+        <h2>Winter socks</h2>
+        <strong>Stay warm and relaxed</strong> this winter with our <strong>cozy socks</strong>! Made from <strong>soft, comfortable material</strong>, these socks are perfect for <strong>indoor and outdoor use</strong>. The <strong>non-slip design</strong> ensures safety with every step. Don’t miss the chance to <strong>treat yourself and your family</strong>!
+      </p>
+
+
+
+<p style="text-align: center; margin-top: 5px; font-weight: bold; font-size: 18px;">
+  Please choose a sock color and send Us your size via email.
+</p>
+
+
+
+<!-- Stars -->
+<div class="star-rating" style="text-align: center; margin-top: 15px;">
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <i class="fa fa-star" aria-hidden="true"></i>
+  <span class="rating">4.9</span>
+</div>
+</div>
+
+    <!-- PayPal Button -->
+    <div id="paypal-button-container"></div>
+
+    <style>
+      /* Style for the stars */
+      .fa-star {
+        color: rgb(187, 66, 50);
+        /* צבע הכוכבים */
+      }
+
+      /* Style for the rating number */
+      .rating {
+        font-weight: bold;
+        /* עושה את המספר בולט */
+        color: rgb(187, 66, 50);
+        /* צבע דומה לכוכבים */
+        margin-left: 5px;
+        /* רווח בין הכוכבים למספר */
+      }
+    </style>
+
+    <style>
+      /* PayPal Button Container */
+      #paypal-button-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 200px;
+        /* רווח מעל הכפתור */
+        margin-left: 550px;
+        /* הזזת הכפתור הרבה ימינה */
+        margin-bottom: 20px;
+        /* רווח מתחת לכפתור */
+        padding: 10px;
+        /* ריווח */
+        border-radius: 8px;
+        /* פינות מעוגלות */
+        box-shadow: none;
+        /* ללא צל */
+        width: 250px;
+        /* רוחב גדול יותר */
+        height: 500px;
+        /* גובה */
+        /* background-color: transparent; */
+        /* הסר את השורה הזו */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* אנימציה חלקה */
+        will-change: transform;
+        /* הכנה לשינוי בהגדלה */
+      }
+
+      /* Custom PayPal Button Text */
+      .paypal-button-text {
+        font-size: 14px;
+        /* גודל טקסט */
+        font-weight: bold;
+        color: #000000;
+        /* צבע טקסט שחור */
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        /* מרווח בין האותיות */
+      }
+
+      /* Custom loading spinner inside the PayPal button */
+      .paypal-button-loading-spinner {
+        color: #000000;
+        /* צבע שחור לספינר */
+      }
+    </style>
+
+  </div>
+  </div>
+
+  <script>
+    const sizeOptions = document.querySelectorAll('.size-option');
+    sizeOptions.forEach(button => {
+      button.addEventListener('click', () => {
+        // הסר את הסימון מכל הכפתורים
+        sizeOptions.forEach(btn => btn.classList.remove('selected'));
+        // הוסף את הסימון לכפתור שנלחץ
+        button.classList.add('selected');
+        // אפשר לבצע פעולות נוספות כאן, כמו שמירת הבחירה
+        const selectedSize = button.getAttribute('data-size');
+        console.log('מידה שנבחרה:', selectedSize);
+      });
+    });
+  </script>
+
+  <style>
+    .rectangle-container {
+      display: flex;
+      gap: 20px;
+      justify-content: space-between;
+    }
+
+    .rectangle {
+      position: relative;
+      width: 250px;
+      height: 250px;
+      overflow: hidden;
+      background-size: cover;
+      background-position: center;
+      border-radius: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .rectangle h3,
+    .rectangle p {
+      position: absolute;
+      left: 10px;
+      right: 10px;
+      color: rgba(255, 255, 255, 0);
+      /* הטקסט מוסתר בהתחלה */
+      transition: color 0.3s ease;
+      z-index: 2;
+    }
+
+    .rectangle h3 {
+      top: 20px;
+      font-size: 18px;
+    }
+
+    .rectangle p {
+      bottom: 20px;
+      font-size: 14px;
+    }
+
+    .rectangle svg {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      fill: rgba(255, 255, 255, 0.7);
+      /* אייקון בהיר בהתחלה */
+      transition: fill 0.3s ease;
+      z-index: 2;
+    }
+
+    /* אפקט מעבר עם העכבר */
+    .rectangle::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      /* רקע כהה למחצה */
+      transition: background-color 0.3s ease;
+      z-index: 1;
+    }
+
+    .rectangle:hover::before {
+      background-color: rgba(0, 0, 0, 0.7);
+      /* רקע כהה יותר כאשר עובר עכבר */
+    }
+
+    .rectangle:hover h3,
+    .rectangle:hover p {
+      color: rgba(255, 255, 255, 1);
+      /* חשיפת הטקסט כשהעכבר עובר */
+    }
+
+    .rectangle:hover svg {
+      fill: rgba(255, 255, 255, 1);
+      /* האייקון נהיה יותר ברור */
+    }
+  </style>
+
+  <!-- Footer Header -->
+  <div class="footer-header">
+    <h2>Why Buy From Us?</h2>
+    <p>We offer fast service, full warranty, and free shipping on every order!</p>
+  </div>
+  <style>
+    .footer-header {
+      text-align: center;
+      padding: 20px;
+      background-color: #b5b7ad;
+      /* צבע הרקע המעודכן */
+    }
+
+    .footer-header h2 {
+      font-size: 28px;
+      color: #1C274C;
+      margin-bottom: 10px;
+      font-family: 'Arial', sans-serif;
+      /* ניתן לשנות לפונט אחר */
+    }
+
+    .footer-header p {
+      font-size: 18px;
+      color: #333;
+      margin: 0;
+    }
+  </style>
+
+  <!-- Footer -->
+  <footer class="footer" style="position: relative; z-index: 1;">
+    <div class="rectangle-container">
+
+      <!-- Rectangle 1 -->
+      <div class="rectangle" style="background-image: url('https://i.pinimg.com/originals/c4/9a/20/c49a207e0f89c9290d98fd43a87a8cb0.gif');">
+        <h3>Fast Shipping</h3>
+        <p>Delivered in 3-5 business days</p>
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M18.0909 2.54877C17.5385 2.23946 16.9504 2.20831 16.3288 2.286C15.7383 2.3598 15.02 2.54651 14.1567 2.7709L12.1384 3.2954C11.2755 3.51963 10.557 3.70634 10.0072 3.92891C9.4292 4.16293 8.92943 4.47736 8.60526 5.02195C8.27903 5.56998 8.24664 6.15584 8.32794 6.76777C8.40459 7.34473 8.59805 8.04488 8.82853 8.87901L9.37108 10.8429C9.60161 11.6775 9.79499 12.3775 10.0259 12.9139C10.271 13.4835 10.5985 13.9684 11.1541 14.2795C11.7064 14.5888 12.2945 14.62 12.9162 14.5423C13.5066 14.4685 14.225 14.2818 15.0882 14.0574L17.1066 13.5329C17.9695 13.3086 18.688 13.1219 19.2377 12.8994C19.8157 12.6653 20.3155 12.3509 20.6397 11.8063C20.9659 11.2583 20.9983 10.6724 20.917 10.0605C20.8403 9.48355 20.6469 8.7834 20.4164 7.94926L19.8738 5.98536C19.6433 5.1508 19.4499 4.45076 19.2191 3.91434C18.9739 3.34477 18.6465 2.85989 18.0909 2.54877ZM14.485 4.2354C15.4099 3.99503 16.0331 3.83463 16.5148 3.77442C16.9764 3.71673 17.1974 3.7676 17.358 3.85754C17.5154 3.94567 17.6656 4.09931 17.8413 4.50734C18.0265 4.93768 18.1937 5.53684 18.442 6.43548L18.9564 8.29754C19.2048 9.19641 19.3687 9.79611 19.4301 10.2581C19.4883 10.6968 19.4362 10.8956 19.3508 11.0391C19.2633 11.186 19.1047 11.3349 18.6748 11.509C18.2271 11.6903 17.605 11.8535 16.6798 12.0939L14.76 12.5929C13.835 12.8333 13.2118 12.9937 12.7301 13.0539C12.2685 13.1116 12.0476 13.0607 11.8869 12.9707C11.7296 12.8826 11.5793 12.729 11.4037 12.3209C11.2185 11.8906 11.0512 11.2914 10.8029 10.3928L10.2885 8.53074C10.0402 7.63187 9.87625 7.03217 9.81487 6.57022C9.75658 6.13148 9.80876 5.93269 9.89418 5.78921C9.98164 5.64227 10.1402 5.49334 10.5701 5.31928C11.0179 5.138 11.64 4.97476 12.5651 4.73434L14.485 4.2354Z" fill="#1C274C"></path>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M3.2007 4.72469C2.80157 4.61396 2.38823 4.84775 2.27749 5.24688C2.16675 5.64602 2.40054 6.05936 2.79968 6.17009L4.50338 6.64278C4.92898 6.76086 5.24592 7.08236 5.35419 7.47427L7.3055 14.5374C7.23053 14.5521 7.1556 14.5692 7.0808 14.5887C5.10375 15.1025 3.89563 17.0913 4.43836 19.0558C4.97848 21.0108 7.03215 22.1384 9.00137 21.6266C10.7247 21.1788 11.8638 19.6102 11.7683 17.9139L20.1888 15.7256C20.5897 15.6214 20.8303 15.2119 20.7261 14.811C20.6219 14.4101 20.2124 14.1696 19.8115 14.2738L11.3734 16.4667C10.8651 15.4794 9.93146 14.7927 8.86688 14.5562L6.80003 7.07483C6.5469 6.1586 5.82129 5.45177 4.9044 5.19738L3.2007 4.72469ZM7.45809 16.0404C8.66981 15.7255 9.88575 16.4288 10.198 17.5589C10.5076 18.6796 9.82797 19.862 8.62408 20.1748C7.41235 20.4897 6.19641 19.7864 5.8842 18.6563C5.5746 17.5357 6.25419 16.3533 7.45809 16.0404Z" fill="#1C274C"></path>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Rectangle 2 -->
+      <div class="rectangle" style="background-image: url('https://i.pinimg.com/originals/21/cc/d0/21ccd0e8897e00e9c19eeac49dc47288.gif');">
+        <h3>1-Year Warranty</h3>
+        <p>Full product warranty</p>
+        <svg viewBox="0 0 1024 1024" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            <path d="M182.87 146.29h585.14v292.57h73.14V73.14H109.72v877.72h402.29v-73.15H182.87z" fill="#0F1F3C"></path>
+            <path d="M713.14 481.52L512 582.1v88.24c0 110.29 62.31 211.11 160.95 260.43l40.19 20.09 40.19-20.09c98.64-49.32 160.95-150.14 160.95-260.43V582.1L713.14 481.52z m128 188.81c0 83.12-46.18 157.84-120.52 195.01l-7.48 3.74-7.48-3.74c-74.34-37.17-120.52-111.9-120.52-195.01V627.3l128-64 128 64v43.03z" fill="#0F1F3C"></path>
+            <path d="M657.87 683.21l-36.33 41.11 93.25 82.43 113.93-131.09-41.39-36L709.69 729zM256 256h438.86v73.14H256zM256 438.86h292.57V512H256zM256 621.71h146.29v73.14H256z" fill="#0F1F3C"></path>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Rectangle 3 -->
+      <div class="rectangle" style="background-image: url('https://i.pinimg.com/originals/08/f1/8f/08f18f99279bfc06cdcab2d5ca1227e2.gif');">
+        <h3>Free Shipping</h3>
+        <p>Available for all orders</p>
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M16.5 6H3V17.25H3.375H4.5H4.52658C4.70854 18.5221 5.80257 19.5 7.125 19.5C8.44743 19.5 9.54146 18.5221 9.72342 17.25H15.0266C15.2085 18.5221 16.3026 19.5 17.625 19.5C18.9474 19.5 20.0415 18.5221 20.2234 17.25H21.75V12.4393L18.3107 9H16.5V6ZM16.5 10.5V14.5026C16.841 14.3406 17.2224 14.25 17.625 14.25C18.6721 14.25 19.5761 14.8631 19.9974 15.75H20.25V13.0607L17.6893 10.5H16.5ZM15 15.75V9V7.5H4.5V15.75H4.75261C5.17391 14.8631 6.07785 14.25 7.125 14.25C8.17215 14.25 9.07609 14.8631 9.49739 15.75H15ZM17.625 18C17.0037 18 16.5 17.4963 16.5 16.875C16.5 16.2537 17.0037 15.75 17.625 15.75C18.2463 15.75 18.75 16.2537 18.75 16.875C18.75 17.4963 18.2463 18 17.625 18ZM8.25 16.875C8.25 17.4963 7.74632 18 7.125 18C6.50368 18 6 17.4963 6 16.875C6 16.2537 6.50368 15.75 7.125 15.75C7.74632 15.75 8.25 16.2537 8.25 16.875Z" fill="#080341"></path>
+          </g>
+        </svg>
+      </div>
+
+      <!-- Rectangle 4 -->
+      <div class="rectangle" style="background-image: url('https://i.pinimg.com/originals/8e/d5/c0/8ed5c06ef4d6457a1e09550242314e65.gif');">
+        <h3>Returns & Exchanges</h3>
+        <p>Return or exchange within 30 days</p>
+        <svg viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+          <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+          <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+          <g id="SVGRepo_iconCarrier">
+            <path d="M17.986 12.166a3 3 0 11-1.973 0A1.003 1.003 0 0116 12V9.999A3.999 3.999 0 0012.001 6h-.587l1.293 1.293a1 1 0 11-1.414 1.414l-3-3a1 1 0 010-1.414l3-3a1 1 0 011.414 1.414L11.414 4h.587A5.999 5.999 0 0118 9.999V12c0 .057-.005.112-.014.166zm-14-4.332c.01.054.014.11.014.166v2.001A4 4 0 007.999 14h.587l-1.293-1.293a1 1 0 011.414-1.414l3 3a1 1 0 010 1.414l-3 3a1 1 0 11-1.414-1.414L8.586 16h-.587A6 6 0 012 10.001V8c0-.057.005-.112.014-.166a3 3 0 111.972 0zM4 5a1 1 0 10-2 0 1 1 0 002 0zm14 10a1 1 0 10-2.001.001A1 1 0 0018 15z" fill="#1C274C"></path>
+          </g>
+        </svg>
+      </div>
+
+    </div>
+  </footer>
+
+  <script>
+    // Render PayPal button
+    paypal.Buttons({
+      createOrder: function(data, actions) {
+        return actions.order.create({
+          purchase_units: [{
+            amount: {
+              value: '77.00' // Price in ILS
+            }
+          }]
+        });
+      },
+      onApprove: function(data, actions) {
+        return actions.order.capture().then(function(details) {
+          document.getElementById('paypal-button-container').style.display = 'none';
+          document.getElementById('address-form').style.display = 'block'; // Show address form after payment
+          alert('Transaction completed by ' + details.payer.name.given_name);
+        });
+      }
+    }).render('#paypal-button-container');
+    // Handle address form submission
+    document.getElementById('shipping-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const formData = new FormData(event.target);
+      const name = formData.get('name');
+      const email = formData.get('email');
+      const address = formData.get('address');
+      const city = formData.get('city');
+      const zip = formData.get('zip');
+      const country = formData.get('country');
+      const mailBody = `
+        Name: ${name}
+        Email: ${email}
+        Address: ${address}, ${city}, ${zip}, ${country}
+        Size: ${selectedSize}
+    `;
+      // Send address details to your email
+      fetch('https://formsubmit.co/lmwptnh@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify({
+            name: name,
+            email: email,
+            message: mailBody
+          })
+        }).then(response => response.json())
+        .then(data => {
+          alert('Address and size sent successfully!');
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    });
+  </script>
+
+  <style>
+    .product-container {
+      display: flex;
+      /* פריסה של התוכן בצורת שורה */
+      align-items: flex-start;
+      /* ישור התוכן */
+    }
+
+    .product {
+      margin-right: 20px;
+      /* רווח בין הכרטיס לתיאור */
+    }
+
+    .product-description-container {
+      max-width: 300px;
+      /* רוחב מקסימלי לתיאור */
+    }
+
+    .product-description {
+      margin-bottom: 15px;
+      /* רווח מתחת לתיאור המוצר */
+      line-height: 1.6;
+      /* מרווח שורות בתוך תיאור המוצר */
+      color: #333;
+      /* צבע טקסט */
+    }
+
+    .product-size-selection {
+      display: block;
+      /* סידור הבחירה בשורה חדשה */
+      margin: 10px 0;
+      /* רווח סביב הבחירה */
+      padding: 8px;
+      /* ריפוד פנימי לבחירה */
+      width: 100%;
+      /* מלא את רוחב ההורה */
+      border: 1px solid #ccc;
+      /* גבול מסביב לבחירה */
+      border-radius: 4px;
+      /* קצוות מעוגלות */
+      font-size: 16px;
+      /* גודל הגופן */
+      background-color: #f9f9f9;
+      /* צבע רקע בהיר */
+    }
+
+    label[for="size-selection"] {
+      font-weight: bold;
+      /* מדגיש את הטקסט של התווית */
+      margin-bottom: 5px;
+      /* רווח בין התווית לבחירה */
+      display: block;
+      /* מבטיח שהתווית תהיה מעל הבחירה */
+      color: #333;
+      /* צבע לתווית */
+    }
+
+    .thumbnail-container {
+  display: flex;
+  margin-top: 10px;
+  background-image: url('path/to/your/image.jpg'); /* החלף את הכתובת בתמונה שלך */
+background-size: cover; /* מכסה את כל הרקע */
+background-repeat: no-repeat; /* מונע חזרה על התמונה */
+  padding: 10px; /* רווח פנימי סביב התמונות */
+  border-radius: 5px; /* פינות מעוגלות */
+}
+
+.thumbnail {
+  width: 50px; 
+  height: auto; 
+  margin-right: 5px; 
+  cursor: pointer; 
+}
+
+
+    .product-price {
+      font-size: 18px;
+      /* גודל טקסט המחיר */
+      color: #ec7a0f;
+      /* צבע טקסט המחיר */
+      font-weight: bold;
+      /* טקסט מודגש */
+    }
+  </style>
+
+  <script>
+    // פונקציה לשינוי תמונה ומחיר
+    function changeProduct(imageSrc, supplierPrice) {
+      document.getElementById('main-image').src = imageSrc; // שינוי התמונה הראשית
+      const profit = 30.99; // הרווח הקבוע
+      const sellingPrice = (supplierPrice + profit).toFixed(2); // חישוב המחיר הסופי
+      document.getElementById('price').innerText = sellingPrice; // עדכון המחיר
+    }
+  </script>
+
+  <style>
+    .footer {
+      text-align: center;
+      /* ממורכז */
+      padding: 50px 20px;
+      /* רווח פנימי */
+      background-color: #b5b7ad;
+      /* צבע רקע של ה-footer */
+    }
+
+    .rectangle-container {
+      display: flex;
+      /* עיצוב של שורה */
+      justify-content: center;
+      /* ממורכז במרכז */
+      gap: 80px;
+      /* רווח בין המלבנים */
+      flex-wrap: wrap;
+      /* מאפשר שורות נוספות אם צריך */
+    }
+
+    .rectangle {
+      width: 250px;
+      /* רוחב המלבנים */
+      height: 150px;
+      /* גובה המלבנים */
+      border-radius: 20px;
+      /* פינות מעוגלות */
+      color: white;
+      /* צבע טקסט */
+      display: flex;
+      /* גמיש */
+      flex-direction: column;
+      /* טקסט באורך עמודה */
+      align-items: center;
+      /* ממורכז */
+      justify-content: center;
+      /* ממורכז */
+      background-size: cover;
+      /* כיסוי מלא של הרקע */
+      background-position: center;
+      /* מיקום מרכזי */
+      transition: transform 0.3s, box-shadow 0.3s;
+      /* אנימציה של ריחוף */
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      /* צל */
+    }
+
+    .rectangle:hover {
+      transform: scale(1.05);
+      /* התרחבות בריחוף */
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+      /* צל חזק יותר */
+    }
+
+    .rectangle h3 {
+      margin: 0;
+      /* מסיר רווחים */
+    }
+
+    .rectangle p {
+      margin: 10px 0 0;
+      /* רווחים של פסקאות */
+      text-align: center;
+      /* טקסט ממורכז */
+    }
+  </style>
+
+  <!--  Header -->
+  <div class="testimonial-header">
+    <h2>Customer Reviews</h2>
+  </div>
+
+  <style>
+    .testimonial-header {
+      text-align: center;
+      padding: 20px;
+      background-color: #b5b7ad;
+      /* צבע הרקע המעודכן */
+      margin-left: 300px;
+      /* הוספת רווח שמאלה */
+      margin-right: 20px;
+      /* רווח מימין לאזן */
+    }
+
+    .testimonial-header h2 {
+      font-size: 28px;
+      color: #1C274C;
+      margin-bottom: 10px;
+      font-family: 'Arial', sans-serif;
+      /* ניתן לשנות לפונט אחר */
+      text-align: left;
+      /* ממרכז את הכותרת לשמאל */
+    }
+
+    .testimonial-header p {
+      font-size: 18px;
+      color: #333;
+      margin: 0;
+    }
+  </style>
+
+  <!-- Customer Reviews Section -->
+  <div class="customer-reviews">
+    <div class="header--block1--fkqnhnV">
+      <div class="header--num--XJ6wKJ5">4.9</div>
+    </div>
+    <div class="header--star--DyVGXQd">
+      <div class="stars--box--vHzUWQ9">
+        <span class="comet-icon comet-icon-starreviewfilled" style="font-size: 27px; color: #ff523b;">
+          <svg viewBox="0 0 1024 1024" width="1em" height="1em" fill="currentColor" aria-hidden="false" focusable="false">
+            <path d="M463.488 157.141333c18.986667-41.557333 78.016-41.557333 97.024 0l91.498667 200.170667 196.544 25.6c42.922667 5.589333 61.653333 57.28 32.256 89.088L738.56 625.92l36.629333 201.258667c7.850667 43.136-36.8 76.8-76.096 57.386666L512 792.064l-187.093333 92.458667c-39.296 19.413333-83.968-14.229333-76.096-57.365334l36.629333-201.258666-142.272-153.92c-29.376-31.786667-10.645333-83.498667 32.277333-89.088l196.544-25.6 91.52-200.170667z"></path>
+          </svg>
+        </span>
+        <span class="comet-icon comet-icon-starreviewfilled" style="font-size: 27px; color: #ff523b;">
+          <svg viewBox="0 0 1024 1024" width="1em" height="1em" fill="currentColor" aria-hidden="false" focusable="false">
+            <path d="M463.488 157.141333c18.986667-41.557333 78.016-41.557333 97.024 0l91.498667 200.170667 196.544 25.6c42.922667 5.589333 61.653333 57.28 32.256 89.088L738.56 625.92l36.629333 201.258667c7.850667 43.136-36.8 76.8-76.096 57.386666L512 792.064l-187.093333 92.458667c-39.296 19.413333-83.968-14.229333-76.096-57.365334l36.629333-201.258666-142.272-153.92c-29.376-31.786667-10.645333-83.498667 32.277333-89.088l196.544-25.6 91.52-200.170667z"></path>
+          </svg>
+        </span>
+        <span class="comet-icon comet-icon-starreviewfilled" style="font-size: 27px; color: #ff523b;">
+          <svg viewBox="0 0 1024 1024" width="1em" height="1em" fill="currentColor" aria-hidden="false" focusable="false">
+            <path d="M463.488 157.141333c18.986667-41.557333 78.016-41.557333 97.024 0l91.498667 200.170667 196.544 25.6c42.922667 5.589333 61.653333 57.28 32.256 89.088L738.56 625.92l36.629333 201.258667c7.850667 43.136-36.8 76.8-76.096 57.386666L512 792.064l-187.093333 92.458667c-39.296 19.413333-83.968-14.229333-76.096-57.365334l36.629333-201.258666-142.272-153.92c-29.376-31.786667-10.645333-83.498667 32.277333-89.088l196.544-25.6 91.52-200.170667z"></path>
+          </svg>
+        </span>
+        <span class="comet-icon comet-icon-starreviewfilled" style="font-size: 27px; color: #ff523b;">
+          <svg viewBox="0 0 1024 1024" width="1em" height="1em" fill="currentColor" aria-hidden="false" focusable="false">
+            <path d="M463.488 157.141333c18.986667-41.557333 78.016-41.557333 97.024 0l91.498667 200.170667 196.544 25.6c42.922667 5.589333 61.653333 57.28 32.256 89.088L738.56 625.92l36.629333 201.258667c7.850667 43.136-36.8 76.8-76.096 57.386666L512 792.064l-187.093333 92.458667c-39.296 19.413333-83.968-14.229333-76.096-57.365334l36.629333-201.258666-142.272-153.92c-29.376-31.786667-10.645333-83.498667 32.277333-89.088l196.544-25.6 91.52-200.170667z"></path>
+          </svg>
+        </span>
+        <span class="comet-icon comet-icon-starhalfreview" style="font-size: 27px; color: #ff523b;">
+          <svg viewBox="0 0 1024 1024" width="1em" height="1em" fill="currentColor" aria-hidden="false" focusable="false">
+            <path d="M512 204.992v-0.021333l84.266667 184.32a53.333333 53.333333 0 0 0 41.6 30.72l181.952 23.68-131.882667 142.698666a53.333333 53.333333 0 0 0-13.290667 45.738667l33.792 185.642667-172.8-85.397334A53.333333 53.333333 0 0 0 512 726.826667V205.013333z m48.512-47.850667c-18.986667-41.557333-78.016-41.557333-97.024 0l-91.498667 200.170667-196.544 25.6c-42.922667 5.589333-61.653333 57.28-32.277333 89.088l142.293333 153.92-36.650666 201.258667c-7.872 43.136 36.778667 76.8 76.096 57.386666L512 792.064l187.093333 92.458667c39.296 19.413333 83.946667-14.229333 76.096-57.365334L738.56 625.92l142.272-153.92c29.376-31.786667 10.645333-83.498667-32.298667-89.088l-196.522666-25.6-91.52-200.170667z"></path>
+          </svg>
+        </span>
+      </div>
+    </div>
+    <div class="header--numText--plcx4m_">All from verified purchases</div>
+  </div>
+  </div>
+
+  <style>
+    /* עיצוב כללי */
+    .customer-reviews {
+      text-align: left;
+      padding: 15px;
+      background-color: #3e3e3f;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      max-width: 500px;
+      /* רוחב המרובע */
+      margin-left: 300px;
+      /* מרכז את האלמנט */
+      margin-right: auto;
+      /* מרכז את האלמנט */
+      opacity: 0;
+      /* מתחיל בעמימות */
+      transform: translateY(20px);
+      /* מתחיל במיקום נמוך יותר */
+      animation: fadeInUp 0.5s forwards;
+      /* אנימציה של כניסה */
+    }
+
+    h2 {
+      font-size: 24px;
+      color: #1C274C;
+      margin-bottom: 10px;
+      transition: color 0.3s ease;
+      /* מעבר חלק בצבע */
+    }
+
+    h2:hover {
+      color: #3B5998;
+      /* שינוי צבע כאשר העכבר מעל */
+    }
+
+    .header--block1--fkqnhnV {
+      display: flex;
+      align-items: center;
+      margin-bottom: 10px;
+      opacity: 0;
+      /* מתחיל בעמימות */
+      transform: translateY(20px);
+      /* מתחיל במיקום נמוך יותר */
+      animation: fadeInUp 0.5s forwards;
+      /* אנימציה של כניסה */
+      animation-delay: 0.3s;
+      /* עיכוב קל על מנת שזה לא יקרה באותו רגע */
+    }
+
+    .header--num--XJ6wKJ5 {
+      font-size: 48px;
+      font-weight: bold;
+      color: #1C274C;
+      margin-right: 10px;
+    }
+
+    .header--star--DyVGXQd {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+    }
+
+    .total-reviews {
+      font-size: 16px;
+      color: #555;
+    }
+
+    .header--numText--plcx4m_ {
+      font-size: 14px;
+      color: #999;
+    }
+
+    /* אנימציות */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        /* מתחיל בעמימות */
+        transform: translateY(20px);
+        /* מתחיל במיקום נמוך יותר */
+      }
+
+      100% {
+        opacity: 1;
+        /* מתבהר לחלוטין */
+        transform: translateY(0);
+        /* חוזר למקום המקורי */
+      }
+    }
+  </style>
+
+  <!--- testimonial ----->
+  <div class="testimonial">
+    <div class="row">
+      <div class="col-3">
+        <i class="fa fa-quote-left"></i>
+        <p>My experience here was amazing! The team is always ready to help,
+          ensuring that every customer leaves satisfied.</p>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star-half"></i>
+        </div>
+        <img src="https://i.ibb.co/8s4WsDc/pexels-roman-odintsov-5836043.jpg" alt="Customer Image 1">
+        <h3>Emily Johnson</h3>
+      </div>
+
+      <div class="col-3">
+        <i class="fa fa-quote-left"></i>
+        <p>High-quality products at fair prices! I always trust that I’m
+          getting the best when I shop here.</p>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star-half"></i>
+        </div>
+        <img src="https://i.ibb.co/xSrfxDb/pexels-italo-melo-881954-2379004.jpg" alt="Customer Image 2">
+        <h3>David Smith</h3>
+      </div>
+
+      <div class="col-3">
+        <i class="fa fa-quote-left"></i>
+        <p>I can always rely on this store. The shipments arrive on time,
+          and the products always match the description.</p>
+        <div class="rating">
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star"></i>
+          <i class="fa fa-star-half"></i>
+        </div>
+        <img src="https://i.ibb.co/QM02WQy/pexels-tim-aribido-1572769-13884317.jpg" alt="Customer Image 3">
+        <h3>Robert Harris</h3>
+      </div>
+    </div>
+  </div>
+
+</body>
+</main>
+
+<!-- Footer Styles 2 -->
+<footer class="footer-secondary">
+  <div class="footerText">
+    <div class="features">
+
+      <div class="feature">
+        <div>
+          <span class="fa-stack fa-1x">
+            <svg fill="#ffc107" height="50px" width="40px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="-81.99 -81.99 573.93 573.93" xml:space="preserve" transform="rotate(-45)matrix(1, 0, 0, 1, 0, 0)" stroke="#ffc107">
+              <g id="SVGRepo_bgCarrier" stroke-width="0" transform="translate(0,0), scale(1)">
+                <rect x="-81.99" y="-81.99" width="573.93" height="573.93" rx="286.965" fill="#32381f" stroke-width="0"></rect>
+              </g>
+              <g id="SVGRepo_iconCarrier">
+                <path d="M298.809,287.873c-21.789,31.978-47.21,63.656-70.192,87.398c-8.04,8.306-15.595,15.467-22.582,21.418 c68.588-1.306,133.022-38.713,97.567-101.286C302.02,292.817,300.42,290.313,298.809,287.873z"></path>
+                <path d="M145.994,320.097c0-15.807,12.813-28.629,28.627-28.629c2.075,0,4.097,0.227,6.047,0.646 c11.107-20.724,23.954-42.066,37.637-62.407c10.651-15.833,20.518-29.121,29.712-39.999c-1.568-16.001-0.427-35.044,4.534-58.906 C277.598,10.335,72.483-74.035,12.371,120.624C-24.844,240.855,23.82,331.027,132.598,382.553c3.719,1.727,7.566,3.29,11.516,4.693 c1.009-11.445,5.235-26.422,12.644-44.788C150.198,337.214,145.994,329.15,145.994,320.097z M48.927,180.699 c0-15.814,12.816-28.631,28.628-28.631c15.807,0,28.627,12.816,28.627,28.631c0,15.806-12.82,28.628-28.627,28.628 C61.744,209.327,48.927,196.504,48.927,180.699z M101.888,291.468c-15.813,0-28.629-12.813-28.629-28.621 c0-15.815,12.815-28.631,28.629-28.631c15.808,0,28.629,12.816,28.629,28.631C130.517,278.656,117.696,291.468,101.888,291.468z M125.526,81.94c0-20.144,16.335-36.477,36.477-36.477s36.47,16.333,36.47,36.477c0,20.142-16.328,36.472-36.47,36.472 S125.526,102.081,125.526,81.94z"></path>
+                <path d="M302.786,188.889c-0.002-0.001-0.004-0.003-0.01-0.004c-7.165-4.599-13.028-10.495-17.39-17.188 c-14.295,9.836-32.436,29.769-56.31,65.258c-48.85,72.619-84.946,155.684-68.009,166.78c1.276,0.837,2.821,1.241,4.601,1.241 c21.834,0,79.571-60.683,124.735-127.83c24.781-36.836,36.322-61.56,39.475-78.436c-4.906-0.693-9.994-1.996-15.294-3.951 C310.437,193.225,306.465,191.251,302.786,188.889z"></path>
+                <path d="M409.74,71.642c-0.945-4.321-4.855-7.356-9.268-7.18c-35.358,1.318-63.614,8.195-83.984,20.439 c-23.171,13.928-30.309,31.113-32.218,43.076c-1.46,9.152-0.262,18.284,3.097,26.596c5.57,13.788,17.089,25.318,32.309,30.936 c7.983,2.947,15.178,4.38,21.995,4.38c0,0,0,0,0,0c1.034,0,2.062-0.037,3.083-0.105c7.742-0.513,15.119-2.963,21.971-7.309 c20.418-12.952,18.702-34.235,17.188-53.012c-1.884-23.374-1.906-38.169,20.402-47.428C408.401,80.34,410.685,75.963,409.74,71.642 z"></path>
+              </g>
+            </svg>
+          </span>
+        </div>
+        <div class="featureText">
+          </h3>
+          <p>Want a custom drawing?<br>
+            I offer personalized drawings based on your request.<br>
+            Contact me via email to get started.
+          </p>
+
+        </div>
+      </div>
+
+      <div class="feature">
+        <div>
+          <span class="fa-stack fa-1x">
+            <svg width="50px" height="40px" viewBox="-4.8 -4.8 33.60 33.60" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffbf07">
+              <g id="SVGRepo_bgCarrier" stroke-width="0" transform="translate(0,0), scale(1)">
+                <rect x="-4.8" y="-4.8" width="33.60" height="33.60" rx="16.8" fill="#32381f" stroke-width="0"></rect>
+              </g>
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round" stroke="#CCCCCC" stroke-width="0.048"></g>
+              <g id="SVGRepo_iconCarrier">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M15.3276 7.54199H8.67239C5.29758 7.54199 3.61017 7.54199 2.66232 8.52882C1.71447 9.51565 1.93748 11.0403 2.38351 14.0895L2.80648 16.9811C3.15626 19.3723 3.33115 20.5679 4.22834 21.2839C5.12553 21.9999 6.4488 21.9999 9.09534 21.9999H14.9046C17.5512 21.9999 18.8745 21.9999 19.7717 21.2839C20.6689 20.5679 20.8437 19.3723 21.1935 16.9811L21.6165 14.0895C22.0625 11.0403 22.2855 9.51564 21.3377 8.52882C20.3898 7.54199 18.7024 7.54199 15.3276 7.54199ZM14.5812 15.7942C15.1396 15.448 15.1396 14.5519 14.5812 14.2057L11.2096 12.1156C10.6669 11.7792 10 12.2171 10 12.9098V17.0901C10 17.7828 10.6669 18.2207 11.2096 17.8843L14.5812 15.7942Z" fill="#ffc107"></path>
+                <path opacity="0.4" d="M8.50956 2.00001H15.4897C15.7221 1.99995 15.9004 1.99991 16.0562 2.01515C17.164 2.12352 18.0708 2.78958 18.4553 3.68678H5.54395C5.92846 2.78958 6.83521 2.12352 7.94303 2.01515C8.09884 1.99991 8.27708 1.99995 8.50956 2.00001Z" fill="#ffc107"></path>
+                <path opacity="0.7" d="M6.3102 4.72266C4.91958 4.72266 3.77931 5.56241 3.39878 6.67645C3.39085 6.69967 3.38325 6.72302 3.37598 6.74647C3.77413 6.6259 4.18849 6.54713 4.60796 6.49336C5.68833 6.35485 7.05367 6.35492 8.6397 6.35501H15.5318C17.1178 6.35492 18.4832 6.35485 19.5635 6.49336C19.983 6.54713 20.3974 6.6259 20.7955 6.74647C20.7883 6.72302 20.7806 6.69967 20.7727 6.67645C20.3922 5.56241 19.2519 4.72266 17.8613 4.72266H6.3102Z" fill="#ffc107"></path>
+              </g>
+            </svg>
+          </span>
+        </div>
+        <div class="featureText">
+          <p>
+          <p>Video editor for businesses<br>Including subtitles in the video</p>
+          </span>
+        </div>
+      </div>
+
+      <div class="feature">
+        <div>
+          <span class="fa-stack fa-1x">
+            <svg width="50px" height="40px" viewBox="-4.8 -4.8 33.60 33.60" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="#ffc107" stroke-width="0.00024000000000000003" transform="matrix(1, 0, 0, 1, 0, 0)">
+              <g id="SVGRepo_bgCarrier" stroke-width="0">
+                <rect x="-4.8" y="-4.8" width="33.60" height="33.60" rx="16.8" fill="#32381f" strokewidth="0"></rect>
+              </g>
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+              <g id="SVGRepo_iconCarrier">
+                <path opacity=".6" fill-rule="evenodd" clip-rule="evenodd" d="M3 4h18a1 1 0 0 1 1 1v1H2V5a1 1 0 0 1 1-1z" fill="#ffc107"></path>
+                <path opacity=".3" fill-rule="evenodd" clip-rule="evenodd" d="M5 2h14a1 1 0 0 1 1 1v1H4V3a1 1 0 0 1 1-1z" fill="#ffc107"></path>
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1 6h22a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1zm0 2v3h3V8H1zm0 5v3h3v-3H1zm0 5v3h3v-3H1zM20 8v3h3V8h-3zm0 5v3h3v-3h-3zm0 5v3h3v-3h-3z" fill="#ffc107"></path>
+              </g>
+            </svg>
+          </span>
+        </div>
+        <div class="featureText">
+          </h3>
+          <p style="display: block;">I create animations and specialize in graphic design.</p>
+          <p style="display: block;">My creativity is reflected in every project I work on.</p>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+<!-- Footer Styles -->
+<footer>
+  <svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" xml:space="preserve" fill="#32381F">
+    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+    <g id="SVGRepo_iconCarrier">
+      <style type="text/css">
+        .st0 {
+          fill: none;
+          stroke: #32381F;
+          stroke-width: 2;
+          stroke-linecap: round;
+          stroke-linejoin: round;
+          stroke-miterlimit: 10;
+        }
+
+        .st1 {
+          fill: none;
+          stroke: #32381F;
+          stroke-width: 2;
+          stroke-linejoin: round;
+          stroke-miterlimit: 10;
+        }
+      </style>
+      <polyline class="st0" points="22,12 22,20 26,20 "></polyline>
+      <path class="st0" d="M29,24H3c-1.1,0-2-0.9-2-2V10c0-1.1,0.9-2,2-2h26c1.1,0,2,0.9,2,2v12C31,23.1,30.1,24,29,24z"></path>
+      <path class="st0" d="M10,14L10,14c0-1.1-0.9-2-2-2h0c-1.1,0-2,0.9-2,2v0c0,1.1,0.9,2,2,2h0c1.1,0,2,0.9,2,2v0c0,1.1-0.9,2-2,2h0
+        c-1.1,0-2-0.9-2-2v0"></path>
+      <path class="st0" d="M18,14L18,14c0-1.1-0.9-2-2-2h0c-1.1,0-2,0.9-2,2v0c0,1.1,0.9,2,2,2h0c1.1,0,2,0.9,2,2v0c0,1.1-0.9,2-2,2h0
+        c-1.1,0-2-0.9-2-2v0"></path>
+    </g>
+  </svg>
+  <svg fill="#32381F" viewBox="0 0 32 32" id="Outlined" xmlns="http://www.w3.org/2000/svg">
+    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+    <g id="SVGRepo_iconCarrier">
+      <g id="Fill">
+        <path d="M16,2,3,6.28V12C3,26.61,15.63,29.94,15.76,30L16,30l.24-.06c.13,0,12.76-3.36,12.76-18V6.28ZM27,12c0,12.1-9.31,15.45-11,16C14.31,27.45,5,24.1,5,12V7.72L16,4.05,27,7.72Z" fill="#32381F"></path>
+        <path d="M11.59,15l-1.42,1.41,2.29,2.29a2,2,0,0,0,1.42.59,2,2,0,0,0,1.41-.59l6.54-6.53-1.42-1.42-6.53,6.54Z" fill="#32381F"></path>
+      </g>
+    </g>
+  </svg>
+  <svg fill="#32381F" viewBox="0 0 14 14" role="img" focusable="false" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+    <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+    <g id="SVGRepo_iconCarrier">
+      <path d="m 10.973418,3.3476612 c 0,0 -0.0098,-0.0539 -0.04041,-0.0735 -0.03061,-0.0196 -0.06367,-0.0233 -0.06367,-0.0233 l -0.964886,-0.0722 -0.710195,-0.70529 c -0.02694,-0.0208 -0.05755,-0.0331 -0.08939,-0.0392 -0.07592,-0.0147 -0.177549,0.002 -0.195916,0.007 l -0.368567,0.11388 c -0.160406,-0.47265 -0.378362,-0.80816 -0.652644,-1.00285 -0.203263,-0.14326 -0.426117,-0.20448 -0.666114,-0.18612 -0.0502,-0.0673 -0.106529,-0.12612 -0.166529,-0.1751 -0.265711,-0.21550998 -0.609788,-0.24856998 -1.019987,-0.1004 -1.23182,0.44815 -1.754671,2.04487 -1.94324,2.842 l -1.073864,0.33306 c 0,0 -0.252241,0.0722 -0.31224,0.14326 -0.0649,0.0784 -0.07714,0.28898 -0.07714,0.28898 l -0.911007,7.0227298 6.860728,1.27958 3.704034,-0.80203 -1.308963,-8.8504998 z m -3.801992,-0.36857 -1.186515,0.36735 c 0.156733,-0.61591 0.459178,-1.24407 1.03713,-1.49019 0.119998,0.31469 0.153059,0.74448 0.149385,1.12284 z m -0.995497,-1.49998 c 0.251017,-0.0906 0.44326,-0.0869 0.588972,0.011 -0.775092,0.35265 -1.113047,1.24285 -1.258759,2.00447 l -0.950192,0.29387 c 0.213058,-0.76652 0.685705,-1.97018 1.619979,-2.30936 z m 0.664889,5.17586 c -0.05388,-0.0269 -0.118774,-0.0551 -0.191018,-0.0808 -0.07224,-0.0269 -0.151834,-0.0527 -0.238772,-0.0735 -0.08571,-0.0208 -0.178773,-0.038 -0.275507,-0.0478 -0.09673,-0.01 -0.198364,-0.0135 -0.303669,-0.007 -0.09673,0.006 -0.183671,0.0233 -0.260813,0.0502 -0.07592,0.0269 -0.143264,0.0649 -0.197141,0.11143 -0.05388,0.0465 -0.09796,0.10163 -0.127345,0.16531 -0.03061,0.0637 -0.04775,0.13469 -0.05143,0.21428 -0.0024,0.0588 0.0061,0.1151 0.02694,0.1702 0.02082,0.0551 0.05265,0.10898 0.09673,0.16285 0.04408,0.0539 0.100407,0.10776 0.167753,0.16164 0.06857,0.0551 0.149386,0.11142 0.242446,0.16897 0.131019,0.0833 0.264486,0.17755 0.391832,0.28653 0.128569,0.1102 0.251017,0.23387 0.355097,0.37469 0.106529,0.14326 0.194691,0.30244 0.253466,0.48244 0.06,0.18122 0.09061,0.38081 0.08082,0.59999 -0.01592,0.36 -0.09428,0.6697898 -0.225304,0.9269298 -0.128569,0.25347 -0.306118,0.45306 -0.520401,0.59754 -0.209385,0.14082 -0.451831,0.22898 -0.715093,0.26449 -0.255915,0.0343 -0.530197,0.0196 -0.813051,-0.0429 -0.0024,0 -0.0049,-10e-4 -0.0073,-10e-4 -0.0024,0 -0.0049,-0.001 -0.0061,-0.001 -0.0024,0 -0.0049,-10e-4 -0.0073,-10e-4 -0.0024,0 -0.0049,-10e-4 -0.0073,-10e-4 -0.132243,-0.0318 -0.260813,-0.0735 -0.380811,-0.12245 -0.118774,-0.0478 -0.230201,-0.10163 -0.330608,-0.16163 -0.100407,-0.0588 -0.191018,-0.12122 -0.269384,-0.1849 -0.07714,-0.0637 -0.143264,-0.12979 -0.194692,-0.19714 L 3.645104,9.4344412 c 0.05265,0.0441 0.11755,0.0955 0.191018,0.14693 0.07469,0.0527 0.157957,0.10531 0.246119,0.15551 0.09061,0.0502 0.18612,0.0967 0.285303,0.13469 0.100407,0.038 0.204487,0.0686 0.306118,0.0833 0.09061,0.0135 0.171427,0.011 0.242446,-0.005 0.07102,-0.0159 0.132243,-0.0453 0.182447,-0.0869 0.0502,-0.0404 0.08939,-0.0918 0.116325,-0.15061 0.02694,-0.06 0.04286,-0.12612 0.0453,-0.19714 0.0037,-0.071 -0.0037,-0.13836 -0.02082,-0.20326 -0.01837,-0.0649 -0.04775,-0.12857 -0.08939,-0.19102 -0.04163,-0.0625 -0.09673,-0.12612 -0.165304,-0.19102 -0.06857,-0.0649 -0.150611,-0.13101 -0.247344,-0.20203 -0.119998,-0.0894 -0.231426,-0.1849 -0.331832,-0.2902 -0.09918,-0.10409 -0.187345,-0.21551 -0.258365,-0.33796 -0.07102,-0.12122 -0.127345,-0.25102 -0.164079,-0.39306 -0.03673,-0.14081 -0.05265,-0.29387 -0.04531,-0.4604 0.01225,-0.27795 0.06735,-0.53387 0.160407,-0.76529 0.09428,-0.23265 0.227752,-0.44204 0.39428,-0.62204 0.170202,-0.18367 0.377138,-0.33918 0.615911,-0.45795 0.246119,-0.12245 0.526523,-0.20939 0.83754,-0.24979 0.144488,-0.0196 0.282853,-0.0282 0.413872,-0.0282 0.133468,0 0.258364,0.007 0.373465,0.022 0.116325,0.0147 0.222854,0.0367 0.317138,0.0637 0.09551,0.0269 0.177549,0.0588 0.244895,0.0931 l -0.45428,1.35427 z m 0.742032,-3.80322 c 0,-0.0465 -0.0012,-0.0943 -0.0037,-0.14204 -0.01347,-0.36857 -0.06367,-0.67958 -0.149386,-0.93182 0.09306,0.01 0.177549,0.0404 0.254691,0.0943 0.214283,0.15183 0.369791,0.45795 0.478769,0.79958 l -0.5804,0.18 z"></path>
+    </g>
+  </svg>
+  <div class="footerText">
+    <p class="description">© 2024 ShayNest. All rights reserved.</p>
+    <p class="madeBy">Created by Shay</p>
+    <a href="PrivacyPolicy.html">Privacy Policy</a> <span class="divider">|</span> <a href="#">Terms of Service</a>
+  </div>
+  <div class="footerIcons">
+    <a href="mailto:lmwptnh@gmail.com" class="socialIcon">
+      <!-- Gmail Icon (SVG) -->
+      <svg viewBox="-0.5 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+        <title>Gmail</title>
+        <g id="SVGRepo_iconCarrier">
+          <path d="M9.00977 21.39H19.0098C20.0706 21.39 21.0881 20.9685 21.8382 20.2184C22.5883 19.4682 23.0098 18.4509 23.0098 17.39V7.39001C23.0098 6.32915 22.5883 5.31167 21.8382 4.56152C21.0881 3.81138 20.0706 3.39001 19.0098 3.39001H7.00977C5.9489 3.39001 4.93148 3.81138 4.18134 4.56152C3.43119 5.31167 3.00977 6.32915 3.00977 7.39001V12.39" stroke="#1d2112" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M1.00977 18.39H11.0098" stroke="#1d2112" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M1.00977 15.39H5.00977" stroke="#1d2112" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          <path d="M22.209 5.41992C16.599 16.0599 9.39906 16.0499 3.78906 5.41992" stroke="#1d2112" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </g>
+      </svg>
+      <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=lmwptnh@gmail.com&amount=3&currency_code=USD&item_name=Website%20improvement" class="socialIcon" target="_blank" rel="noopener noreferrer">
+        <!-- Paypal Icon (SVG) -->
+        <svg fill="#1d2112" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+          <g>
+            <title>paypal</title>
+            <path d="M27.508 9.657c-0.223-0.253-0.472-0.476-0.744-0.666l-0.013-0.009c-0.016 0.095-0.032 0.218-0.051 0.317-1.161 5.963-4.998 8.986-11.404 8.986h-2.733c-0.351 0-0.641 0.258-0.693 0.594l-0.001 0.004-1.481 9.393h-0.631l-0.3 1.892c-0.005 0.033-0.008 0.070-0.008 0.109 0 0.386 0.313 0.699 0.699 0.699 0 0 0.001 0 0.001 0h4.844c0 0 0 0 0 0 0.579 0 1.060-0.423 1.149-0.977l0.001-0.007c0.075-0.324 0.948-6.055 1.018-6.352 0.090-0.56 0.57-0.983 1.149-0.983 0.001 0 0.002 0 0.003 0h0.724c4.692 0 8.367-1.907 9.441-7.42 0.171-0.546 0.269-1.173 0.269-1.823 0-1.414-0.465-2.72-1.251-3.773l0.012 0.017zM9.855 27.652h-5.748c-0.442-0-0.8-0.358-0.8-0.8 0-0.044 0.003-0.086 0.010-0.128l-0.001 0.005 3.877-24.579c0.104-0.641 0.653-1.124 1.315-1.124h9.31c0.296-0.033 0.638-0.053 0.985-0.053 2.349 0 4.494 0.876 6.125 2.32l-0.010-0.009c0.898 1.036 1.446 2.398 1.446 3.887 0 0.52-0.067 1.024-0.192 1.504l0.009-0.041c-0.029 0.178-0.059 0.359-0.096 0.545-1.227 6.302-5.427 8.482-10.791 8.482h-2.733c-0.66 0.001-1.208 0.484-1.309 1.116l-0.001 0.008z"></path>
+          </g>
+        </svg>
+      </a>
+
+    </a>
+
+  </div>
+</footer>
+<script src="locationCurrency.js"></script>
+</body>
+
+</html>
