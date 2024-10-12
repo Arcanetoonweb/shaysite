@@ -1,3 +1,59 @@
+/* דוגמאות לקוד CSS רספונסיבי */
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.item {
+  flex: 1 1 300px; /* מינימום 300 פיקסלים לרוחב */
+  margin: 10px;
+}
+
+/* מסכים קטנים */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* פריסה עמודתית למסכים קטנים */
+  }
+}
+
+/* מסכים בינוניים */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .item {
+    flex: 1 1 45%; /* שני טורים למסכים בינוניים */
+  }
+}
+
+/* מסכים גדולים */
+@media (min-width: 1025px) {
+  .item {
+    flex: 1 1 30%; /* שלושה טורים למסכים גדולים */
+  }
+}
+
+
+/* כל התמונות יהיו גמישות */
+img {
+  max-width: 100%;  /* התמונה לא תעלה על רוחב ה-container שלה */
+  height: auto;     /* יחס הגובה לרוחב יישמר */
+}
+
+/* לדוגמה, עבור אלמנט עם מחלקת 'container' */
+.container {
+  display: flex;
+  flex-wrap: wrap; /* אפשר פריסה גמישה */
+  justify-content: space-between; /* שים את התוכן באופן אחיד */
+}
+
+/* עבור פריטים בתוך ה-container */
+.item {
+  flex: 1 1 300px; /* מינימום 300 פיקסלים לרוחב */
+  margin: 10px; /* רווח בין הפריטים */
+  padding: 10px; /* רווח פנימי */
+}
+
+
+
 /* שים את זה בתחילת קובץ ה-CSS שלך */
 body {
   background-color: #b5b7ad;
