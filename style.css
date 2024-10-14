@@ -56,7 +56,7 @@ img {
 
 /* שים את זה בתחילת קובץ ה-CSS שלך */
 body {
-  background-color: #b5b7ad;
+  background-color: #131417;
   margin: 0;
   padding: 0;
   font-family: Arial, sans-serif;
@@ -66,7 +66,7 @@ body {
 
 /* מלבן ראשי בראש האתר */
 .top-rectangle {
-  background-color: #2b2d25;
+  background-color: #000;
   height: 60px; /* גובה המלבן */
   width: 100%; /* רוחב מלא */
   display: flex;
@@ -74,7 +74,7 @@ body {
   justify-content: center;
   position: relative; /* מאפשר למלבן השני להתמקם יחסית לו */
   z-index: 1000;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.6); /* צל קל */
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.8); /* הצל שודרג */
   margin-bottom: 0px; /* מרווח מתחת למלבן */
 }
 
@@ -117,7 +117,7 @@ body {
 
 /* המלבן המשני מתחת לראש האתר */
 .secondary-rectangle {
-  background-color: #737668; /* צבע רקע */
+  background-color: #131417; /* צבע רקע */
   height: 60px; /* גובה המלבן המשני */
   width: 100%; /* רוחב מלא */
   display: flex;
@@ -461,7 +461,7 @@ body.activeTabCart .container {
 
 /* עיצוב עבור כל מוצר */
 .product {
-  background-color: #50553f; /* צבע רקע */
+  background-color: #2c303a; /* צבע רקע */
   border-radius: 10px; /* פינות עגולות */
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* צל */
   text-align: center; /* יישור טקסט במרכז */
@@ -504,7 +504,7 @@ body.activeTabCart .container {
   display: flex;
   align-items: center;
   justify-content: flex-start; /* התוכן מיושר לצד שמאל */
-  background-color: #2b2d25; /* צבע הרקע של המלבן */
+  background-color: #000; /* צבע הרקע של המלבן */
   padding: 10px;
   animation: waveAnimation 4s ease-in-out infinite; /* הוספת אנימציה */
 }
@@ -533,7 +533,7 @@ body.activeTabCart .container {
 
 /* עיצוב הכפתור */
 .add-to-cart-button {
-  background-color: #ff523b; /* צבע רקע הכפתור */
+  background-color: #2c303a; /* צבע רקע הכפתור */
   color: #ffffff; /* צבע טקסט הכפתור */
   border: none; /* ללא גבול */
   border-radius: 5px; /* פינות עגולות */
@@ -550,10 +550,9 @@ body.activeTabCart .container {
 
 /* עיצוב המלבן השני */
 .second-rectangle {
-  background-color: #b5b7ad; /* צבע הרקע של המלבן השני */
+  background-color: #131417; /* צבע הרקע של המלבן השני */
   padding: 20px; /* ריווח פנימי */
   border-radius: 10px; /* פינות עגולות */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* צל */
   margin-top: 20px; /* מרווח עליון מהקטע של המוצרים */
 }
 
@@ -564,7 +563,7 @@ body.activeTabCart .container {
 
 /* הסרת כפילויות של עיצוב כפתור ה-ADD TO CART */
 .add-to-cart-button {
-  background-color: #ff523b; /* צבע רקע */
+  background-color: #2c303a; /* צבע רקע */
   color: white; /* צבע טקסט */
   border: none; /* ללא גבול */
   padding: 10px 20px; /* ריווח פנימי */
@@ -705,7 +704,7 @@ body.activeTabCart .container {
 
 /* Footer Styles */
 footer {
-  background-color: #737668; /* צבע הרקע של Amazon */
+  background-color: #131417; /* צבע הרקע של  */
   color: #e0e0e0; /* צבע טקסט כללי */
   padding: 20px; /* ריווח פנימי */
   text-align: center; /* ממרכז את התוכן */
@@ -713,7 +712,7 @@ footer {
 
 /* Secondary Footer Styles */
 .footer-secondary {
-  background-color: #737668; /* צבע רקע שונה עבור ה-footer השני */
+  background-color: #131417; /* צבע רקע שונה עבור ה-footer השני */
   color: #c2c0c0; /* צבע טקסט כללי */
   padding: 20px; /* ריווח פנימי */
   text-align: center; /* ממרכז את התוכן */
@@ -733,7 +732,7 @@ footer {
 
 /* טקסט "Made by" */
 .footerText .madeBy {
-  color: #32381f; /* צבע טקסט */
+  color: rgb(130, 121, 121); /* צבע טקסט */
 }
 
 .divider {
@@ -781,8 +780,8 @@ footer {
 }
 
 footer {
-  background-color: #545747; /* צבע רקע כהה */
-  color: #ffc107; /* צבע טקסט */
+  background-color: #000; /* צבע רקע כהה */
+  color: #ff6207; /* צבע טקסט */
   padding: 20px; /* ריווח פנימי */
   text-align: center; /* מיקום מרכזי של הטקסט */
   position: relative; /* מאפשר לקבוע את המיקום של אלמנטים פנימיים */
@@ -818,7 +817,7 @@ footer {
   width: 30%; /* גודל של כל תכונה */
   padding: 10px; /* ריווח פנימי */
   text-align: center; /* טקסט ממורכז */
-  background-color: #333629; /* צבע רקע כהה לתכונות */
+  background-color: #2c303a; /* צבע רקע כהה לתכונות */
   border-radius: 15px; /* פינות מעוגלות */
   margin: 20px 0; /* רווח בין תכונות */
   overflow: hidden; /* להסתיר את הקו כשלא מרחפים */
@@ -877,7 +876,7 @@ body {
 .paypal-button-text {
   font-size: 14px; /* גודל טקסט */
   font-weight: bold;
-  color: #000000; /* צבע טקסט שחור */
+  color: #0a0a0a; /* צבע טקסט שחור */
   text-transform: uppercase;
   letter-spacing: 1px; /* מרווח בין האותיות */
 }
@@ -885,4 +884,59 @@ body {
 /* Custom loading spinner inside the PayPal button */
 .paypal-button-loading-spinner {
   color: #000000; /* צבע שחור לספינר */
+}
+
+
+
+/*--------------------------- סל הקניות---------------------*/
+
+.sidebar {
+  height: 100%;
+  width: 300px; /* רוחב קבוע לסל */
+  position: fixed;
+  top: 0;
+  right: -300px; /* הסתרת הסל בצד ימין */
+  background-color: #f5f5f5;
+  transition: 0.4s ease; /* מעבר חלק */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 9999;
+}
+
+.sidebar.open {
+  right: 0; /* הסל נפתח */
+}
+
+.closebtn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+}
+
+#cart-items {
+  padding: 20px;
+}
+
+#cart-total {
+  font-size: 18px;
+  padding: 20px;
+}
+
+button {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
+button:hover {
+  background-color: #45a049;
 }
