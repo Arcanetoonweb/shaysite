@@ -727,12 +727,12 @@ footer {
 
 /* טקסט התיאור */
 .footerText .description {
-  color: rgb(130, 121, 121); /* צבע טקסט מותאם */
+  color: #32381f; /* צבע טקסט מותאם */
 }
 
 /* טקסט "Made by" */
 .footerText .madeBy {
-  color: rgb(130, 121, 121); /* צבע טקסט */
+  color: #32381f; /* צבע טקסט */
 }
 
 .divider {
@@ -765,7 +765,7 @@ footer {
 }
 
 .footerText .description {
-  color: rgb(130, 121, 121); /* צבע טקסט מותאם */
+  color: #32381f; /* צבע טקסט מותאם */
 }
 
 .footerIcons svg {
@@ -776,11 +776,10 @@ footer {
 
 .footerIcons a:hover svg {
   transform: scale(1.1); /* אפקט של הגדלה בזמן ריחוף */
-  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7)); /* צל זוהר */
 }
 
 footer {
-  background-color: #000; /* צבע רקע כהה */
+  background-color: #060707; /* צבע רקע כהה */
   color: #ff6207; /* צבע טקסט */
   padding: 20px; /* ריווח פנימי */
   text-align: center; /* מיקום מרכזי של הטקסט */
