@@ -193,3 +193,17 @@ document
     };
     addToCart(product); // הוספת המוצר לסל
   });
+
+
+
+
+
+  function openCart() {
+    document.getElementById("cart-sidebar").classList.add("open");
+}
+
+function closeCart() {
+    document.getElementById("cart-sidebar").classList.remove("open");
+}
+
+
